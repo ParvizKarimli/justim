@@ -22,7 +22,18 @@
                     <i class="ti-wand"></i>
                     Night Mode
                 </a>
-                <a href="sign-in.html" class="btn power" title="Sign Out"><i class="ti-power-off"></i></a>
+                <a href="{{ route('logout') }}"
+                   class="btn power"
+                   title="Sign Out"
+                   onclick="event.preventDefault();
+                            document.getElementById('logout-form-navbar').submit();"
+                >
+                    <i class="ti-power-off"></i>
+                </a>
+
+                <form id="logout-form-navbar" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
             </div>
         </div>
     </div>

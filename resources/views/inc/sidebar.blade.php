@@ -716,7 +716,11 @@
                             <!-- End of Privacy & Safety -->
                             <!-- Start of Logout -->
                             <div class="category">
-                                <a href="sign-in.html" class="title collapsed">
+                                <a href="{{ route('logout') }}"
+                                   class="title collapsed"
+                                   onclick="event.preventDefault();
+                                            document.getElementById('logout-form-sidebar').submit();"
+                                >
                                     <i class="ti-power-off"></i>
                                     <div class="data">
                                         <h5>Power Off</h5>
@@ -724,6 +728,10 @@
                                     </div>
                                     <i class="ti-angle-down"></i>
                                 </a>
+
+                                <form id="logout-form-sidebar" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
                             </div>
                             <!-- End of Logout -->
                         </div>
