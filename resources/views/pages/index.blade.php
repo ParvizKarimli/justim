@@ -1,1 +1,1 @@
-{{ $threads }}
+@extends('layouts.app')
