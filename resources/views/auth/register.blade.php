@@ -65,7 +65,7 @@
                             <label for="avatar" class="col-md-4 control-label">Avatar</label>
 
                             <div class="col-md-6">
-                                <input id="avatar" type="file" name="avatar" required>
+                                <input id="avatar" type="file" accept=".jpg, .jpeg, .png, .gif" name="avatar" required>
                             </div>
                         </div>
 
