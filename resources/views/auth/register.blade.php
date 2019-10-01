@@ -61,11 +61,18 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group {{ $errors->has('avatar') ? 'has-error' : '' }}">
                             <label for="avatar" class="col-md-4 control-label">Avatar</label>
 
                             <div class="col-md-6">
-                                <input id="avatar" type="file" accept=".jpg, .jpeg, .png, .gif" name="avatar" required>
+                                <input id="avatar" type="file" accept=".jpg, .jpeg, .png, .gif" name="avatar">
+                            </div>
+                            <div class="col-md-6">
+                                @if($errors->has('avatar'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('avatar') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 
