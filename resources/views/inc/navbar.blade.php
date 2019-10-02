@@ -7,7 +7,7 @@
                     Settings
                 </a>
                 <a href="#members" data-toggle="tab" title="All Friends">
-                    <i class="ti-home"></i>
+                    <i class="ti-comments-smiley"></i>
                     Friends
                 </a>
                 <a href="#discussions" data-toggle="tab" class="active" title="Recent Chats">
