@@ -2,19 +2,19 @@
     <div class="container">
         <div class="inside">
             <div class="nav nav-tab menu">
-                <a href="#settings" data-toggle="tab" title="User Setting">
+                <a href="#settings" data-toggle="tab" title="User Settings">
                     <i class="ti-panel"></i>
-                    Setting
+                    Settings
                 </a>
-                <a href="#members" data-toggle="tab" title="All members">
+                <a href="#members" data-toggle="tab" title="All Friends">
                     <i class="ti-home"></i>
-                    All Friends
+                    Friends
                 </a>
-                <a href="#discussions" data-toggle="tab" class="active" title="Chat">
+                <a href="#discussions" data-toggle="tab" class="active" title="Recent Chats">
                     <i class="ti-comment-alt"></i>
-                    Recent Chat
+                    Chat
                 </a>
-                <a href="#notifications" data-toggle="tab" class="f-grow1" title="Notifications">
+                <a href="#notifications" data-toggle="tab" class="f-grow1" title="Recent Notifications">
                     <i class="ti-bell"></i>
                     Notifications
                 </a>
@@ -29,6 +29,7 @@
                             document.getElementById('logout-form-navbar').submit();"
                 >
                     <i class="ti-power-off"></i>
+                    <p>Log Out</p>
                 </a>
 
                 <form id="logout-form-navbar" action="{{ route('logout') }}" method="POST" style="display: none;">
