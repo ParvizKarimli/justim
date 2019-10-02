@@ -4,7 +4,13 @@
             <div class="tab-content">
                 <!-- Start of Contacts -->
                 <div class="tab-pane fade" id="members">
-                    <figure class="setting"><img class="avatar-xl" src="dist/img/avatars/avatar-male-1.jpg" alt="avatar"></figure>
+                    <figure class="setting">
+                        @if(auth()->user()->avatar == NULL)
+                            <img class="avatar-xl" src="dist/img/avatars/default.jpg" alt="avatar">
+                        @else
+                            <img class="avatar-xl" src="dist/img/avatars/{{ auth()->user()->avatar }}" alt="avatar">
+                        @endif
+                    </figure>
                     <span class="logo"><img alt="" src="dist/img/logo.png"></span>
                     <div class="search">
                         <form class="form-inline position-relative">
@@ -137,7 +143,13 @@
                 <!-- End of Contacts -->
                 <!-- Start of Discussions -->
                 <div id="discussions" class="tab-pane fade in active show">
-                    <figure class="setting"><img class="avatar-xl" src="dist/img/avatars/avatar-male-1.jpg" alt="avatar"></figure>
+                    <figure class="setting">
+                        @if(auth()->user()->avatar == NULL)
+                            <img class="avatar-xl" src="dist/img/avatars/default.jpg" alt="avatar">
+                        @else
+                            <img class="avatar-xl" src="dist/img/avatars/{{ auth()->user()->avatar }}" alt="avatar">
+                        @endif
+                    </figure>
                     <span class="logo"><img src="dist/img/logo.png" alt=""></span>
                     <div class="search">
                         <form class="form-inline position-relative">
@@ -267,7 +279,13 @@
                 <!-- End of Discussions -->
                 <!-- Start of Notifications -->
                 <div id="notifications" class="tab-pane fade">
-                    <figure class="setting"><img class="avatar-xl" src="dist/img/avatars/avatar-male-1.jpg" alt="avatar"></figure>
+                    <figure class="setting">
+                        @if(auth()->user()->avatar == NULL)
+                            <img class="avatar-xl" src="dist/img/avatars/default.jpg" alt="avatar">
+                        @else
+                            <img class="avatar-xl" src="dist/img/avatars/{{ auth()->user()->avatar }}" alt="avatar">
+                        @endif
+                    </figure>
                     <span class="logo"><img alt="" src="dist/img/logo.png"></span>
                     <div class="search">
                         <form class="form-inline position-relative">
@@ -389,39 +407,43 @@
                                     <div class="content">
                                         <div class="upload">
                                             <div class="data">
-                                                <img class="avatar-xl" src="dist/img/avatars/avatar-male-1.jpg" alt="image">
+                                                @if(auth()->user()->avatar == NULL)
+                                                    <img class="avatar-xl" src="dist/img/avatars/default.jpg" alt="avatar">
+                                                @else
+                                                    <img class="avatar-xl" src="dist/img/avatars/{{ auth()->user()->avatar }}" alt="avatar">
+                                                @endif
                                                 <label>
                                                     <input type="file">
-                                                    <span class="btn button">Upload avatar</span>
+                                                    <span class="btn button">
+                                                        @if(auth()->user()->avatar == NULL)
+                                                            Upload Avatar
+                                                        @else
+                                                            Update Avatar
+                                                        @endif
+                                                    </span>
                                                 </label>
                                             </div>
-                                            <p>For best results, use an image at least 200px by 200px in .jpg or .png format!</p>
+                                            <p>For better results, use an image at least 200px by 200px in .jpg or .png format.</p>
                                         </div>
                                         <form>
-                                            <div class="parent">
-                                                <div class="field">
-                                                    <label for="firstName">First name <span>*</span></label>
-                                                    <input type="text" class="form-control" id="firstName" placeholder="First name" value="Bob" required>
-                                                </div>
-                                                <div class="field">
-                                                    <label for="lastName">Last name <span>*</span></label>
-                                                    <input type="text" class="form-control" id="lastName" placeholder="Last name" value="Frank" required>
-                                                </div>
+                                            <div class="field">
+                                                <label for="firstName">Name</label>
+                                                <input type="text" class="form-control" id="firstName" placeholder="Enter a new name" value="{{ auth()->user()->name }}" required>
                                             </div>
                                             <div class="field">
-                                                <label for="email">Email <span>*</span></label>
-                                                <input type="email" class="form-control" id="email" placeholder="Enter your email address" value="bobfrank@gmail.com" required>
+                                                <label for="lastName">Username</label>
+                                                <input type="text" class="form-control" id="lastName" placeholder="Enter a new username" value="{{ auth()->user()->username }}" required>
+                                            </div>
+                                            <div class="field">
+                                                <label for="email">Email</label>
+                                                <input type="email" class="form-control" id="email" placeholder="Enter a new email address" value="{{ auth()->user()->email }}" required>
                                             </div>
                                             <div class="field">
                                                 <label for="password">Password</label>
-                                                <input type="password" class="form-control" id="password" placeholder="Enter a new password" value="password" required>
+                                                <input type="password" class="form-control" id="password" placeholder="Enter a new password" value="" required>
                                             </div>
-                                            <div class="field">
-                                                <label for="location">Location</label>
-                                                <input type="text" class="form-control" id="location" placeholder="Enter your location" value="New York, USA" required>
-                                            </div>
+                                            <button type="submit" class="btn button w-100">Update</button>
                                             <button class="btn btn-link w-100">Delete Account</button>
-                                            <button type="submit" class="btn button w-100">Apply</button>
                                         </form>
                                     </div>
                                 </div>
