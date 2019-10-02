@@ -364,9 +364,13 @@
                 <div class="tab-pane fade" id="settings">
                     <div class="settings">
                         <div class="profile">
-                            <img class="avatar-xl" src="dist/img/avatars/avatar-male-1.jpg" alt="avatar">
-                            <h1><a href="#">Bob Frank</a></h1>
-                            <span>New York, USA</span>
+                            @if(auth()->user()->avatar == NULL)
+                                <img class="avatar-xl" src="dist/img/avatars/default.jpg" alt="avatar">
+                            @else
+                                <img class="avatar-xl" src="dist/img/avatars/{{ auth()->user()->avatar }}" alt="avatar">
+                            @endif
+                            <h1><a href="#">{{ auth()->user()->name }}</a></h1>
+                            <span>&#64;{{ auth()->user()->username }}</span>
 
                         </div>
                         <div class="categories" id="accordionSettings">
