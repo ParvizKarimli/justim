@@ -19,7 +19,7 @@
                     Notifications
                 </a>
                 <a href="" id="dark" class="dark-theme" title="Use Night Mode">
-                    <i class="ti-wand"></i>
+                    <i class="ti-light-bulb"></i>
                     Night Mode
                 </a>
                 <a href="{{ route('logout') }}"
