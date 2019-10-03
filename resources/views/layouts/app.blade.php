@@ -6,7 +6,7 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <title>JustIM</title>
-    <link href="dist/img/favicon.png" type="image/png" rel="icon">
+    <link href="/storage/images/favicon.png" type="image/png" rel="icon">
 
     <link rel="stylesheet" href="dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="dist/css/perfect-scrollbar.min.css" >

@@ -11,7 +11,7 @@
                             <img class="avatar-xl" src="/storage/images/avatars/{{ auth()->user()->avatar }}" alt="avatar">
                         @endif
                     </figure>
-                    <span class="logo"><img alt="" src="dist/img/logo.png"></span>
+                    <span class="logo"><img alt="" src="/storage/images/logo.png"></span>
                     <div class="search">
                         <form class="form-inline position-relative">
                             <input type="search" class="form-control" id="people" placeholder="Search for people...">
@@ -150,7 +150,7 @@
                             <img class="avatar-xl" src="/storage/images/avatars/{{ auth()->user()->avatar }}" alt="avatar">
                         @endif
                     </figure>
-                    <span class="logo"><img src="dist/img/logo.png" alt=""></span>
+                    <span class="logo"><img src="/storage/images/logo.png" alt=""></span>
                     <div class="search">
                         <form class="form-inline position-relative">
                             <input type="search" class="form-control" id="conversations" placeholder="Search for conversations...">
@@ -286,7 +286,7 @@
                             <img class="avatar-xl" src="/storage/images/avatars/{{ auth()->user()->avatar }}" alt="avatar">
                         @endif
                     </figure>
-                    <span class="logo"><img alt="" src="dist/img/logo.png"></span>
+                    <span class="logo"><img alt="" src="/storage/images/logo.png"></span>
                     <div class="search">
                         <form class="form-inline position-relative">
                             <input type="search" class="form-control" id="notice" placeholder="Filter notifications...">
@@ -600,7 +600,7 @@
                                 <div class="collapse" id="collapseFour" aria-labelledby="headingFour" data-parent="#accordionSettings">
                                     <div class="content">
                                         <div class="app">
-                                            <img src="dist/img/integrations/slack.svg" alt="app">
+                                            <img src="/storage/images/integrations/slack.svg" alt="app">
                                             <div class="permissions">
                                                 <h5>Skrill</h5>
                                                 <p>Read, Write, Comment</p>
@@ -611,7 +611,7 @@
                                             </label>
                                         </div>
                                         <div class="app">
-                                            <img src="dist/img/integrations/dropbox.svg" alt="app">
+                                            <img src="/storage/images/integrations/dropbox.svg" alt="app">
                                             <div class="permissions">
                                                 <h5>Dropbox</h5>
                                                 <p>Read, Write, Upload</p>
@@ -622,7 +622,7 @@
                                             </label>
                                         </div>
                                         <div class="app">
-                                            <img src="dist/img/integrations/drive.svg" alt="app">
+                                            <img src="/storage/images/integrations/drive.svg" alt="app">
                                             <div class="permissions">
                                                 <h5>Google Drive</h5>
                                                 <p>No permissions set</p>
@@ -633,7 +633,7 @@
                                             </label>
                                         </div>
                                         <div class="app">
-                                            <img src="dist/img/integrations/trello.svg" alt="app">
+                                            <img src="/storage/images/integrations/trello.svg" alt="app">
                                             <div class="permissions">
                                                 <h5>Trello</h5>
                                                 <p>No permissions set</p>
