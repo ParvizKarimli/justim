@@ -405,7 +405,9 @@
                                 </a>
                                 <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionSettings">
                                     <div class="content">
-                                        <form>
+                                        <form action="/users/{{ auth()->id() }}" method="POST" enctype="multipart/form-data">
+                                            {{ method_field('PATCH') }}
+                                            {{ csrf_field() }}
                                             <div class="upload">
                                                 <div class="data">
                                                     @if(auth()->user()->avatar == NULL)
