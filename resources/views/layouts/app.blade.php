@@ -35,5 +35,23 @@
 <script src="dist/js/perfect-scrollbar.min.js"></script>
 <script src="dist/js/script.js"></script>
 
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#avatar-xl').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#avatar-input").change(function() {
+        readURL(this);
+    });
+</script>
+
 </body>
 </html>

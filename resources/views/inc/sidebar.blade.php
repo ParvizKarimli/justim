@@ -405,27 +405,29 @@
                                 </a>
                                 <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionSettings">
                                     <div class="content">
-                                        <div class="upload">
-                                            <div class="data">
-                                                @if(auth()->user()->avatar == NULL)
-                                                    <img class="avatar-xl" src="dist/img/avatars/default.jpg" alt="avatar">
-                                                @else
-                                                    <img class="avatar-xl" src="dist/img/avatars/{{ auth()->user()->avatar }}" alt="avatar">
-                                                @endif
-                                                <label>
-                                                    <input type="file">
-                                                    <span class="btn button">
-                                                        @if(auth()->user()->avatar == NULL)
-                                                            Upload Avatar
-                                                        @else
-                                                            Update Avatar
-                                                        @endif
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            <p>For better results, use an image at least 200px by 200px in .jpg or .png format.</p>
-                                        </div>
                                         <form>
+                                            <div class="upload">
+                                                <div class="data">
+                                                    @if(auth()->user()->avatar == NULL)
+                                                        <img class="avatar-xl" id="avatar-xl" src="dist/img/avatars/default.jpg" alt="avatar">
+                                                        <label>
+                                                            <input type="file" id="avatar-input" name="avatar" accept=".jpg, .jpeg, .png, .gif">
+                                                            <span class="btn button">
+                                                                Upload Avatar
+                                                            </span>
+                                                        </label>
+                                                    @else
+                                                        <img class="avatar-xl" id="avatar-xl" src="dist/img/avatars/{{ auth()->user()->avatar }}" alt="avatar">
+                                                        <label>
+                                                            <input type="file" id="avatar-input" name="avatar" accept=".jpg, .jpeg, .png, .gif">
+                                                            <span class="btn button">
+                                                                Upload New Avatar
+                                                            </span>
+                                                        </label>
+                                                    @endif
+                                                </div>
+                                                <p>For better results, use an image at least 200px by 200px in .jpg or .png format.</p>
+                                            </div>
                                             <div class="field">
                                                 <label for="firstName">Name</label>
                                                 <input type="text" class="form-control" id="firstName" placeholder="Enter a new name" value="{{ auth()->user()->name }}" required>
