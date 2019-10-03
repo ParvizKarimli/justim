@@ -27,10 +27,6 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
-        if(empty($user))
-        {
-            return back()->with('success', 'User Not Found');
-        }
 
         $this->validate($request, [
             'name' => 'required|string|max:191',

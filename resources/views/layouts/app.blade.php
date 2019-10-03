@@ -25,6 +25,7 @@
         @include('inc.add_friends')
         @include('inc.create_chat')
         @include('inc.chat_dialog')
+        @include('inc.system.messages')
     </div> <!-- Layout -->
 </main>
 
