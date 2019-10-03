@@ -3,7 +3,7 @@
         <div class="inside">
             <div class="nav nav-tab menu">
                 <a href="#settings" data-toggle="tab" title="User Settings">
-                    <i class="ti-panel"></i>
+                    <i class="ti-settings"></i>
                     Settings
                 </a>
                 <a href="#members" data-toggle="tab" title="All Friends">
