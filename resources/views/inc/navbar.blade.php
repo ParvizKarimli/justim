@@ -11,7 +11,7 @@
                     Friends
                 </a>
                 <a href="#discussions" data-toggle="tab" class="active" title="Recent Chats">
-                    <i class="ti-comment-alt"></i>
+                    <i class="ti-comments"></i>
                     Chats
                 </a>
                 <a href="#notifications" data-toggle="tab" class="f-grow1" title="Recent Notifications">
