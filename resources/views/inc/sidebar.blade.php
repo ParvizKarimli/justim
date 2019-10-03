@@ -785,7 +785,6 @@
                                         <h5>Power Off</h5>
                                         <p>Log out of your account</p>
                                     </div>
-                                    <i class="ti-angle-down"></i>
                                 </a>
 
                                 <form id="logout-form-sidebar" action="{{ route('logout') }}" method="POST" style="display: none;">
