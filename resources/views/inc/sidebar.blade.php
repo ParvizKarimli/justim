@@ -650,7 +650,7 @@
                             <!-- Start of Appearance Settings -->
                             <div class="category">
                                 <a href="#" class="title collapsed" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-                                    <i class="ti-pencil"></i>
+                                    <i class="ti-palette"></i>
                                     <div class="data">
                                         <h5>Appearance</h5>
                                         <p>Customize the look of Talkshak</p>
