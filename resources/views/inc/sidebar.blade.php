@@ -653,7 +653,7 @@
                                     <i class="ti-palette"></i>
                                     <div class="data">
                                         <h5>Appearance</h5>
-                                        <p>Customize the look of Talkshak</p>
+                                        <p>Customize the look of JustIM</p>
                                     </div>
                                     <i class="ti-angle-down"></i>
                                 </a>
