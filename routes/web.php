@@ -16,3 +16,6 @@ Route::get('/', 'PagesController@index');
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+Route::patch('/users/{id}', 'UsersController@update');
+Route::delete('/users/{id}', 'UsersController@destroy');

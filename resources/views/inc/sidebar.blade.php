@@ -408,7 +408,7 @@
                                         <form action="/users/{{ auth()->id() }}" method="POST" enctype="multipart/form-data">
                                             {{ method_field('PATCH') }}
                                             {{ csrf_field() }}
-                                            <div class="upload">
+                                            <div class="upload{{ $errors->has('avatar') ? ' has-error' : '' }}">
                                                 <div class="data">
                                                     @if(auth()->user()->avatar == NULL)
                                                         <img class="avatar-xl" id="avatar-xl" src="dist/img/avatars/default.jpg" alt="avatar">
@@ -423,28 +423,57 @@
                                                         <label>
                                                             <input type="file" id="avatar-input" name="avatar" accept=".jpg, .jpeg, .png, .gif">
                                                             <span class="btn button">
-                                                                Upload New Avatar
+                                                                Change Avatar
                                                             </span>
                                                         </label>
                                                     @endif
                                                 </div>
+                                                @if ($errors->has('avatar'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('avatar') }}</strong>
+                                                    </span>
+                                                @endif
                                                 <p>For better results, use an image at least 200px by 200px in .jpg or .png format.</p>
                                             </div>
-                                            <div class="field">
-                                                <label for="firstName">Name</label>
-                                                <input type="text" class="form-control" id="firstName" placeholder="Enter a new name" value="{{ auth()->user()->name }}" required>
+                                            <div class="field{{ $errors->has('name') ? ' has-error' : '' }}">
+                                                <label for="name">Name</label>
+                                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" value="{{ auth()->user()->name }}" required>
+                                                @if ($errors->has('name'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('name') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
-                                            <div class="field">
-                                                <label for="lastName">Username</label>
-                                                <input type="text" class="form-control" id="lastName" placeholder="Enter a new username" value="{{ auth()->user()->username }}" required>
+                                            <div class="field{{ $errors->has('username') ? ' has-error' : '' }}">
+                                                <label for="username">Username</label>
+                                                <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" value="{{ auth()->user()->username }}" required>
+                                                @if ($errors->has('username'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('username') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
-                                            <div class="field">
+                                            <div class="field{{ $errors->has('email') ? ' has-error' : '' }}">
                                                 <label for="email">Email</label>
-                                                <input type="email" class="form-control" id="email" placeholder="Enter a new email address" value="{{ auth()->user()->email }}" required>
+                                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" value="{{ auth()->user()->email }}" required>
+                                                @if ($errors->has('email'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('email') }}</strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+                                            <div class="field{{ $errors->has('password') ? ' has-error' : '' }}">
+                                                <label for="password">Password</label>
+                                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+                                                @if ($errors->has('password'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('password') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
                                             <div class="field">
-                                                <label for="password">Password</label>
-                                                <input type="password" class="form-control" id="password" placeholder="Enter a new password" value="" required>
+                                                <label for="password_confirmation">Confirm Password</label>
+                                                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Enter password again" required>
                                             </div>
                                             <button type="submit" class="btn button w-100">Update</button>
                                             <button class="btn btn-link w-100">Delete Account</button>
