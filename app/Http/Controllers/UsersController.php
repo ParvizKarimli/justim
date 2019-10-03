@@ -40,11 +40,35 @@ class UsersController extends Controller
             'avatar' => 'image|nullable|max:2048',
         ]);
 
+        // Handle File Upload
+        if($request->hasFile('avatar'))
+        {
+            // Delete old avatar if avatar is not null
+            if($user->avatar)
+            {
+                // Delete old avatar
+                unlink('storage/images/avatars/' . $user->avatar);
+            }
+
+            // Upload new avatar
+            // Get just extension without filename
+            $file_extension = $request->file('avatar')->getClientOriginalExtension();
+            // File name salt
+            $filename_salt = mt_rand() . '_' . time();
+            // File name to store in DB
+            $filename_to_store = $filename_salt . '.' . $file_extension;
+            // Upload image to storage
+            $request->file('avatar')->storeAs('public/images/avatars', $filename_to_store);
+        }
+
         $user->name = $request->input('name');
         $user->username = $request->input('username');
         $user->email = $request->input('email');
         $user->password = bcrypt($request->input('password'));
-        $user->avatar = $request->input('avatar');
+        if($request->hasFile('avatar'))
+        {
+            $user->avatar = $filename_to_store;
+        }
         $user->save();
 
         return back()->with('success', 'User Updated');
