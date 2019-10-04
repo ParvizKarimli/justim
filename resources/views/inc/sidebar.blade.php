@@ -142,7 +142,7 @@
                 </div>
                 <!-- End of Contacts -->
                 <!-- Start of Discussions -->
-                <div id="discussions" class="tab-pane fade in active show">
+                <div id="discussions" class="tab-pane fade in{{ count($errors)==0 ? ' active show' : '' }}">
                     <figure class="setting">
                         @if(auth()->user()->avatar == NULL)
                             <img class="avatar-xl" src="/storage/images/avatars/default.jpg" alt="avatar">
@@ -379,7 +379,7 @@
                 </div>
                 <!-- End of Notifications -->
                 <!-- Start of Settings -->
-                <div class="tab-pane fade" id="settings">
+                <div class="tab-pane fade{{ count($errors)>0 ? ' active show' : '' }}" id="settings">
                     <div class="settings">
                         <div class="profile">
                             @if(auth()->user()->avatar == NULL)
@@ -395,7 +395,7 @@
                             <h1>Settings</h1>
                             <!-- Start of My Account -->
                             <div class="category">
-                                <a href="#" class="title collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <a href="#" class="title{{ count($errors)>0 ? '' : ' collapsed' }}" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="{{ count($errors)>0 ? 'true' : 'false' }}" aria-controls="collapseOne">
                                     <i class="ti-user"></i>
                                     <div class="data">
                                         <h5>My Account</h5>
@@ -403,11 +403,18 @@
                                     </div>
                                     <i class="ti-angle-down"></i>
                                 </a>
-                                <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionSettings">
+                                <div class="collapse{{ count($errors)>0 ? 'show' : '' }}" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionSettings">
                                     <div class="content">
                                         <form action="/users/{{ auth()->id() }}" method="POST" enctype="multipart/form-data">
                                             {{ method_field('PATCH') }}
                                             {{ csrf_field() }}
+
+                                            @if(count($errors) > 0)
+                                                <p class="alert-danger">
+                                                    Error updating account credentials! Check out the errors below for more information.
+                                                </p>
+                                            @endif
+
                                             <div class="upload{{ $errors->has('avatar') ? ' has-error' : '' }}">
                                                 <div class="data">
                                                     @if(auth()->user()->avatar == NULL)

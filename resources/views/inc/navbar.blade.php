@@ -1,8 +1,8 @@
-<div class="navigation">
+<div class="navigation{{ count($errors)>0 ? ' active' : '' }}">
     <div class="container">
         <div class="inside">
             <div class="nav nav-tab menu">
-                <a href="#settings" data-toggle="tab" title="User Settings">
+                <a href="#settings" data-toggle="tab" title="User Settings" class="{{ count($errors)>0 ? ' active show' : '' }}">
                     <i class="ti-settings"></i>
                     Settings
                 </a>
@@ -10,7 +10,7 @@
                     <i class="ti-comments-smiley"></i>
                     Friends
                 </a>
-                <a href="#discussions" data-toggle="tab" class="active" title="Recent Chats">
+                <a href="#discussions" data-toggle="tab" class="{{ count($errors)==0 ? 'active' : '' }}" title="Recent Chats">
                     <i class="ti-comments"></i>
                     Chats
                 </a>
