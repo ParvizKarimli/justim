@@ -18,15 +18,25 @@
                     <i class="ti-bell"></i>
                     Notifications
                 </a>
-                <a href="" id="dark" class="dark-theme" title="Use Night Mode">
+                <a href="" id="dark" class="dark-theme" title="{{ session('nightmode')==0 ? 'Use Night Mode' : 'Use Light Mode'}}"
+                   onclick="event.preventDefault();
+                   document.getElementById('nightmode-form-navbar').submit();"
+                >
                     <i class="ti-light-bulb"></i>
-                    Night Mode
+                    @if(session('nightmode') == 0)
+                        Switch Night Mode On
+                    @else
+                        Switch Night Mode Off
+                    @endif
                 </a>
-                <a href="{{ route('logout') }}"
+                <form id="nightmode-form-navbar" action="{{ route('nightmode') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+                <a href=""
                    class="btn power"
                    title="Sign Out"
                    onclick="event.preventDefault();
-                            document.getElementById('logout-form-navbar').submit();"
+                   document.getElementById('logout-form-navbar').submit();"
                 >
                     <i class="ti-power-off"></i>
                     <p>Log Out</p>
