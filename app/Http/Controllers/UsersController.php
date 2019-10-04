@@ -28,13 +28,17 @@ class UsersController extends Controller
     {
         $user = User::find($id);
 
+        $custom_validation_messages = [
+            'username.regex' => 'Only alphanumeric characters, numbers, and underscore symbol (_) allowed for username.'
+        ];
+
         $this->validate($request, [
-            'name' => 'required|string|max:191',
-            'username' => 'required|string|max:15|unique:users,username,'.$id,
-            'email' => 'required|string|email|max:191|unique:users,email,'.$id,
-            'password' => 'required|string|min:6|confirmed',
-            'avatar' => 'image|nullable|max:2048',
-        ]);
+            'name' => 'required|string|max:35',
+            'username' => 'required|string|max:15|regex:/^[\w]*$/|unique:users,username,'.$id,
+            'email' => 'required|string|email|max:75|unique:users,email,'.$id,
+            'password' => 'required|string|min:8|confirmed',
+            'avatar' => 'mimes:png,jpg,gif,jpeg|nullable|max:4096',
+        ], $custom_validation_messages);
 
         // Handle File Upload
         if($request->hasFile('avatar'))

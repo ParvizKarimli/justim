@@ -47,12 +47,16 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $custom_validation_messages = [
+            'username.regex' => 'Only alphanumeric characters, numbers, and underscore symbol (_) allowed for username.'
+        ];
+
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'username' => 'required|string|max:15|unique:users',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
+            'name' => 'required|string|max:35',
+            'username' => 'required|string|max:15|regex:/^[\w]*$/|unique:users',
+            'email' => 'required|string|email|max:75|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+        ], $custom_validation_messages);
     }
 
     /**
