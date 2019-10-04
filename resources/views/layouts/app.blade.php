@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="dist/css/emoji.css">
     <link rel="stylesheet" href="dist/css/style.css" >
     <link rel="stylesheet" href="dist/css/responsive.css" >
-    @if(session('nightmode') == 1)
+    @if(auth()->user()->nightmode == 1)
         <link href="dist/css/dark.css" type="text/css" rel="stylesheet">
     @endif
 

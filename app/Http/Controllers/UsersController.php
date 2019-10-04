@@ -80,13 +80,11 @@ class UsersController extends Controller
 
         if($user->nightmode == 0)
         {
-            session(['nightmode' => 1]);
             $user->nightmode = 1;
             $user->save();
         }
         else
         {
-            session(['nightmode' => 0]);
             $user->nightmode = 0;
             $user->save();
         }

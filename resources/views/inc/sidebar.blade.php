@@ -668,7 +668,7 @@
                                     <div class="content no-layer">
                                         <div class="set">
                                             <div class="details">
-                                                <h5>Turn Off Lights</h5>
+                                                <h5>Turn On/Off Lights</h5>
                                                 <p>The dark mode is applied to core areas of the app that are normally displayed as light.</p>
                                             </div>
                                             <label class="switch">
@@ -678,7 +678,7 @@
                                                                document.getElementById('nightmode-form-sidebar').submit();"
                                                 >
                                                 </span>
-                                                <form id="nightmode-form-sidebar" action="{{ route('nightmode_user') }}" method="POST" style="display: none;">
+                                                <form id="nightmode-form-sidebar" action="{{ route('nightmode') }}" method="POST" style="display: none;">
                                                     {{ csrf_field() }}
                                                 </form>
                                             </label>
