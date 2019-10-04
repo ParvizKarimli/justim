@@ -36,7 +36,7 @@
                                     {{ csrf_field() }}
                                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                         <input type="text" id="" class="form-control" placeholder="Name" name="name" value="{{ old('name') }}" required autofocus>
-                                        <button class="btn icon"><i class="ti-user"></i></button>
+                                        <span class="btn icon"><i class="ti-user"></i></span>
                                         @if ($errors->has('name'))
                                             <span class="help-block">
                                                 <strong>{{ $errors->first('name') }}</strong>
@@ -45,7 +45,7 @@
                                     </div>
                                     <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
                                         <input type="text" id="inputuser" class="form-control" placeholder="User Name" name="username" value="{{ old('username') }}" required>
-                                        <button class="btn icon"><i class="ti-user"></i></button>
+                                        <span class="btn icon"><i class="ti-user"></i></span>
                                         @if ($errors->has('username'))
                                             <span class="help-block">
                                                 <strong>{{ $errors->first('username') }}</strong>
@@ -54,7 +54,7 @@
                                     </div>
                                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                         <input type="email" id="inputEmail" class="form-control" placeholder="Email Address" name="email" value="{{ old('email') }}" required>
-                                        <button class="btn icon"><i class="ti-email"></i></button>
+                                        <span class="btn icon"><i class="ti-email"></i></span>
                                         @if ($errors->has('email'))
                                             <span class="help-block">
                                                 <strong>{{ $errors->first('email') }}</strong>
@@ -63,7 +63,7 @@
                                     </div>
                                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                         <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
-                                        <button class="btn icon"><i class="ti-lock"></i></button>
+                                        <span class="btn icon"><i class="ti-lock"></i></span>
                                         @if ($errors->has('password'))
                                             <span class="help-block">
                                                 <strong>{{ $errors->first('password') }}</strong>
@@ -72,7 +72,7 @@
                                     </div>
                                     <div class="form-group">
                                         <input type="password" id="" class="form-control" placeholder="Confirm Password" name="password_confirmation" required>
-                                        <button class="btn icon"><i class="ti-lock"></i></button>
+                                        <span class="btn icon"><i class="ti-lock"></i></span>
                                     </div>
                                     <button type="submit" class="btn button" formaction="{{ route('register') }}">Sign Up</button>
                                     <div class="callout">
