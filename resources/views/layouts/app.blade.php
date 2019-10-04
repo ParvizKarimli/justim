@@ -29,6 +29,7 @@
         @include('inc.create_chat')
         @include('inc.chat_dialog')
         @include('inc.system.messages')
+        @include('inc.delete_account_modal')
     </div> <!-- Layout -->
 </main>
 

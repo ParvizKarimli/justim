@@ -483,8 +483,11 @@
                                                 <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Enter password again" required>
                                             </div>
                                             <button type="submit" class="btn button w-100">Update</button>
-                                            <button class="btn btn-link w-100">Delete Account</button>
                                         </form>
+                                        <!-- Trigger the delete account modal with a button -->
+                                        <a class="btn btn-link w-100" href="" title="Delete Your Account" data-toggle="modal" data-target="#deleteAccountModal-{{ auth()->id() }}">
+                                            Delete Account
+                                        </a>
                                     </div>
                                 </div>
                             </div>
