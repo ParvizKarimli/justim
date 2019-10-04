@@ -74,6 +74,26 @@ class UsersController extends Controller
         return back()->with('success', 'User Updated');
     }
 
+    public function nightmode(Request $request)
+    {
+        $user = User::find(auth()->id());
+
+        if($user->nightmode == 0)
+        {
+            session(['nightmode' => 1]);
+            $user->nightmode = 1;
+            $user->save();
+        }
+        else
+        {
+            session(['nightmode' => 0]);
+            $user->nightmode = 0;
+            $user->save();
+        }
+
+        return back();
+    }
+
     /**
      * Remove the specified resource from storage.
      *

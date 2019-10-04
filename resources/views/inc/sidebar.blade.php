@@ -673,7 +673,14 @@
                                             </div>
                                             <label class="switch">
                                                 <input type="checkbox">
-                                                <span class="slider round mode"></span>
+                                                <span class="slider round mode"
+                                                      onclick="event.preventDefault();
+                                                               document.getElementById('nightmode-form-sidebar').submit();"
+                                                >
+                                                </span>
+                                                <form id="nightmode-form-sidebar" action="{{ route('nightmode_user') }}" method="POST" style="display: none;">
+                                                    {{ csrf_field() }}
+                                                </form>
                                             </label>
                                         </div>
                                     </div>

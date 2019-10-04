@@ -20,7 +20,7 @@
                 </a>
                 <a href="" id="dark" class="dark-theme" title="{{ session('nightmode')==0 ? 'Use Night Mode' : 'Use Light Mode'}}"
                    onclick="event.preventDefault();
-                   document.getElementById('nightmode-form-navbar').submit();"
+                            document.getElementById('nightmode-form-navbar').submit();"
                 >
                     <i class="ti-light-bulb"></i>
                     @if(session('nightmode') == 0)
@@ -36,7 +36,7 @@
                    class="btn power"
                    title="Sign Out"
                    onclick="event.preventDefault();
-                   document.getElementById('logout-form-navbar').submit();"
+                            document.getElementById('logout-form-navbar').submit();"
                 >
                     <i class="ti-power-off"></i>
                     <p>Log Out</p>
