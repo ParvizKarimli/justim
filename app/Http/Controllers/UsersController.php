@@ -76,7 +76,7 @@ class UsersController extends Controller
 
     public function nightmode(Request $request)
     {
-        $user = User::find(auth()->id());
+        $user = auth()->user();
 
         if($user->nightmode == 0)
         {

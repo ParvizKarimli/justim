@@ -668,11 +668,11 @@
                                     <div class="content no-layer">
                                         <div class="set">
                                             <div class="details">
-                                                <h5>Turn On/Off Lights</h5>
+                                                <h5>Turn {{ auth()->user()->nightmode==1 ? 'On' : 'Off' }} Lights</h5>
                                                 <p>The dark mode is applied to core areas of the app that are normally displayed as light.</p>
                                             </div>
                                             <label class="switch">
-                                                <input type="checkbox" {{ auth()->user()->nightmode==1 ? 'checked' : '' }}>
+                                                <input type="checkbox" {{ auth()->user()->nightmode==1 ? '' : 'checked' }}>
                                                 <span class="slider round mode"
                                                       onclick="event.preventDefault();
                                                                document.getElementById('nightmode-form-sidebar').submit();"
