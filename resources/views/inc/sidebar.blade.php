@@ -6,9 +6,9 @@
                 <div class="tab-pane fade" id="members">
                     <figure class="setting">
                         @if(auth()->user()->avatar == NULL)
-                            <img class="avatar-xl" src="/storage/images/avatars/default.jpg" alt="avatar">
+                            <img class="avatar-xl" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" alt="avatar">
                         @else
-                            <img class="avatar-xl" src="/storage/images/avatars/{{ auth()->user()->avatar }}" alt="avatar">
+                            <img class="avatar-xl" src="/storage/images/avatars/thumbnails/{{ auth()->user()->thumbnail }}" alt="avatar">
                         @endif
                     </figure>
                     <span class="logo"><img alt="" src="/storage/images/logo.png"></span>
@@ -145,9 +145,9 @@
                 <div id="discussions" class="tab-pane fade in{{ count($errors)==0 ? ' active show' : '' }}">
                     <figure class="setting">
                         @if(auth()->user()->avatar == NULL)
-                            <img class="avatar-xl" src="/storage/images/avatars/default.jpg" alt="avatar">
+                            <img class="avatar-xl" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" alt="avatar">
                         @else
-                            <img class="avatar-xl" src="/storage/images/avatars/{{ auth()->user()->avatar }}" alt="avatar">
+                            <img class="avatar-xl" src="/storage/images/avatars/thumbnails/{{ auth()->user()->thumbnail }}" alt="avatar">
                         @endif
                     </figure>
                     <span class="logo"><img src="/storage/images/logo.png" alt=""></span>
@@ -281,9 +281,9 @@
                 <div id="notifications" class="tab-pane fade">
                     <figure class="setting">
                         @if(auth()->user()->avatar == NULL)
-                            <img class="avatar-xl" src="/storage/images/avatars/default.jpg" alt="avatar">
+                            <img class="avatar-xl" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" alt="avatar">
                         @else
-                            <img class="avatar-xl" src="/storage/images/avatars/{{ auth()->user()->avatar }}" alt="avatar">
+                            <img class="avatar-xl" src="/storage/images/avatars/thumbnails/{{ auth()->user()->thumbnail }}" alt="avatar">
                         @endif
                     </figure>
                     <span class="logo"><img alt="" src="/storage/images/logo.png"></span>
@@ -383,9 +383,9 @@
                     <div class="settings">
                         <div class="profile">
                             @if(auth()->user()->avatar == NULL)
-                                <img class="avatar-xl" src="/storage/images/avatars/default.jpg" alt="avatar">
+                                <img class="avatar-xl" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" alt="avatar">
                             @else
-                                <img class="avatar-xl" src="/storage/images/avatars/{{ auth()->user()->avatar }}" alt="avatar">
+                                <img class="avatar-xl" src="/storage/images/avatars/thumbnails/{{ auth()->user()->thumbnail }}" alt="avatar">
                             @endif
                             <h1><a href="#">{{ auth()->user()->name }}</a></h1>
                             <span>&#64;{{ auth()->user()->username }}</span>
@@ -418,7 +418,7 @@
                                             <div class="upload{{ $errors->has('avatar') ? ' has-error' : '' }}">
                                                 <div class="data">
                                                     @if(auth()->user()->avatar == NULL)
-                                                        <img class="avatar-xl" id="avatar-xl" src="/storage/images/avatars/default.jpg" alt="avatar">
+                                                        <img class="avatar-xl" id="avatar-xl" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" alt="avatar">
                                                         <label>
                                                             <input type="file" id="avatar-input" name="avatar" accept=".jpg, .jpeg, .png, .gif">
                                                             <span class="btn button">
@@ -426,7 +426,7 @@
                                                             </span>
                                                         </label>
                                                     @else
-                                                        <img class="avatar-xl" id="avatar-xl" src="/storage/images/avatars/{{ auth()->user()->avatar }}" alt="avatar">
+                                                        <img class="avatar-xl" id="avatar-xl" src="/storage/images/avatars/thumbnails/{{ auth()->user()->thumbnail }}" alt="avatar">
                                                         <label>
                                                             <input type="file" id="avatar-input" name="avatar" accept=".jpg, .jpeg, .png, .gif">
                                                             <span class="btn button">
