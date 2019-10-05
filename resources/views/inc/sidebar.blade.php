@@ -471,7 +471,7 @@
                                             </div>
                                             <div class="field{{ $errors->has('password') ? ' has-error' : '' }}">
                                                 <label for="password">Password</label>
-                                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+                                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required minlength="8">
                                                 @if ($errors->has('password'))
                                                     <span class="help-block">
                                                         <strong>{{ $errors->first('password') }}</strong>
@@ -480,7 +480,7 @@
                                             </div>
                                             <div class="field">
                                                 <label for="password_confirmation">Confirm Password</label>
-                                                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Enter password again" required>
+                                                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Enter password again" required minlength="8">
                                             </div>
                                             <button type="submit" class="btn button w-100">Update</button>
                                         </form>

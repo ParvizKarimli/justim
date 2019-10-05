@@ -62,7 +62,7 @@
                                         @endif
                                     </div>
                                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+                                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required minlength="8">
                                         <span class="btn icon"><i class="ti-lock"></i></span>
                                         @if ($errors->has('password'))
                                             <span class="help-block">
@@ -71,7 +71,7 @@
                                         @endif
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" id="" class="form-control" placeholder="Confirm Password" name="password_confirmation" required>
+                                        <input type="password" id="" class="form-control" placeholder="Confirm Password" name="password_confirmation" required minlength="8">
                                         <span class="btn icon"><i class="ti-lock"></i></span>
                                     </div>
                                     <button type="submit" class="btn button" formaction="{{ route('register') }}">Sign Up</button>
