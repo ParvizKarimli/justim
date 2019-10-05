@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Image as ImageLib;
 
 class UsersController extends Controller
 {
@@ -48,14 +49,18 @@ class UsersController extends Controller
         // Handle File Upload
         if($request->hasFile('avatar'))
         {
-            // Delete old avatar if avatar is not null
+            // Delete old avatar if avatar and thumbnail is not null
             if($user->avatar)
             {
                 // Delete old avatar
                 unlink('storage/images/avatars/' . $user->avatar);
+
+                // Delete old thumbnail
+                unlink('storage/images/avatars/thumbnails/' . $user->thumbnail);
             }
 
-            // Upload new avatar
+            // Upload new avatar and thumbnail
+
             // Get just extension without filename
             $file_extension = $request->file('avatar')->getClientOriginalExtension();
             // File name salt
@@ -64,6 +69,13 @@ class UsersController extends Controller
             $filename_to_store = $filename_salt . '.' . $file_extension;
             // Upload image to storage
             $request->file('avatar')->storeAs('public/images/avatars', $filename_to_store);
+
+            // Create thumbnail file name
+            $thumbnail_name_to_store = $filename_salt . '_thumb.' . $file_extension;
+            // Create thumbnail of avatar and upload it to storage
+            ImageLib::make('storage/images/avatars/' . $filename_to_store)
+                ->resize(200, 200)
+                ->save('storage/images/avatars/thumbnails/' . $thumbnail_name_to_store);
         }
 
         $user->name = $request->input('name');
@@ -73,6 +85,7 @@ class UsersController extends Controller
         if($request->hasFile('avatar'))
         {
             $user->avatar = $filename_to_store;
+            $user->thumbnail = $thumbnail_name_to_store;
         }
         $user->save();
 
@@ -124,6 +137,15 @@ class UsersController extends Controller
         if(!password_verify($request->password_to_delete_account, $user->password))
         {
             return back()->with('password_to_delete_account_error', "Incorrect password.");
+        }
+
+        if($user->avatar)
+        {
+            // Delete cover image
+            unlink('storage/images/avatars/' . $user->avatar);
+
+            // Delete thumbnail
+            unlink('storage/images/avatars/thumbnails/' . $user->thumbnail);
         }
 
         $user->delete();
