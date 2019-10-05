@@ -98,57 +98,26 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        // Chech if the logged in user is admin or
-        // the user wants to delete itself.
-        // Add 0 to string ($id comes from the url so it's a string) and
-        // PHP will automatically convert it to number
-        if(auth()->user()->role !== 'admin' && $id + 0 !== auth()->user()->id)
-        {
-            return redirect('dashboard')->with('error', __('pages.unauthorized'));
-        }
-
         $user = User::find($id);
+
         if(empty($user))
         {
-            return redirect('/users')->with('error', __('users.not_found'));
-        }
-        elseif($user->role === 'admin')
-        {
-            return redirect('/users')->with('error', __('users.admin_delete'));
+            return redirect('/users')->with('error', 'User Not Found');
         }
 
-        // Delete posts of the user to be deleted
-        $posts = Post::where('user_id', $id)->cursor();
-        foreach($posts as $post)
+        $this->validate($request, [
+            'password_to_delete_account' => 'required|string|confirmed',
+        ]);
+
+        if(!password_verify($request->password_to_delete_account, $user->password))
         {
-            if($post->cover_image && $post->cover_image !== 'noimage.jpg')
-            {
-                // Delete cover image
-                unlink('storage/images/cover_images/' . $post->cover_image);
-
-                // Delete thumbnail
-                unlink('storage/images/cover_images/thumbnails/' . $post->thumbnail);
-            }
-
-            $images = $post->images;
-            foreach($images as $image)
-            {
-                unlink('storage/images/' . $image->filename);
-                unlink('storage/images/thumbnails/' . $image->filename_thumb);
-            }
-
-            Image::where('post_id', $post->id)->delete();
-
-            Bookmark::where('post_id', $post->id)->delete();
-
-            // Delete from DB
-            $post->delete();
+            return back()->with('incorrect_password_to_delete_account_error', "Incorrect password.");
         }
 
         $user->delete();
 
-        return redirect('users')->with('success', __('users.removed'));
+        return back()->with('success', 'User Deleted');
     }
 }

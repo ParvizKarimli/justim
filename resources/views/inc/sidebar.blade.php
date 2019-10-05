@@ -403,13 +403,13 @@
                                     </div>
                                     <i class="ti-angle-down"></i>
                                 </a>
-                                <div class="collapse{{ count($errors)>0 ? 'show' : '' }}" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionSettings">
+                                <div class="collapse{{ count($errors)>0 ? ' show' : '' }}" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionSettings">
                                     <div class="content">
                                         <form action="/users/{{ auth()->id() }}" method="POST" enctype="multipart/form-data">
                                             {{ method_field('PATCH') }}
                                             {{ csrf_field() }}
 
-                                            @if(count($errors) > 0)
+                                            @if(count($errors) > 0 && !$errors->has('password_to_delete_account'))
                                                 <p class="alert-danger">
                                                     Error updating account credentials! Check out the errors below for more information.
                                                 </p>
@@ -485,7 +485,7 @@
                                             <button type="submit" class="btn button w-100">Update</button>
                                         </form>
                                         <!-- Trigger the delete account modal with a button -->
-                                        <a class="btn btn-link w-100" href="" title="Delete Your Account" data-toggle="modal" data-target="#deleteAccountModal-{{ auth()->id() }}">
+                                        <a class="btn btn-link w-100" href="" title="Delete Your Account" data-toggle="modal" data-target="#deleteAccountModal">
                                             Delete Account
                                         </a>
                                     </div>

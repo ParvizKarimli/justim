@@ -1,4 +1,8 @@
-<div id="deleteAccountModal-{{ auth()->id() }}" class="modal fade" role="dialog">
+<div id="deleteAccountModal"
+     role="dialog"
+     class="modal fade{{ $errors->has('password_to_delete_account') || session('incorrect_password_to_delete_account_error') ? ' show' : '' }}"
+     style="display: {{ $errors->has('password_to_delete_account') || session('incorrect_password_to_delete_account_error') ? 'block' : 'none' }}"
+>
     <div class="modal-dialog">
 
         <!-- Modal content-->
@@ -11,22 +15,28 @@
                 <form id="delete-account-form-sidebar" action="/users/{{ auth()->id() }}" method="POST">
                     {{ method_field('DELETE') }}
                     {{ csrf_field() }}
-                    <div class="field{{ $errors->has('password') ? ' has-error' : '' }}">
-                        <label for="password_delete">Password</label>
-                        <input type="password" class="form-control" id="password_delete" name="password" placeholder="Enter password" required>
-                        @if ($errors->has('password'))
+                    <div class="field{{ $errors->has('password_to_delete_account') || session('incorrect_password_to_delete_account_error') ? ' has-error' : '' }}">
+                        <label for="password_to_delete_account">Password</label>
+                        <input type="password" class="form-control" id="password_to_delete_account" name="password_to_delete_account" placeholder="Enter password" required>
+                        @if ($errors->has('password_to_delete_account'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('password') }}</strong>
+                                <strong>{{ $errors->first('password_to_delete_account') }}</strong>
+                            </span>
+                        @endif
+                        @if (session('incorrect_password_to_delete_account_error'))
+                            <span class="help-block">
+                                <strong>{{ session('incorrect_password_to_delete_account_error') }}</strong>
                             </span>
                         @endif
                     </div>
+                    <br>
                     <div class="field">
-                        <label for="password_confirmation_delete">Confirm Password</label>
-                        <input type="password" class="form-control" id="password_confirmation_delete" name="password_confirmation" placeholder="Enter password again" required>
+                        <label for="password_to_delete_account_confirmation">Confirm Password</label>
+                        <input type="password" class="form-control" id="password_to_delete_account_confirmation" name="password_to_delete_account_confirmation" placeholder="Enter password again" required>
                     </div>
                     <input type="button" class="btn btn-link w-100" href="" value="Delete Account"
                            onclick="if(confirm('Are you sure you want to permanently delete your account?')) {
-                               //event.preventDefault();
+                               event.preventDefault();
                                document.getElementById('delete-account-form-sidebar').submit();
                            }"
                     >
