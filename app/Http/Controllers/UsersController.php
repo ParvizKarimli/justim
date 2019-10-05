@@ -71,7 +71,7 @@ class UsersController extends Controller
             $request->file('avatar')->storeAs('public/images/avatars', $filename_to_store);
 
             // Create thumbnail file name
-            $thumbnail_name_to_store = $filename_salt . '_thumb.' . $file_extension;
+            $thumbnail_name_to_store = $filename_salt . '_thumbnail.' . $file_extension;
             // Create thumbnail of avatar and upload it to storage
             ImageLib::make('storage/images/avatars/' . $filename_to_store)
                 ->resize(200, 200)

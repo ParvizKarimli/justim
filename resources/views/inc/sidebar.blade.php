@@ -39,7 +39,7 @@
                         </div>
                         <div class="list-group" id="contacts" role="tablist">
                             <a href="#" class="filterMembers all online contact" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-female-1.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-1.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
                                 <div class="status online"></div>
                                 <div class="data">
                                     <h5>Sarah Dalton</h5>
@@ -50,7 +50,7 @@
                                 </div>
                             </a>
                             <a href="#" class="filterMembers all online contact" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Bob Frank" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Bob Frank" alt="avatar">
                                 <div class="status online"></div>
                                 <div class="data">
                                     <h5>Bob Frank</h5>
@@ -61,7 +61,7 @@
                                 </div>
                             </a>
                             <a href="#" class="filterMembers all online contact" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-female-2.jpg" data-toggle="tooltip" data-placement="top" title="Lucy" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-2.jpg" data-toggle="tooltip" data-placement="top" title="Lucy" alt="avatar">
                                 <div class="status online"></div>
                                 <div class="data">
                                     <h5>Lucy Grey</h5>
@@ -72,7 +72,7 @@
                                 </div>
                             </a>
                             <a href="#" class="filterMembers all online contact" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-male-2.jpg" data-toggle="tooltip" data-placement="top" title="james idoms" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-2.jpg" data-toggle="tooltip" data-placement="top" title="james idoms" alt="avatar">
                                 <div class="status online"></div>
                                 <div class="data">
                                     <h5>james idoms</h5>
@@ -83,7 +83,7 @@
                                 </div>
                             </a>
                             <a href="#" class="filterMembers all online contact" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-female-3.jpg" data-toggle="tooltip" data-placement="top" title="Linda Gates" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-3.jpg" data-toggle="tooltip" data-placement="top" title="Linda Gates" alt="avatar">
                                 <div class="status online"></div>
                                 <div class="data">
                                     <h5>Linda gates</h5>
@@ -94,7 +94,7 @@
                                 </div>
                             </a>
                             <a href="#" class="filterMembers all offline contact" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Karen joye" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Karen joye" alt="avatar">
                                 <div class="status offline"></div>
                                 <div class="data">
                                     <h5>Karen joye</h5>
@@ -105,7 +105,7 @@
                                 </div>
                             </a>
                             <a href="#" class="filterMembers all offline contact" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-female-6.jpg" data-toggle="tooltip" data-placement="top" title="Lisa Honey" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-6.jpg" data-toggle="tooltip" data-placement="top" title="Lisa Honey" alt="avatar">
                                 <div class="status offline"></div>
                                 <div class="data">
                                     <h5>Lisa Honey</h5>
@@ -116,7 +116,7 @@
                                 </div>
                             </a>
                             <a href="#" class="filterMembers all offline contact" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-male-3.jpg" data-toggle="tooltip" data-placement="top" title="Daniel Cabral" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-3.jpg" data-toggle="tooltip" data-placement="top" title="Daniel Cabral" alt="avatar">
                                 <div class="status offline"></div>
                                 <div class="data">
                                     <h5>Daniel Cabral</h5>
@@ -127,7 +127,7 @@
                                 </div>
                             </a>
                             <a href="#" class="filterMembers all offline contact" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-male-4.jpg" data-toggle="tooltip" data-placement="top" title="Jhon Doe" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-4.jpg" data-toggle="tooltip" data-placement="top" title="Jhon Doe" alt="avatar">
                                 <div class="status offline"></div>
                                 <div class="data">
                                     <h5>Jhon Doe</h5>
@@ -177,7 +177,7 @@
                         </div>
                         <div class="list-group" id="chats" role="tablist">
                             <a href="#list-chat" class="filterDiscussions all unread single active" id="list-chat-list" data-toggle="list" role="tab">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-female-1.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-1.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
                                 <div class="status online"></div>
 
                                 <div class="data">
@@ -190,7 +190,7 @@
                                 </div>
                             </a>
                             <a href="#list-empty" class="filterDiscussions all unread single" id="list-empty-list" data-toggle="list" role="tab">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Michael" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Michael" alt="avatar">
                                 <div class="status offline"></div>
 
                                 <div class="data">
@@ -203,7 +203,7 @@
                                 </div>
                             </a>
                             <a href="#list-chat" class="filterDiscussions all read single" id="list-chat-list2" data-toggle="list" role="tab">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-female-2.jpg" data-toggle="tooltip" data-placement="top" title="Lucy" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-2.jpg" data-toggle="tooltip" data-placement="top" title="Lucy" alt="avatar">
                                 <div class="status online"></div>
                                 <div class="data">
                                     <h5>Lucy Grey</h5>
@@ -212,7 +212,7 @@
                                 </div>
                             </a>
                             <a href="#list-empty" class="filterDiscussions all read single" id="list-empty-list2" data-toggle="list" role="tab">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-male-2.jpg" data-toggle="tooltip" data-placement="top" title="james idoms" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-2.jpg" data-toggle="tooltip" data-placement="top" title="james idoms" alt="avatar">
                                 <div class="status offline"></div>
                                 <div class="data">
                                     <h5>james idoms</h5>
@@ -221,7 +221,7 @@
                                 </div>
                             </a>
                             <a href="#list-chat" class="filterDiscussions all read single" id="list-chat-list3" data-toggle="list" role="tab">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-female-3.jpg" data-toggle="tooltip" data-placement="top" title="Linda Gates" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-3.jpg" data-toggle="tooltip" data-placement="top" title="Linda Gates" alt="avatar">
                                 <div class="status away"></div>
                                 <div class="data">
                                     <h5>Linda gates</h5>
@@ -230,7 +230,7 @@
                                 </div>
                             </a>
                             <a href="#list-empty" class="filterDiscussions all read single" id="list-empty-list3" data-toggle="list" role="tab">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Karen joye" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Karen joye" alt="avatar">
                                 <div class="status online"></div>
                                 <div class="data">
                                     <h5>Karen joye</h5>
@@ -239,7 +239,7 @@
                                 </div>
                             </a>
                             <a href="#list-chat" class="filterDiscussions all unread single" id="list-chat-list4" data-toggle="list" role="tab">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-female-6.jpg" data-toggle="tooltip" data-placement="top" title="Lisa Honey" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-6.jpg" data-toggle="tooltip" data-placement="top" title="Lisa Honey" alt="avatar">
                                 <div class="status offline"></div>
 
                                 <div class="data">
@@ -252,7 +252,7 @@
                                 </div>
                             </a>
                             <a href="#list-empty" class="filterDiscussions all read single" id="list-empty-list4" data-toggle="list" role="tab">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-male-3.jpg" data-toggle="tooltip" data-placement="top" title="Daniel Cabral" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-3.jpg" data-toggle="tooltip" data-placement="top" title="Daniel Cabral" alt="avatar">
                                 <div class="status offline"></div>
                                 <div class="data">
                                     <h5>Daniel Cabral</h5>
@@ -261,7 +261,7 @@
                                 </div>
                             </a>
                             <a href="#list-chat" class="filterDiscussions all unread single" id="list-chat-list5" data-toggle="list" role="tab">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-male-4.jpg" data-toggle="tooltip" data-placement="top" title="Jhon Doe" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-4.jpg" data-toggle="tooltip" data-placement="top" title="Jhon Doe" alt="avatar">
                                 <div class="status online"></div>
 
                                 <div class="data">
@@ -303,7 +303,7 @@
                         <h1>Notifications</h1>
                         <div class="list-group" id="alerts" role="tablist">
                             <a href="#" class="filterNotifications all latest notification" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-female-1.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-1.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
                                 <div class="status online"></div>
                                 <div class="data">
                                     <p>Sarah has accepted your friend request on Talkshak.</p>
@@ -311,7 +311,7 @@
                                 </div>
                             </a>
                             <a href="#" class="filterNotifications all latest notification" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Michael" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Michael" alt="avatar">
                                 <div class="status online"></div>
                                 <div class="data">
                                     <p>Michael, you have a new friend suggestion today.</p>
@@ -319,7 +319,7 @@
                                 </div>
                             </a>
                             <a href="#" class="filterNotifications all latest notification" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-male-2.jpg" data-toggle="tooltip" data-placement="top" title="james idoms" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-2.jpg" data-toggle="tooltip" data-placement="top" title="james idoms" alt="avatar">
                                 <div class="status online"></div>
                                 <div class="data">
                                     <p>james idoms have just sent you a new message.</p>
@@ -327,7 +327,7 @@
                                 </div>
                             </a>
                             <a href="#" class="filterNotifications all latest notification" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-female-6.jpg" data-toggle="tooltip" data-placement="top" title="Lisa Honey" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-6.jpg" data-toggle="tooltip" data-placement="top" title="Lisa Honey" alt="avatar">
                                 <div class="status online"></div>
                                 <div class="data">
                                     <p>Lisa Honey has a birthday today. Wish her all the best.</p>
@@ -335,7 +335,7 @@
                                 </div>
                             </a>
                             <a href="#" class="filterNotifications all latest notification" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-female-3.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-3.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
                                 <div class="status online"></div>
                                 <div class="data">
                                     <p>Linda Gates has accepted your friend request on Talkshak.</p>
@@ -343,7 +343,7 @@
                                 </div>
                             </a>
                             <a href="#" class="filterNotifications all oldest notification" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
                                 <div class="status offline"></div>
                                 <div class="data">
                                     <p>Karen joye have just sent you a new message.</p>
@@ -351,7 +351,7 @@
                                 </div>
                             </a>
                             <a href="#" class="filterNotifications all oldest notification" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-female-2.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-2.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
                                 <div class="status offline"></div>
                                 <div class="data">
                                     <p>Michael, you have a new friend suggestion today.</p>
@@ -359,7 +359,7 @@
                                 </div>
                             </a>
                             <a href="#" class="filterNotifications all oldest notification" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-male-3.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-3.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
                                 <div class="status offline"></div>
                                 <div class="data">
                                     <p>Daniel Cabral have just sent you a new message.</p>
@@ -367,7 +367,7 @@
                                 </div>
                             </a>
                             <a href="#" class="filterNotifications all oldest notification" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/avatar-male-4.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-4.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
                                 <div class="status offline"></div>
                                 <div class="data">
                                     <p>Jhon Doe has a birthday today. Wish him all the best.</p>
