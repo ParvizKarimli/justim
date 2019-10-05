@@ -1,7 +1,7 @@
 <div id="deleteAccountModal"
      role="dialog"
-     class="modal fade{{ $errors->has('password_to_delete_account') || session('incorrect_password_to_delete_account_error') ? ' show' : '' }}"
-     style="display: {{ $errors->has('password_to_delete_account') || session('incorrect_password_to_delete_account_error') ? 'block' : 'none' }}"
+     class="modal fade{{ $errors->has('password_to_delete_account') || session('password_to_delete_account_error') ? ' show' : '' }}"
+     style="display: {{ $errors->has('password_to_delete_account') || session('password_to_delete_account_error') ? 'block' : 'none' }}"
 >
     <div class="modal-dialog">
 
@@ -15,7 +15,7 @@
                 <form id="delete-account-form-sidebar" action="/users/{{ auth()->id() }}" method="POST">
                     {{ method_field('DELETE') }}
                     {{ csrf_field() }}
-                    <div class="field{{ $errors->has('password_to_delete_account') || session('incorrect_password_to_delete_account_error') ? ' has-error' : '' }}">
+                    <div class="field{{ $errors->has('password_to_delete_account') || session('password_to_delete_account_error') ? ' has-error' : '' }}">
                         <label for="password_to_delete_account">Password</label>
                         <input type="password" class="form-control" id="password_to_delete_account" name="password_to_delete_account" placeholder="Enter password" required>
                         @if ($errors->has('password_to_delete_account'))
@@ -23,9 +23,9 @@
                                 <strong>{{ $errors->first('password_to_delete_account') }}</strong>
                             </span>
                         @endif
-                        @if (session('incorrect_password_to_delete_account_error'))
+                        @if (session('password_to_delete_account_error'))
                             <span class="help-block">
-                                <strong>{{ session('incorrect_password_to_delete_account_error') }}</strong>
+                                <strong>{{ session('password_to_delete_account_error') }}</strong>
                             </span>
                         @endif
                     </div>

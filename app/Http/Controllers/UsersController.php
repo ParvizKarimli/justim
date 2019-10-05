@@ -100,6 +100,11 @@ class UsersController extends Controller
      */
     public function destroy(Request $request, $id)
     {
+        if($id + 0 !== auth()->id())
+        {
+            return back()->with('password_to_delete_account_error', "Unauthorized page.");
+        }
+
         $user = User::find($id);
 
         if(empty($user))
@@ -113,7 +118,7 @@ class UsersController extends Controller
 
         if(!password_verify($request->password_to_delete_account, $user->password))
         {
-            return back()->with('incorrect_password_to_delete_account_error', "Incorrect password.");
+            return back()->with('password_to_delete_account_error', "Incorrect password.");
         }
 
         $user->delete();
