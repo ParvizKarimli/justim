@@ -14,7 +14,7 @@ class AddNightModeToUsers extends Migration
     public function up()
     {
         Schema::table('users', function($table) {
-            $table->boolean('nightmode')->after('id');
+            $table->boolean('nightmode')->after('id')->default(0);
         });
     }
 
