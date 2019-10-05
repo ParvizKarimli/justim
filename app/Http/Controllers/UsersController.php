@@ -26,6 +26,11 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if($id + 0 !== auth()->id())
+        {
+            return back()->with('error', "Unauthorized Page");
+        }
+
         $user = User::find($id);
 
         $custom_validation_messages = [
@@ -123,6 +128,6 @@ class UsersController extends Controller
 
         $user->delete();
 
-        return back()->with('success', 'User Deleted');
+        return back();
     }
 }
