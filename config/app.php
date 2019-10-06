@@ -169,6 +169,7 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Hootlex\Friendships\FriendshipsServiceProvider::class,
 
         /*
          * Application Service Providers...
