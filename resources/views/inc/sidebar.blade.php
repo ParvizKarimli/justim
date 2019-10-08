@@ -38,6 +38,23 @@
                             </div>
                         </div>
                         <div class="list-group" id="contacts" role="tablist">
+                            <div>
+                                <p>Start of friends list:</p>
+                                @foreach(auth()->user()->getFriends() as $friend)
+                                    <a href="#" class="filterMembers all online contact" data-toggle="list">
+                                        <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-1.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
+                                        <div class="status online"></div>
+                                        <div class="data">
+                                            <h5>{{ $friend->name }}</h5>
+                                            <p>{{ $friend->username }}</p>
+                                        </div>
+                                        <div class="person-add">
+                                            <i class="ti-user"></i>
+                                        </div>
+                                    </a>
+                                @endforeach
+                                <p>End of friends list.</p>
+                            </div>
                             <a href="#" class="filterMembers all online contact" data-toggle="list">
                                 <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-1.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
                                 <div class="status online"></div>
