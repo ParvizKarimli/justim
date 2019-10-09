@@ -38,122 +38,23 @@
                             </div>
                         </div>
                         <div class="list-group" id="contacts" role="tablist">
-                            <div>
-                                <p>Start of friends list:</p>
-                                @foreach(auth()->user()->getFriends() as $friend)
-                                    <a href="#" class="filterMembers all online contact" data-toggle="list">
-                                        <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-1.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
-                                        <div class="status online"></div>
-                                        <div class="data">
-                                            <h5>{{ $friend->name }}</h5>
-                                            <p>{{ $friend->username }}</p>
-                                        </div>
-                                        <div class="person-add">
-                                            <i class="ti-user"></i>
-                                        </div>
-                                    </a>
-                                @endforeach
-                                <p>End of friends list.</p>
-                            </div>
-                            <a href="#" class="filterMembers all online contact" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-1.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
-                                <div class="status online"></div>
-                                <div class="data">
-                                    <h5>Sarah Dalton</h5>
-                                    <p>Sofia, Bulgaria</p>
-                                </div>
-                                <div class="person-add">
-                                    <i class="ti-user"></i>
-                                </div>
-                            </a>
-                            <a href="#" class="filterMembers all online contact" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Bob Frank" alt="avatar">
-                                <div class="status online"></div>
-                                <div class="data">
-                                    <h5>Bob Frank</h5>
-                                    <p>Washington, USA</p>
-                                </div>
-                                <div class="person-add">
-                                    <i class="ti-user"></i>
-                                </div>
-                            </a>
-                            <a href="#" class="filterMembers all online contact" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-2.jpg" data-toggle="tooltip" data-placement="top" title="Lucy" alt="avatar">
-                                <div class="status online"></div>
-                                <div class="data">
-                                    <h5>Lucy Grey</h5>
-                                    <p>Shanghai, China</p>
-                                </div>
-                                <div class="person-add">
-                                    <i class="ti-user"></i>
-                                </div>
-                            </a>
-                            <a href="#" class="filterMembers all online contact" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-2.jpg" data-toggle="tooltip" data-placement="top" title="james idoms" alt="avatar">
-                                <div class="status online"></div>
-                                <div class="data">
-                                    <h5>james idoms</h5>
-                                    <p>Helena, Montana</p>
-                                </div>
-                                <div class="person-add">
-                                    <i class="ti-user"></i>
-                                </div>
-                            </a>
-                            <a href="#" class="filterMembers all online contact" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-3.jpg" data-toggle="tooltip" data-placement="top" title="Linda Gates" alt="avatar">
-                                <div class="status online"></div>
-                                <div class="data">
-                                    <h5>Linda gates</h5>
-                                    <p>Indore, India</p>
-                                </div>
-                                <div class="person-add">
-                                    <i class="ti-user"></i>
-                                </div>
-                            </a>
-                            <a href="#" class="filterMembers all offline contact" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Karen joye" alt="avatar">
-                                <div class="status offline"></div>
-                                <div class="data">
-                                    <h5>Karen joye</h5>
-                                    <p>Chisinau, Moldova</p>
-                                </div>
-                                <div class="person-add">
-                                    <i class="ti-user"></i>
-                                </div>
-                            </a>
-                            <a href="#" class="filterMembers all offline contact" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-6.jpg" data-toggle="tooltip" data-placement="top" title="Lisa Honey" alt="avatar">
-                                <div class="status offline"></div>
-                                <div class="data">
-                                    <h5>Lisa Honey</h5>
-                                    <p>Vienna, Austria</p>
-                                </div>
-                                <div class="person-add">
-                                    <i class="ti-user"></i>
-                                </div>
-                            </a>
-                            <a href="#" class="filterMembers all offline contact" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-3.jpg" data-toggle="tooltip" data-placement="top" title="Daniel Cabral" alt="avatar">
-                                <div class="status offline"></div>
-                                <div class="data">
-                                    <h5>Daniel Cabral</h5>
-                                    <p>Oslo, Norway</p>
-                                </div>
-                                <div class="person-add">
-                                    <i class="ti-user"></i>
-                                </div>
-                            </a>
-                            <a href="#" class="filterMembers all offline contact" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-4.jpg" data-toggle="tooltip" data-placement="top" title="Jhon Doe" alt="avatar">
-                                <div class="status offline"></div>
-                                <div class="data">
-                                    <h5>Jhon Doe</h5>
-                                    <p>London, United Kingdom</p>
-                                </div>
-                                <div class="person-add">
-                                    <i class="ti-user"></i>
-                                </div>
-                            </a>
+                            @foreach(auth()->user()->getFriends() as $friend)
+                                <a href="#" class="filterMembers all online contact" data-toggle="list">
+                                    @if($friend->thumbnail == NULL)
+                                        <img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="{{ $friend->name }}" alt="avatar">
+                                    @else
+                                        <img class="avatar-md" src="/storage/images/avatars/thumbnails/{{ $friend->thumbnail }}" data-toggle="tooltip" data-placement="top" title="{{ $friend->name }}" alt="avatar">
+                                    @endif
+                                    <div class="status online"></div>
+                                    <div class="data">
+                                        <h5>{{ $friend->name }}</h5>
+                                        <p>&#64;{{ $friend->username }}</p>
+                                    </div>
+                                    <div class="person-add">
+                                        <i class="ti-user"></i>
+                                    </div>
+                                </a>
+                            @endforeach
                         </div>
                     </div>
                 </div>
