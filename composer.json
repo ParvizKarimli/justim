@@ -8,6 +8,7 @@
         "php": ">=5.6.4",
         "hootlex/laravel-friendships": "^1.0",
         "intervention/image": "^2.5",
+        "kim/activity": "^1.1",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4.0"

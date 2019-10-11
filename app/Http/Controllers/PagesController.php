@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Activity;
 
 class PagesController extends Controller
 {
@@ -13,8 +14,17 @@ class PagesController extends Controller
 
     public function index()
     {
+        $active_user_ids = Activity::users()->select('user_id')->get()->pluck('user_id')->toArray();
+
         $threads = 'Some threads';
 
-        return view('pages.index', ['threads' => $threads]);
+        return view
+        (
+            'pages.index',
+            [
+                'threads' => $threads,
+                'active_user_ids' => $active_user_ids
+            ]
+        );
     }
 }
