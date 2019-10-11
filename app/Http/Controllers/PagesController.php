@@ -14,7 +14,11 @@ class PagesController extends Controller
 
     public function index()
     {
-        $active_user_ids = Activity::users()->select('user_id')->get()->pluck('user_id')->toArray();
+        $active_user_ids = Activity::users(1)
+            ->select('user_id')
+            ->get()
+            ->pluck('user_id')
+            ->toArray();
 
         $threads = 'Some threads';
 
