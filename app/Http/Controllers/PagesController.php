@@ -16,7 +16,7 @@ class PagesController extends Controller
     {
         $friends = auth()->user()->getFriends();
 
-        $active_user_ids = Activity::users(1)
+        $active_users_ids = Activity::users(1)
             ->select('user_id')
             ->get()
             ->pluck('user_id')
@@ -27,7 +27,7 @@ class PagesController extends Controller
             'pages.index',
             [
                 'friends' => $friends,
-                'active_user_ids' => $active_user_ids
+                'active_users_ids' => $active_users_ids
             ]
         );
     }
