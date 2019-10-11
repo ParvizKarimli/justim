@@ -38,7 +38,7 @@
                             </div>
                         </div>
                         <div class="list-group" id="contacts" role="tablist">
-                            @foreach(auth()->user()->getFriends() as $friend)
+                            @foreach($friends as $friend)
                                 <a href="#" class="filterMembers all {{ in_array($friend->id, $active_user_ids) ? 'online' : 'offline' }} contact" data-toggle="list">
                                     @if($friend->thumbnail == NULL)
                                         <img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="{{ $friend->name }}" alt="avatar">

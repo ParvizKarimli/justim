@@ -14,19 +14,19 @@ class PagesController extends Controller
 
     public function index()
     {
+        $friends = auth()->user()->getFriends();
+
         $active_user_ids = Activity::users(1)
             ->select('user_id')
             ->get()
             ->pluck('user_id')
             ->toArray();
 
-        $threads = 'Some threads';
-
         return view
         (
             'pages.index',
             [
-                'threads' => $threads,
+                'friends' => $friends,
                 'active_user_ids' => $active_user_ids
             ]
         );
