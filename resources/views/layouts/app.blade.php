@@ -40,6 +40,7 @@
 <script src="dist/js/perfect-scrollbar.min.js"></script>
 <script src="dist/js/script.js"></script>
 
+// Show avatar preview thumbnail before uploading
 <script>
     function readURL(input) {
         if (input.files && input.files[0]) {
@@ -55,6 +56,18 @@
 
     $("#avatar-input").change(function() {
         readURL(this);
+    });
+</script>
+
+// Show deleteAccountModal if there's any error upon validation
+<script>
+    $(document).ready(function() {
+        if($('#deleteAccountModal').attr('data-has-error') == 'yes') {
+            $('#deleteAccountModal').modal('show');
+        }
+        else {
+            $('#deleteAccountModal').modal('hide');
+        }
     });
 </script>
 

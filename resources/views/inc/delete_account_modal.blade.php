@@ -1,7 +1,8 @@
 <div id="deleteAccountModal"
      role="dialog"
-     class="modal fade{{ $errors->has('password_to_delete_account') || session('password_to_delete_account_error') ? ' show' : '' }}"
-     style="display: {{ $errors->has('password_to_delete_account') || session('password_to_delete_account_error') ? 'block' : 'none' }}"
+     class="modal fade"
+     style="display: none"
+     data-has-error="{{ $errors->has('password_to_delete_account') || session('password_to_delete_account_error') ? 'yes' : 'no' }}"
 >
     <div class="modal-dialog">
 
