@@ -39,13 +39,13 @@
                         </div>
                         <div class="list-group" id="contacts" role="tablist">
                             @foreach($friends as $friend)
-                                <a href="#" class="filterMembers all {{ in_array($friend->id, $active_users_ids) ? 'online' : 'offline' }} contact" data-toggle="list">
+                                <a href="#" class="filterMembers all {{ in_array($friend->id, $online_friends_ids) ? 'online' : 'offline' }} contact" data-toggle="list">
                                     @if($friend->thumbnail == NULL)
                                         <img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="{{ $friend->name }}" alt="avatar">
                                     @else
                                         <img class="avatar-md" src="/storage/images/avatars/thumbnails/{{ $friend->thumbnail }}" data-toggle="tooltip" data-placement="top" title="{{ $friend->name }}" alt="avatar">
                                     @endif
-                                    <div class="status {{ in_array($friend->id, $active_users_ids) ? 'online' : 'offline' }}"></div>
+                                    <div class="status {{ in_array($friend->id, $online_friends_ids) ? 'online' : 'offline' }}"></div>
                                     <div class="data">
                                         <h5>{{ $friend->name }}</h5>
                                         <p>&#64;{{ $friend->username }}</p>
