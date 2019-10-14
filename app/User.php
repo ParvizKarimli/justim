@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Hootlex\Friendships\Traits\Friendable;
+use App\UserSession;
 
 class User extends Authenticatable
 {
@@ -28,4 +29,20 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function isOnline()
+    {
+        if(
+            \DB::table('sessions')
+            ->select('user_id')
+            ->where('last_activity', '>=', time() - 60)
+            ->where('user_id', '=', $this->id)
+            ->first()
+        )
+        {
+            return true;
+        }
+
+        return false;
+    }
 }
