@@ -40,7 +40,7 @@
 <script src="dist/js/perfect-scrollbar.min.js"></script>
 <script src="dist/js/script.js"></script>
 
-// Show avatar preview thumbnail before uploading
+<!-- Show avatar preview thumbnail before uploading -->
 <script>
     function readURL(input) {
         if (input.files && input.files[0]) {
@@ -59,7 +59,7 @@
     });
 </script>
 
-// Show deleteAccountModal if there's any error upon validation
+<!-- Show deleteAccountModal if there's any error upon validation -->
 <script>
     $(document).ready(function() {
         if($('#deleteAccountModal').attr('data-has-error') == 'yes') {
@@ -68,6 +68,18 @@
         else {
             $('#deleteAccountModal').modal('hide');
         }
+    });
+</script>
+
+<!-- Infinite Scroll -->
+<script src="{{ asset('js/infinite-scroll.pkgd.min.js') }}"></script>
+<script>
+    $('.infinite-scroll-container').infiniteScroll({
+        // options
+        path: '.pagination li.active + li a',
+        append: '.filterMembers',
+        history: false,
+        hideNav: '.pagination',
     });
 </script>
 

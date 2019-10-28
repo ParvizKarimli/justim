@@ -14,7 +14,7 @@ class PagesController extends Controller
 
     public function index()
     {
-        $friends = auth()->user()->getFriends();
+        $friends = auth()->user()->getFriends($perPage = 10);
 
         return view
         (
