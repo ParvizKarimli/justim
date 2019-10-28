@@ -38,25 +38,23 @@
                             </div>
                         </div>
                         <div class="list-group" id="contacts" role="tablist">
-                            <div class="infinite-scroll-container">
-                                @foreach($friends as $friend)
-                                    <a href="#" class="filterMembers all {{ $friend->isOnline() ? 'online' : 'offline' }} contact" data-toggle="list">
-                                        @if($friend->thumbnail == NULL)
-                                            <img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="{{ $friend->name }}" alt="avatar">
-                                        @else
-                                            <img class="avatar-md" src="/storage/images/avatars/thumbnails/{{ $friend->thumbnail }}" data-toggle="tooltip" data-placement="top" title="{{ $friend->name }}" alt="avatar">
-                                        @endif
-                                        <div class="status {{ $friend->isOnline() ? 'online' : 'offline' }}"></div>
-                                        <div class="data">
-                                            <h5>{{ $friend->name }}</h5>
-                                            <p>&#64;{{ $friend->username }}</p>
-                                        </div>
-                                        <div class="person-add">
-                                            <i class="ti-user"></i>
-                                        </div>
-                                    </a>
-                                @endforeach
-                            </div>
+                            @foreach($friends as $friend)
+                                <a href="#" class="filterMembers all {{ $friend->isOnline() ? 'online' : 'offline' }} contact" data-toggle="list">
+                                    @if($friend->thumbnail == NULL)
+                                        <img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="{{ $friend->name }}" alt="avatar">
+                                    @else
+                                        <img class="avatar-md" src="/storage/images/avatars/thumbnails/{{ $friend->thumbnail }}" data-toggle="tooltip" data-placement="top" title="{{ $friend->name }}" alt="avatar">
+                                    @endif
+                                    <div class="status {{ $friend->isOnline() ? 'online' : 'offline' }}"></div>
+                                    <div class="data">
+                                        <h5>{{ $friend->name }}</h5>
+                                        <p>&#64;{{ $friend->username }}</p>
+                                    </div>
+                                    <div class="person-add">
+                                        <i class="ti-user"></i>
+                                    </div>
+                                </a>
+                            @endforeach
                             {{ $friends->links() }}
                         </div>
                     </div>

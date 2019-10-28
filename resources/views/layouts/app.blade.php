@@ -74,7 +74,7 @@
 <!-- Infinite Scroll -->
 <script src="{{ asset('js/infinite-scroll.pkgd.min.js') }}"></script>
 <script>
-    $('.infinite-scroll-container').infiniteScroll({
+    $('#contacts').infiniteScroll({
         // options
         path: '.pagination li.active + li a',
         append: '.filterMembers',
