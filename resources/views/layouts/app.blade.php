@@ -39,50 +39,10 @@
 <script src="dist/js/bootstrap.min.js"></script>
 <script src="dist/js/perfect-scrollbar.min.js"></script>
 <script src="dist/js/script.js"></script>
-
-<!-- Show avatar preview thumbnail before uploading -->
-<script>
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function(e) {
-                $('#avatar-xl').attr('src', e.target.result);
-            }
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-    $("#avatar-input").change(function() {
-        readURL(this);
-    });
-</script>
-
-<!-- Show deleteAccountModal if there's any error upon validation -->
-<script>
-    $(document).ready(function() {
-        if($('#deleteAccountModal').attr('data-has-error') == 'yes') {
-            $('#deleteAccountModal').modal('show');
-        }
-        else {
-            $('#deleteAccountModal').modal('hide');
-        }
-    });
-</script>
-
 <!-- Infinite Scroll -->
 <script src="{{ asset('js/infinite-scroll.pkgd.min.js') }}"></script>
-<script>
-    $('.infinite-scroll-container').infiniteScroll({
-        // options
-        path: '.pagination li.active + li a',
-        append: '.infinite-scroll-item',
-        history: false,
-        hideNav: '.pagination',
-        elementScroll: '.infinite-scroll-container',
-    });
-</script>
+<!-- My Script -->
+<script src="{{ asset('js/myscript.js') }}"></script>
 
 </body>
 </html>
