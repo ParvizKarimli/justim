@@ -157,14 +157,22 @@ class UsersController extends Controller
     public function search_friends(Request $request)
     {
         $search_term = $request->input('search_term');
-        $friends = auth()->user()->getFriends($perPage = 10)
-            /*->where('users.name', 'like', '%' . $search_term . '%')
-            ->get()*/;
-        //dd($friends);
+        $friends = User::join('friendships', function ($join) {
+                $join->on('users.id', '=', 'friendships.sender_id')
+                    ->orOn('users.id', '=', 'friendships.recipient_id');
+            })
+            ->where(function($query) {
+                $query->where('friendships.sender_id', auth()->id())
+                    ->orWhere('friendships.recipient_id', auth()->id());
+            })
+            ->where('users.name', 'like', '%' . $search_term . '%')
+            ->paginate(10);
 
+        echo '<ol>';
         foreach($friends as $friend)
         {
-            echo '<tr><td>' . $friend->name . '</td></tr>';
+            echo '<li>' . $friend->name . '</li>';
         }
+        echo '</ol>';
     }
 }
