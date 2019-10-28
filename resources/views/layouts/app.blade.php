@@ -80,6 +80,7 @@
         append: '.infinite-scroll-item',
         history: false,
         hideNav: '.pagination',
+        elementScroll: '.infinite-scroll-container',
     });
 </script>
 
