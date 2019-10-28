@@ -37,9 +37,9 @@
                                 <a class="dropdown-item" href="#">Private Chat +</a>
                             </div>
                         </div>
-                        <div class="list-group" id="contacts" role="tablist">
+                        <div class="list-group infinite-scroll-container" id="contacts" role="tablist">
                             @foreach($friends as $friend)
-                                <a href="#" class="filterMembers all {{ $friend->isOnline() ? 'online' : 'offline' }} contact" data-toggle="list">
+                                <a href="#" class="filterMembers all {{ $friend->isOnline() ? 'online' : 'offline' }} contact infinite-scroll-item" data-toggle="list">
                                     @if($friend->thumbnail == NULL)
                                         <img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="{{ $friend->name }}" alt="avatar">
                                     @else

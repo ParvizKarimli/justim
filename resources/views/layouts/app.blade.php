@@ -74,10 +74,10 @@
 <!-- Infinite Scroll -->
 <script src="{{ asset('js/infinite-scroll.pkgd.min.js') }}"></script>
 <script>
-    $('#contacts').infiniteScroll({
+    $('.infinite-scroll-container').infiniteScroll({
         // options
         path: '.pagination li.active + li a',
-        append: '.filterMembers',
+        append: '.infinite-scroll-item',
         history: false,
         hideNav: '.pagination',
     });
