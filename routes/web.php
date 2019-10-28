@@ -21,3 +21,4 @@ Route::patch('/users/{id}', 'UsersController@update');
 Route::delete('/users/{id}', 'UsersController@destroy');
 
 Route::post('/nightmode', 'UsersController@nightmode')->name('nightmode');
+Route::post('/users/search_friends', 'UsersController@search_friends');

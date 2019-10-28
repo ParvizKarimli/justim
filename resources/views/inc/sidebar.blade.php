@@ -14,8 +14,8 @@
                     <span class="logo"><img alt="" src="/storage/images/logo.png"></span>
                     <div class="search">
                         <form class="form-inline position-relative">
-                            <input type="search" class="form-control" id="people" placeholder="Search for people...">
-                            <button type="button" class="btn btn-link loop"><i class="ti-search"></i></button>
+                            <input type="search" name="search_term" onkeyup="getFriendsBySearchTerm(this.value)" class="form-control" id="people" placeholder="Search friends">
+                            <button type="button" class="btn loop"><i class="ti-search"></i></button>
                         </form>
                         <button class="btn create" data-toggle="modal" data-target="#exampleModalCenter">
                             <i class="ti-user">+</i></button>

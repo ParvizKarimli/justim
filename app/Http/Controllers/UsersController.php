@@ -152,4 +152,19 @@ class UsersController extends Controller
 
         return back();
     }
+
+    // Search friends using AJAX
+    public function search_friends(Request $request)
+    {
+        $search_term = $request->input('search_term');
+        $friends = auth()->user()->getFriends($perPage = 10)
+            /*->where('users.name', 'like', '%' . $search_term . '%')
+            ->get()*/;
+        //dd($friends);
+
+        foreach($friends as $friend)
+        {
+            echo '<tr><td>' . $friend->name . '</td></tr>';
+        }
+    }
 }
