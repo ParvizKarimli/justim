@@ -172,8 +172,9 @@ class UsersController extends Controller
 
         foreach($friends as $friend)
         {
+            $user = User::find($friend->id);
             echo '<a href="#" class="filterMembers all ';
-            echo $friend->isOnline() ? 'online' : 'offline';
+            echo $user->isOnline() ? 'online' : 'offline';
             echo ' contact infinite-scroll-item" data-toggle="list">';
             if($friend->thumbnail == NULL)
             {
@@ -184,7 +185,7 @@ class UsersController extends Controller
                 echo '<img class="avatar-md" src="/storage/images/avatars/thumbnails/' . $friend->thumbnail . '" data-toggle="tooltip" data-placement="top" title="' . $friend->name . '" alt="avatar">';
             }
             echo '<div class="status ';
-            echo $friend->isOnline() ? 'online' : 'offline';
+            echo $user->isOnline() ? 'online' : 'offline';
             echo '"></div>
                 <div class="data">
                     <h5>' . $friend->name . '</h5>
