@@ -156,11 +156,8 @@ class UsersController extends Controller
     // Search friends using AJAX
     public function search_friends(Request $request)
     {
-        $members_filter = $request->input('members_filter');
         $search_term = $request->input('search_term');
-        if($members_filter === 'all')
-        {
-            $friends = \DB::table('friendships')
+        $friends = \DB::table('friendships')
             ->join('users', function ($join) {
                 $join->on('users.id', '=', 'friendships.sender_id')
                     ->orOn('users.id', '=', 'friendships.recipient_id');
@@ -172,46 +169,6 @@ class UsersController extends Controller
             ->where('users.name', 'like', '%' . $search_term . '%')
             ->where('users.id', '!=', auth()->id())
             ->paginate(10);
-            dd($friends[0]);
-        }
-        elseif($members_filter === 'online')
-        {
-            $friends = \DB::table('friendships')
-            ->join('users', function ($join) {
-                $join->on('users.id', '=', 'friendships.sender_id')
-                    ->orOn('users.id', '=', 'friendships.recipient_id');
-            })
-            ->join('sessions', 'sessions.user_id', '=', 'users.id')
-            ->where('sessions.user_id', '=', 'users.id')
-            ->where('sessions.last_activity', '>=', time() - 60)
-            ->where(function($query) {
-                $query->where('friendships.sender_id', auth()->id())
-                    ->orWhere('friendships.recipient_id', auth()->id());
-            })
-            ->where('users.name', 'like', '%' . $search_term . '%')
-            ->where('users.id', '!=', auth()->id())
-            ->paginate(10);
-            dd($friends[0]);
-        }
-        elseif($members_filter === 'offline')
-        {
-            $friends = \DB::table('friendships')
-            ->join('users', function ($join) {
-                $join->on('users.id', '=', 'friendships.sender_id')
-                    ->orOn('users.id', '=', 'friendships.recipient_id');
-            })
-            ->join('sessions', 'sessions.user_id', '=', 'users.id')
-            ->where('sessions.user_id', '=', 'users.id')
-            ->where('sessions.last_activity', '<', time() - 60)
-            ->where(function($query) {
-                $query->where('friendships.sender_id', auth()->id())
-                    ->orWhere('friendships.recipient_id', auth()->id());
-            })
-            ->where('users.name', 'like', '%' . $search_term . '%')
-            ->where('users.id', '!=', auth()->id())
-            ->paginate(10);
-            dd($friends[0]);
-        }
 
         foreach($friends as $friend)
         {
