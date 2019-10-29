@@ -195,4 +195,10 @@ class UsersController extends Controller
             </a>';
         }
     }
+
+    // Make user online by sending AJAX request periodically if user is active
+    public function make_user_online()
+    {
+        // This function does not do anything
+    }
 }
