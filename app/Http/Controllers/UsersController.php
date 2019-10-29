@@ -169,11 +169,30 @@ class UsersController extends Controller
             ->where('users.id', '!=', auth()->id())
             ->paginate(10);
 
-        echo '<ol>';
         foreach($friends as $friend)
         {
-            echo '<li>' . $friend->name . '</li>';
+            echo '<a href="#" class="filterMembers all ';
+            echo $friend->isOnline() ? 'online' : 'offline';
+            echo ' contact infinite-scroll-item" data-toggle="list">';
+            if($friend->thumbnail == NULL)
+            {
+                echo '<img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="' . $friend->name . '" alt="avatar">';
+            }
+            else
+            {
+                echo '<img class="avatar-md" src="/storage/images/avatars/thumbnails/' . $friend->thumbnail . '" data-toggle="tooltip" data-placement="top" title="' . $friend->name . '" alt="avatar">';
+            }
+            echo '<div class="status ';
+            echo $friend->isOnline() ? 'online' : 'offline';
+            echo '"></div>
+                <div class="data">
+                    <h5>' . $friend->name . '</h5>
+                    <p>&#64;' . $friend->username . '</p>
+                </div>
+                <div class="person-add">
+                    <i class="ti-user"></i>
+                </div>
+            </a>';
         }
-        echo '</ol>';
     }
 }
