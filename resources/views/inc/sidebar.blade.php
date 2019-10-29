@@ -14,7 +14,7 @@
                     <span class="logo"><img alt="" src="/storage/images/logo.png"></span>
                     <div class="search">
                         <form class="form-inline position-relative">
-                            <input type="search" name="search_term" onkeyup="getFriendsBySearchTerm(this.value)" class="form-control" id="people" placeholder="Search friends" autocomplete="off">
+                            <input type="search" name="search_term" onfocus="focusSearch()" onkeyup="getFriendsBySearchTerm(this.value)" class="form-control" id="people" placeholder="Search friends" autocomplete="off">
                             <button type="button" class="btn loop"><i class="ti-search"></i></button>
                         </form>
                         <button class="btn create" data-toggle="modal" data-target="#exampleModalCenter">

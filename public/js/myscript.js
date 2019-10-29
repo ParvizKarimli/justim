@@ -35,6 +35,17 @@ $('.infinite-scroll-container').infiniteScroll({
     elementScroll: '.infinite-scroll-container',
 });
 
+// When friends search input element gets focused
+function focusSearch() {
+    var filterMembersBtns = document.querySelectorAll('.filterMembersBtn');
+    for(var i=0; i<filterMembersBtns.length; i++) {
+        filterMembersBtns[i].classList.remove('active');
+        filterMembersBtns[i].classList.remove('show');
+    }
+    filterMembersBtns[0].classList.add('active');
+    filterMembersBtns[0].classList.add('show');
+}
+
 // Get friends by search term using AJAX
 function getFriendsBySearchTerm(search_term) {
     if(window.XMLHttpRequest) {
