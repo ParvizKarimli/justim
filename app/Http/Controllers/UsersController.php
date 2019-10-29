@@ -157,7 +157,8 @@ class UsersController extends Controller
     public function search_friends(Request $request)
     {
         $search_term = $request->input('search_term');
-        $friends = User::join('friendships', function ($join) {
+        $friends = \DB::table('friendships')
+            ->join('users', function ($join) {
                 $join->on('users.id', '=', 'friendships.sender_id')
                     ->orOn('users.id', '=', 'friendships.recipient_id');
             })
