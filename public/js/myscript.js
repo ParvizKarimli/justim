@@ -37,8 +37,6 @@ $('.infinite-scroll-container').infiniteScroll({
 
 // Get friends by search term using AJAX
 function getFriendsBySearchTerm(search_term) {
-    var search_term = document.getElementById('people').value;
-
     if(window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         var xmlhttp = new XMLHttpRequest();
