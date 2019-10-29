@@ -35,19 +35,20 @@ $('.infinite-scroll-container').infiniteScroll({
     elementScroll: '.infinite-scroll-container',
 });
 
-// When friends search input element gets focused
-function focusSearch() {
-    var filterMembersBtns = document.querySelectorAll('.filterMembersBtn');
-    for(var i=0; i<filterMembersBtns.length; i++) {
-        filterMembersBtns[i].classList.remove('active');
-        filterMembersBtns[i].classList.remove('show');
-    }
-    filterMembersBtns[0].classList.add('active');
-    filterMembersBtns[0].classList.add('show');
-}
-
 // Get friends by search term using AJAX
 function getFriendsBySearchTerm(search_term) {
+    var membersFilterAll = document.querySelector('button[data-filter="all"]');
+    var membersFilterOnline = document.querySelector('button[data-filter="online"]');
+    var membersFilterOffline = document.querySelector('button[data-filter="offline"]');
+
+    if(membersFilterAll.classList.contains('active')) {
+        var membersFilter = 'all';
+    } else if(membersFilterOnline.classList.contains('active')) {
+        var membersFilter = 'online';
+    } else if(membersFilterOffline.classList.contains('active')) {
+        var membersFilter = 'offline';
+    }
+
     if(window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         var xmlhttp = new XMLHttpRequest();
@@ -60,7 +61,7 @@ function getFriendsBySearchTerm(search_term) {
     // Send the proper header information along with the request
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.setRequestHeader('X-CSRF-TOKEN', document.querySelector('meta[name="csrf-token"]').content);
-    xmlhttp.send('search_term=' + search_term);
+    xmlhttp.send('search_term=' + search_term + '&members_filter=' + membersFilter);
 
     xmlhttp.onreadystatechange = function()
     {
