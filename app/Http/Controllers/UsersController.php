@@ -166,6 +166,7 @@ class UsersController extends Controller
                 $query->where('friendships.sender_id', auth()->id())
                     ->orWhere('friendships.recipient_id', auth()->id());
             })
+            ->where('friendships.status', 1)
             ->where('users.name', 'like', '%' . $search_term . '%')
             ->where('users.id', '!=', auth()->id())
             ->paginate(10);

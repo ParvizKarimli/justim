@@ -15,15 +15,6 @@ class PagesController extends Controller
     {
         $friends = auth()->user()->getFriends($perPage = 10);
         $friend_requests = auth()->user()->getFriendRequests();
-        //dd(count($friend_requests));
-        /*if(count($friend_requests) === 0)
-        {
-            dd('no friend requests');
-        }
-        else
-        {
-            dd($friend_requests[0]->name);
-        }*/
 
         return view
         (
