@@ -127,7 +127,7 @@ class UsersController extends Controller
 
         if(empty($user))
         {
-            return redirect('/users')->with('error', 'User Not Found');
+            return back()->with('error', 'User Not Found');
         }
 
         $this->validate($request, [
@@ -202,5 +202,46 @@ class UsersController extends Controller
     public function make_user_online()
     {
         // This function does not do anything
+    }
+
+    // Send friend request
+    public function send_friend_request(Request $request)
+    {
+        $username = $request->input('username');
+        if($username === auth()->user()->username)
+        {
+            return back()->with('send_friend_request_error', 'You cannot send a friend request to yourself');
+        }
+
+        $user = User::where('username', '=', $username)->first();
+        if(empty($user))
+        {
+            return back()->with('send_friend_request_error', 'User not found');
+        }
+        elseif(auth()->user()->isFriendWith($user))
+        {
+            return back()->with('send_friend_request_error', 'You are already friends');
+        }
+        elseif(auth()->user()->hasSentFriendRequestTo($user))
+        {
+            return back()->with('send_friend_request_error', 'You have already sent a friend request to this user');
+        }
+        elseif(auth()->user()->hasFriendRequestFrom($user))
+        {
+            return back()->with('send_friend_request_error', 'You already have a friend request from this user');
+        }
+        elseif(auth()->user()->hasBlocked($user))
+        {
+            return back()->with('send_friend_request_error', 'You have blocked this user');
+        }
+        elseif(auth()->user()->isBlockedBy($user))
+        {
+            return back()->with('send_friend_request_error', 'You have been blocked by this user');
+        }
+        else
+        {
+            auth()->user()->befriend($user);
+            return back()->with('success', 'Friend request sent successfully');
+        }
     }
 }

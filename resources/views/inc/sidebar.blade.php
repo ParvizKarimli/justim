@@ -26,7 +26,7 @@
                     <div class="contacts">
                         <h1>
                             Friends
-                            <button class="btn" data-toggle="modal" data-target="#exampleModalCenter" title="Add New Friend">
+                            <button class="btn" data-toggle="modal" data-target="#sendFriendRequestModal" title="Add New Friend">
                                 <i class="ti-user">+</i>
                             </button>
                         </h1>

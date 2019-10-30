@@ -25,6 +25,16 @@ $(document).ready(function() {
     }
 });
 
+<!-- Show sendFriendRequestModal if there's any error upon validation -->
+$(document).ready(function() {
+    if($('#sendFriendRequestModal').attr('data-has-error') == 'yes') {
+        $('#sendFriendRequestModal').modal('show');
+    }
+    else {
+        $('#sendFriendRequestModal').modal('hide');
+    }
+});
+
 <!-- Infinite Scroll initialization -->
 $('.infinite-scroll-container').infiniteScroll({
     // options
