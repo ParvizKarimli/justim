@@ -22,6 +22,7 @@
                         <button class="btn filterMembersBtn active show" data-toggle="list" data-filter="all">All</button>
                         <button class="btn filterMembersBtn" data-toggle="list" data-filter="online">Online</button>
                         <button class="btn filterMembersBtn" data-toggle="list" data-filter="offline">Offline</button>
+                        <button class="btn" data-toggle="modal" data-target="#friendRequestsModal">Friend Requests</button>
                     </div>
                     <div class="contacts">
                         <h1>
