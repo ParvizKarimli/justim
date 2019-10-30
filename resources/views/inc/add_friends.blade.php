@@ -2,23 +2,14 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="requests">
             <div class="title">
-                <h1>Add your friends</h1>
+                <h1>Add a friend</h1>
                 <button type="button" class="btn" data-dismiss="modal" aria-label="Close"><i class="ti-close"></i></button>
             </div>
             <div class="content">
-                <form>
+                <form method="post" action="/users/send_friend_request">
                     <div class="form-group">
                         <label for="user">Username:</label>
-                        <input type="text" class="form-control" id="user" placeholder="Add recipient..." required>
-                        <div class="user" id="contact">
-                            <img class="avatar-sm" src="dist/img/avatars/avatar-female-5.jpg" alt="avatar">
-                            <h5>Karen joye</h5>
-                            <button type="reset" class="btn"><i class="ti-close"></i></button>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="welcome">Message:</label>
-                        <textarea class="text-control" id="welcome" placeholder="Send your welcome message...">Hi Karen joye, I'd like to add you as a contact.</textarea>
+                        <input type="text" class="form-control" name="username" id="user" placeholder="@" required>
                     </div>
                     <button type="submit" class="btn button w-100">Send Friend Request</button>
                 </form>

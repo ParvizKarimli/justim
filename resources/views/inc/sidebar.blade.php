@@ -17,8 +17,6 @@
                             <input type="search" name="search_term" onkeyup="getFriendsBySearchTerm(this.value)" class="form-control" id="people" placeholder="Search friends" autocomplete="off">
                             <button type="button" class="btn loop"><i class="ti-search"></i></button>
                         </form>
-                        <button class="btn create" data-toggle="modal" data-target="#exampleModalCenter">
-                            <i class="ti-user">+</i></button>
                     </div>
                     <div class="list-group sort">
                         <button class="btn filterMembersBtn active show" data-toggle="list" data-filter="all">All</button>
@@ -26,17 +24,12 @@
                         <button class="btn filterMembersBtn" data-toggle="list" data-filter="offline">Offline</button>
                     </div>
                     <div class="contacts">
-                        <h1>Contacts</h1>
-                        <div class="btn-group add-group" role="group">
-                            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Add +
+                        <h1>
+                            Friends
+                            <button class="btn" data-toggle="modal" data-target="#exampleModalCenter" title="Add New Friend">
+                                <i class="ti-user">+</i>
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                <a class="dropdown-item" href="#">New user</a>
-                                <a class="dropdown-item" href="#">New Group +</a>
-                                <a class="dropdown-item" href="#">Private Chat +</a>
-                            </div>
-                        </div>
+                        </h1>
                         <div class="list-group infinite-scroll-container" id="contacts" role="tablist">
                             @foreach($friends as $friend)
                                 <a href="#" class="filterMembers all {{ $friend->isOnline() ? 'online' : 'offline' }} contact infinite-scroll-item" data-toggle="list">
