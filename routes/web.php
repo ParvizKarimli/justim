@@ -24,3 +24,4 @@ Route::post('/nightmode', 'UsersController@nightmode')->name('nightmode');
 Route::post('/users/search_friends', 'UsersController@search_friends');
 Route::post('/users/make_user_online', 'UsersController@make_user_online');
 Route::post('/users/send_friend_request', 'UsersController@send_friend_request');
+Route::post('/users/friend_request_action', 'UsersController@friend_request_action');

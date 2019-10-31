@@ -17,12 +17,21 @@
                     <p>You have no friend requests.</p>
                 @else
                     @foreach($friend_requests as $friend_request)
-                        <div>
+                        <div class="card" style="background-color: lavender;">
+                            <p>
+                                @if($friend_request->thumbnail == NULL)
+                                    <img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="{{ $friend_request->name }}" alt="avatar">
+                                @else
+                                    <img class="avatar-md" src="/storage/images/avatars/thumbnails/{{ $friend_request->thumbnail }}" data-toggle="tooltip" data-placement="top" title="{{ $friend_request->name }}" alt="avatar">
+                                @endif
+                            </p>
                             <p>{{ $friend_request->name }}</p>
                             <p>&#64;{{ $friend_request->username }}</p>
-                            <a class="btn btn-success col-sm-4 friend-request-action-btn">Confirm</a>
-                            <a class="btn btn-danger col-sm-4 friend-request-action-btn">Deny</a>
-                        </div>
+                            <div id="friend-request-action-container-{{ $friend_request->id }}">
+                                <a class="btn btn-success col-sm-4 friend-request-action-btn" data-friend-id="{{ $friend_request->id }}" data-action="accept">Accept</a>
+                                <a class="btn btn-danger col-sm-4 friend-request-action-btn" data-friend-id="{{ $friend_request->id }}" data-action="deny">Deny</a>
+                            </div>
+                        </div><br>
                     @endforeach
                 @endif
             </div>
