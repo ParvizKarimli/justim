@@ -22,7 +22,7 @@
                                         </svg>
                                     </span>
                             @endif
-                            Friend Requests ({{ count($friend_requests) }})
+                            Friend Requests ({{ $friend_requests_count }})
                         </button>
                     </div>
                     <div class="search">
