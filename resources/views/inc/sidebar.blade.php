@@ -31,11 +31,6 @@
                             <button type="button" class="btn loop"><i class="ti-search"></i></button>
                         </form>
                     </div>
-                    <div class="list-group sort">
-                        <button class="btn filterMembersBtn active show" data-toggle="list" data-filter="all">All</button>
-                        <button class="btn filterMembersBtn" data-toggle="list" data-filter="online">Online</button>
-                        <button class="btn filterMembersBtn" data-toggle="list" data-filter="offline">Offline</button>
-                    </div>
                     <div class="contacts">
                         <h1>
                             Friends ({{ auth()->user()->getFriendsCount() }})
