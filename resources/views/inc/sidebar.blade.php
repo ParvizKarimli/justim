@@ -12,6 +12,19 @@
                         @endif
                     </figure>
                     <span class="logo"><img alt="" src="/storage/images/logo.png"></span>
+                    <br><br>
+                    <div class="card">
+                        <button class="btn btn-link" data-toggle="modal" data-target="#friendRequestsModal">
+                            @if(count($friend_requests) > 0)
+                            <span title="You have a new friend request">
+                                        <svg height="10" width="10">
+                                            <circle cx="5" cy="5" r="4" stroke="red" stroke-width="0" fill="red" />
+                                        </svg>
+                                    </span>
+                            @endif
+                            Friend Requests ({{ count($friend_requests) }})
+                        </button>
+                    </div>
                     <div class="search">
                         <form class="form-inline position-relative">
                             <input type="search" name="search_term" onkeyup="getFriendsBySearchTerm(this.value)" class="form-control" id="people" placeholder="Search friends" autocomplete="off">
@@ -22,16 +35,6 @@
                         <button class="btn filterMembersBtn active show" data-toggle="list" data-filter="all">All</button>
                         <button class="btn filterMembersBtn" data-toggle="list" data-filter="online">Online</button>
                         <button class="btn filterMembersBtn" data-toggle="list" data-filter="offline">Offline</button>
-                        <button class="btn" data-toggle="modal" data-target="#friendRequestsModal">
-                            @if(count($friend_requests) > 0)
-                                <span title="You have a new friend request">
-                                    <svg height="10" width="10">
-                                        <circle cx="5" cy="5" r="4" stroke="red" stroke-width="0" fill="red" />
-                                    </svg>
-                                </span>
-                            @endif
-                            Friend Requests ({{ count($friend_requests) }})
-                        </button>
                     </div>
                     <div class="contacts">
                         <h1>
