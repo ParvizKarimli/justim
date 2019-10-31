@@ -7,7 +7,9 @@
                     Settings
                 </a>
                 <a href="#members" data-toggle="tab" title="All Friends">
-                    <i class="ti-comments-smiley"></i>
+                    <i class="ti-user" style="display: inline; font-size: 1em"></i>
+                    <i class="ti-user" style="display: inline; font-size: 2em"></i>
+                    <i class="ti-user" style="display: inline; font-size: 1em"></i>
                     Friends
                     @if(count($friend_requests) > 0)
                         <span title="You have a new friend request">
