@@ -43,6 +43,7 @@ $('.infinite-scroll-container').infiniteScroll({
     history: false,
     hideNav: '.pagination',
     elementScroll: '.infinite-scroll-container',
+    status: '.page-load-status',
 });
 
 // Get friends by search term using AJAX

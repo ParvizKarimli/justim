@@ -59,8 +59,16 @@
                                         </div>
                                     </a>
                                 @endforeach
+                                <div class="page-load-status text-center">
+                                    @if(auth()->user()->getFriendsCount() > 10)
+                                        <p class="infinite-scroll-request">
+                                            Loading...<br>
+                                            <!--<img src="/storage/images/default/loader.svg">-->
+                                        </p>
+                                    @endif
+                                </div>
+                                {{ $friends->links() }}
                             @endif
-                            {{ $friends->links() }}
                         </div>
                     </div>
                 </div>

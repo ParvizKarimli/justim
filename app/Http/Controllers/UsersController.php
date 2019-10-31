@@ -171,31 +171,38 @@ class UsersController extends Controller
             ->where('users.id', '!=', auth()->id())
             ->paginate(10);
 
-        foreach($friends as $friend)
+        if(count($friends) > 0)
         {
-            $user = User::find($friend->id);
-            echo '<a href="#" class="filterMembers all ';
-            echo $user->isOnline() ? 'online' : 'offline';
-            echo ' contact infinite-scroll-item" data-toggle="list">';
-            if($friend->thumbnail == NULL)
+            foreach($friends as $friend)
             {
-                echo '<img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="' . $friend->name . '" alt="avatar">';
+                $user = User::find($friend->id);
+                echo '<a href="#" class="filterMembers all ';
+                echo $user->isOnline() ? 'online' : 'offline';
+                echo ' contact infinite-scroll-item" data-toggle="list">';
+                if($friend->thumbnail == NULL)
+                {
+                    echo '<img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="' . $friend->name . '" alt="avatar">';
+                }
+                else
+                {
+                    echo '<img class="avatar-md" src="/storage/images/avatars/thumbnails/' . $friend->thumbnail . '" data-toggle="tooltip" data-placement="top" title="' . $friend->name . '" alt="avatar">';
+                }
+                echo '<div class="status ';
+                echo $user->isOnline() ? 'online' : 'offline';
+                echo '"></div>
+                    <div class="data">
+                        <h5>' . $friend->name . '</h5>
+                        <p>&#64;' . $friend->username . '</p>
+                    </div>
+                    <div class="person-add">
+                        <i class="ti-user"></i>
+                    </div>
+                </a>';
             }
-            else
-            {
-                echo '<img class="avatar-md" src="/storage/images/avatars/thumbnails/' . $friend->thumbnail . '" data-toggle="tooltip" data-placement="top" title="' . $friend->name . '" alt="avatar">';
-            }
-            echo '<div class="status ';
-            echo $user->isOnline() ? 'online' : 'offline';
-            echo '"></div>
-                <div class="data">
-                    <h5>' . $friend->name . '</h5>
-                    <p>&#64;' . $friend->username . '</p>
-                </div>
-                <div class="person-add">
-                    <i class="ti-user"></i>
-                </div>
-            </a>';
+        }
+        else
+        {
+            echo '<p>No friend found.</p>';
         }
     }
 
