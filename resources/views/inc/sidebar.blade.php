@@ -22,7 +22,16 @@
                         <button class="btn filterMembersBtn active show" data-toggle="list" data-filter="all">All</button>
                         <button class="btn filterMembersBtn" data-toggle="list" data-filter="online">Online</button>
                         <button class="btn filterMembersBtn" data-toggle="list" data-filter="offline">Offline</button>
-                        <button class="btn" data-toggle="modal" data-target="#friendRequestsModal">Friend Requests</button>
+                        <button class="btn" data-toggle="modal" data-target="#friendRequestsModal">
+                            @if(count($friend_requests) > 0)
+                                <span title="You have a new friend request">
+                                    <svg height="10" width="10">
+                                        <circle cx="5" cy="5" r="4" stroke="red" stroke-width="0" fill="red" />
+                                    </svg>
+                                </span>
+                            @endif
+                            Friend Requests ({{ count($friend_requests) }})
+                        </button>
                     </div>
                     <div class="contacts">
                         <h1>

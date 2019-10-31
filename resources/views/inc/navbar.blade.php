@@ -9,6 +9,13 @@
                 <a href="#members" data-toggle="tab" title="All Friends">
                     <i class="ti-comments-smiley"></i>
                     Friends
+                    @if(count($friend_requests) > 0)
+                        <span title="You have a new friend request">
+                            <svg height="10" width="10">
+                                <circle cx="5" cy="5" r="4" stroke="red" stroke-width="0" fill="red" />
+                            </svg>
+                        </span>
+                    @endif
                 </a>
                 <a href="#discussions" data-toggle="tab" class="{{ count($errors)==0 ? 'active' : '' }}" title="Recent Chats">
                     <i class="ti-comments"></i>
