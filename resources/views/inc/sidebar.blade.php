@@ -39,23 +39,27 @@
                             </button>
                         </h1>
                         <div class="list-group infinite-scroll-container" id="contacts" role="tablist">
-                            @foreach($friends as $friend)
-                                <a href="#" class="filterMembers all {{ $friend->isOnline() ? 'online' : 'offline' }} contact infinite-scroll-item" data-toggle="list">
-                                    @if($friend->thumbnail == NULL)
-                                        <img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="{{ $friend->name }}" alt="avatar">
-                                    @else
-                                        <img class="avatar-md" src="/storage/images/avatars/thumbnails/{{ $friend->thumbnail }}" data-toggle="tooltip" data-placement="top" title="{{ $friend->name }}" alt="avatar">
-                                    @endif
-                                    <div class="status {{ $friend->isOnline() ? 'online' : 'offline' }}"></div>
-                                    <div class="data">
-                                        <h5>{{ $friend->name }}</h5>
-                                        <p>&#64;{{ $friend->username }}</p>
-                                    </div>
-                                    <div class="person-add">
-                                        <i class="ti-user"></i>
-                                    </div>
-                                </a>
-                            @endforeach
+                            @if(auth()->user()->getFriendsCount() === 0)
+                                <p>There is no friend in your contacts.</p>
+                            @else
+                                @foreach($friends as $friend)
+                                    <a href="#" class="filterMembers all {{ $friend->isOnline() ? 'online' : 'offline' }} contact infinite-scroll-item" data-toggle="list">
+                                        @if($friend->thumbnail == NULL)
+                                            <img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="{{ $friend->name }}" alt="avatar">
+                                        @else
+                                            <img class="avatar-md" src="/storage/images/avatars/thumbnails/{{ $friend->thumbnail }}" data-toggle="tooltip" data-placement="top" title="{{ $friend->name }}" alt="avatar">
+                                        @endif
+                                        <div class="status {{ $friend->isOnline() ? 'online' : 'offline' }}"></div>
+                                        <div class="data">
+                                            <h5>{{ $friend->name }}</h5>
+                                            <p>&#64;{{ $friend->username }}</p>
+                                        </div>
+                                        <div class="person-add">
+                                            <i class="ti-user"></i>
+                                        </div>
+                                    </a>
+                                @endforeach
+                            @endif
                             {{ $friends->links() }}
                         </div>
                     </div>
