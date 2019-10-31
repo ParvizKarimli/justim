@@ -38,7 +38,7 @@
                     </div>
                     <div class="contacts">
                         <h1>
-                            Friends
+                            Friends ({{ auth()->user()->getFriendsCount() }})
                             <button class="btn" data-toggle="modal" data-target="#sendFriendRequestModal" title="Add New Friend">
                                 <i class="ti-user">+</i>
                             </button>
