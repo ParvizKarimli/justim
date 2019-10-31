@@ -12,12 +12,12 @@
                 <h1 class="modal-title">Friend Requests</h1>
                 <button type="button" class="btn" data-dismiss="modal" aria-label="Close"><i class="ti-close"></i></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body infinite-scroll-container">
                 @if(count($friend_requests) === 0)
                     <p>You have no friend request.</p>
                 @else
                     @foreach($friend_requests as $friend_request)
-                        <div class="card" style="background-color: lavender;">
+                        <div class="card infinite-scroll-item" style="background-color: lavender;">
                             <p>
                                 @if($friend_request->thumbnail == NULL)
                                     <img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="{{ $friend_request->name }}" alt="avatar">
@@ -33,6 +33,7 @@
                             </div>
                         </div><br>
                     @endforeach
+                    {{ $friend_requests->links() }}
                 @endif
             </div>
         </div>
