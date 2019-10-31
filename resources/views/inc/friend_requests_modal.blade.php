@@ -14,7 +14,7 @@
             </div>
             <div class="modal-body">
                 @if(count($friend_requests) === 0)
-                    <p>You have no friend requests.</p>
+                    <p>You have no friend request.</p>
                 @else
                     @foreach($friend_requests as $friend_request)
                         <div class="card" style="background-color: lavender;">
