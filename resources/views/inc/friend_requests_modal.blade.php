@@ -28,7 +28,7 @@
                                 @endif
                             </p>
                             <p>{{ $friend_request->name }}</p>
-                            <p>&#64;{{ $friend_request->username }}</p>
+                            <p class="username">&#64;{{ $friend_request->username }}</p>
                             <div id="friend-request-action-container-{{ $friend_request->id }}">
                                 <a class="btn btn-success col-sm-4 friend-request-action-btn" onclick="friendRequestAction(this)" data-friend-id="{{ $friend_request->id }}" data-action="accept">Accept</a>
                                 <a class="btn btn-danger col-sm-4 friend-request-action-btn" onclick="friendRequestAction(this)" data-friend-id="{{ $friend_request->id }}" data-action="deny">Deny</a>
