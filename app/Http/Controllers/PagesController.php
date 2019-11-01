@@ -18,6 +18,7 @@ class PagesController extends Controller
             ->join('users', 'users.id', '=', 'friendships.sender_id')
             ->where('friendships.recipient_id', auth()->id())
             ->where('friendships.status', 0)
+            ->orderBy('friendships.id', 'desc')
             ->paginate(10);
         $friend_requests_count = count(auth()->user()->getFriendRequests());
 

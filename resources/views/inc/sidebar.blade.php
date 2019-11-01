@@ -38,12 +38,12 @@
                                 <i class="ti-user">+</i>
                             </button>
                         </h1>
-                        <div class="list-group infinite-scroll-container" id="contacts" role="tablist">
+                        <div class="list-group" id="contacts" role="tablist">
                             @if(auth()->user()->getFriendsCount() === 0)
                                 <p>There is no friend in your contacts.</p>
                             @else
                                 @foreach($friends as $friend)
-                                    <a href="#" class="filterMembers all {{ $friend->isOnline() ? 'online' : 'offline' }} contact infinite-scroll-item" data-toggle="list">
+                                    <a href="#" class="filterMembers all {{ $friend->isOnline() ? 'online' : 'offline' }} contact" data-toggle="list">
                                         @if($friend->thumbnail == NULL)
                                             <img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="{{ $friend->name }}" alt="avatar">
                                         @else
@@ -59,7 +59,7 @@
                                         </div>
                                     </a>
                                 @endforeach
-                                <div class="page-load-status text-center">
+                                <div class="page-load-status-contacts text-center">
                                     @if(auth()->user()->getFriendsCount() > 10)
                                         <p class="infinite-scroll-request">
                                             Loading...<br>

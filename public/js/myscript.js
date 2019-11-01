@@ -36,14 +36,25 @@ $(document).ready(function() {
 });
 
 <!-- Infinite Scroll initialization -->
-$('.infinite-scroll-container').infiniteScroll({
+// For friends
+$('#contacts').infiniteScroll({
     // options
     path: '.pagination li.active + li a',
-    append: '.infinite-scroll-item',
+    append: '.contact',
     history: false,
     hideNav: '.pagination',
-    elementScroll: '.infinite-scroll-container',
-    status: '.page-load-status',
+    elementScroll: '#contacts',
+    status: '.page-load-status-contacts',
+});
+// For friend requests
+$('#friend-requests').infiniteScroll({
+    // options
+    path: '.pagination li.active + li a',
+    append: '.friend-request',
+    history: false,
+    hideNav: '.pagination',
+    elementScroll: '#friend-requests',
+    status: '.page-load-status-friend-requests',
 });
 
 // Get friends by search term using AJAX
