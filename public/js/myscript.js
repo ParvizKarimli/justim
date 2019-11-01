@@ -106,15 +106,11 @@ setInterval(function () {
 }, 60000);
 
 // Take a friend request action: accept or deny a friend request
-var friendRequestActionBtns = document.querySelectorAll('.friend-request-action-btn');
-for(var i=0; i<friendRequestActionBtns.length; i++) {
-    friendRequestActionBtns[i].addEventListener('click', friendRequestAction);
-}
-function friendRequestAction() {
+function friendRequestAction(e) {
     event.preventDefault();
 
-    var dataFriendId = this.getAttribute('data-friend-id');
-    var dataAction = this.getAttribute('data-action');
+    var dataFriendId = e.getAttribute('data-friend-id');
+    var dataAction = e.getAttribute('data-action');
 
     if(window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
