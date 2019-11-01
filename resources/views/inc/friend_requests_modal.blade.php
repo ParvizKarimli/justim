@@ -36,7 +36,7 @@
                         </div>
                     @endforeach
                     <div class="page-load-status-friend-requests text-center">
-                        @if(auth()->user()->getFriendsCount() > 10)
+                        @if($friend_requests_count > 10)
                             <p class="infinite-scroll-request">
                                 Loading...<br>
                                 <!--<img src="/storage/images/default/loader.svg">-->
