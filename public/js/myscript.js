@@ -78,8 +78,7 @@ function getFriendsBySearchTerm(search_term) {
     xmlhttp.setRequestHeader('X-CSRF-TOKEN', document.querySelector('meta[name="csrf-token"]').content);
     xmlhttp.send('search_term=' + search_term);
 
-    xmlhttp.onreadystatechange = function()
-    {
+    xmlhttp.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200)
         {
             document.getElementById('contacts').innerHTML = this.responseText;
@@ -106,11 +105,11 @@ setInterval(function () {
     xmlhttp.send();
 }, 60000);
 
+// Take a friend request action: accept or deny a friend request
 var friendRequestActionBtns = document.querySelectorAll('.friend-request-action-btn');
 for(var i=0; i<friendRequestActionBtns.length; i++) {
     friendRequestActionBtns[i].addEventListener('click', friendRequestAction);
 }
-
 function friendRequestAction() {
     event.preventDefault();
 
@@ -131,8 +130,7 @@ function friendRequestAction() {
     xmlhttp.setRequestHeader('X-CSRF-TOKEN', document.querySelector('meta[name="csrf-token"]').content);
     xmlhttp.send('data_action=' + dataAction + '&data_friend_id=' + dataFriendId);
 
-    xmlhttp.onreadystatechange = function()
-    {
+    xmlhttp.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200)
         {
             document.getElementById('friend-request-action-container-' + dataFriendId).innerHTML = this.responseText;

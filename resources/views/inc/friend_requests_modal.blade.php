@@ -19,7 +19,7 @@
                     <p>You have no friend request.</p>
                 @else
                     @foreach($friend_requests as $friend_request)
-                        <div class="card friend-request" style="background-color: lavender;">
+                        <div class="card friend-request">
                             <p>
                                 @if($friend_request->thumbnail == NULL)
                                     <img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="{{ $friend_request->name }}" alt="avatar">
@@ -33,7 +33,7 @@
                                 <a class="btn btn-success col-sm-4 friend-request-action-btn" data-friend-id="{{ $friend_request->id }}" data-action="accept">Accept</a>
                                 <a class="btn btn-danger col-sm-4 friend-request-action-btn" data-friend-id="{{ $friend_request->id }}" data-action="deny">Deny</a>
                             </div>
-                        </div><br>
+                        </div>
                     @endforeach
                     <div class="page-load-status-friend-requests text-center">
                         @if(auth()->user()->getFriendsCount() > 10)

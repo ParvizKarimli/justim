@@ -31,3 +31,8 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+.friend-request {
+    margin-bottom: 10px;
+    background-color: lavender;
+}
