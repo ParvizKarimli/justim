@@ -1,3 +1,11 @@
 .help-block {
     color: red;
 }
+
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    height: 77vh;
+    overflow-y: auto;
+}

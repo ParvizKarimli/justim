@@ -6,11 +6,13 @@
     aria-hidden="true"
     data-has-error="{{ session('friend_requests_error') ? 'yes' : 'no' }}"
 >
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title">Friend Requests</h1>
-                <button type="button" class="btn" data-dismiss="modal" aria-label="Close"><i class="ti-close"></i></button>
+                <button type="button" class="btn" data-dismiss="modal" aria-label="Close">
+                    <i class="ti-close"></i>
+                </button>
             </div>
             <div class="modal-body infinite-scroll-container">
                 @if(count($friend_requests) === 0)
