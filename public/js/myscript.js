@@ -56,6 +56,11 @@ $('#friend-requests').infiniteScroll({
     elementScroll: '#friend-requests',
     status: '.page-load-status-friend-requests',
 });
+// .pagination does not get hidden for friend requests
+// So let's hide it manually
+$(document).ready(function(){
+    $('.pagination').hide();
+});
 
 // Get friends by search term using AJAX
 function getFriendsBySearchTerm(search_term) {
