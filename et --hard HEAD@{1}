@@ -1,0 +1,169 @@
+[33m1d2cb78[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{0}: reset: moving to HEAD
+[33m1d2cb78[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{1}: reset: moving to 1d2cb7862968e7078e5d18dfd03984354f699973
+[33m91962bd[m HEAD@{2}: rebase -i (finish): returning to refs/heads/master
+[33m91962bd[m HEAD@{3}: rebase -i (continue): Added to myscript.js: refreshing page after friendRequestsModal gets hidden if a friend request action has been taken
+[33m856ed9f[m HEAD@{4}: rebase -i (start): checkout HEAD~3
+[33m204ee10[m HEAD@{5}: rebase: updating HEAD
+[33m856ed9f[m HEAD@{6}: rebase: checkout 1d2cb7862968e7078e5d18dfd03984354f699973^
+[33m204ee10[m HEAD@{7}: rebase -i (abort): updating HEAD
+[33m856ed9f[m HEAD@{8}: rebase -i (start): checkout HEAD~2
+[33m204ee10[m HEAD@{9}: rebase -i (abort): updating HEAD
+[33m856ed9f[m HEAD@{10}: rebase -i (start): checkout HEAD~2
+[33m204ee10[m HEAD@{11}: commit: Added to myscript.js: refreshing page after friendRequestsModal gets hidden if a friend request action has been taken
+[33m1d2cb78[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{12}: commit: Added: Refresh page after friendRequestsModal gets hidden if a friend request action has been takenx
+[33m856ed9f[m HEAD@{13}: commit: Added improvement comment to UsersController@search_friends to decrease number of DB requests
+[33m91f6878[m HEAD@{14}: commit: Fixed 'Loading...' stays shown in friend requests modal while there are less friend requests than 10
+[33m26d2112[m HEAD@{15}: commit: Added a better design for friend requests modal elements
+[33m44dd159[m HEAD@{16}: commit: Fixed action buttons not working for friend requests fetched after scrolling in friend requests modal
+[33m5ef6f7f[m HEAD@{17}: commit: Better styling for friend requests modal friend-request class; better code styling for myscript.js
+[33md0ec0ac[m HEAD@{18}: commit: Fixed pagination links do not get hidden in friend requests modal by adding a jQuery function to hide it manually (not by Infinite Scroll, but when document is ready)
+[33mcb9ead0[m HEAD@{19}: commit (amend): Fixed Infinite Scroll issue in friend requests modal (but pagination links are not hidden); added ordering friend requests by friendships.id in descending order (showing last friend request first)
+[33m227b1ad[m HEAD@{20}: commit (amend): Fixed Infinite Scroll issue in friend requests modal (but pagination links are not hidden); added ordering friend requests by friendships.id in descending order (showing last friend request first)
+[33m30e589f[m HEAD@{21}: commit: Fixed Infinite Scroll issue in friend requests modal; added ordering friend requests by friendships.id in descending order (showing last friend request first)
+[33me9283ca[m HEAD@{22}: commit (amend): Improved scrollbar of modal-body in friendRequestsModal (actually, for the whole website but other areas use Perfect Scroll by Talkshak so they're not affected)
+[33m2de89ac[m HEAD@{23}: commit: Improved scrollbar of modal-body in friendRequestsModal (actually, for the whole website but other areas use perfect scroll by talkshak so they're not affected)
+[33m870b13d[m HEAD@{24}: commit: Removed modal-dialog-scrollable bootstrap class from modal-dialog div in friendRequestsModal since it doesn't help (hence added solution via CSS)
+[33m63e5a17[m HEAD@{25}: commit: Added scrolling to friendRequestsModal body
+[33maa7a913[m HEAD@{26}: commit: Added Infinite Scroll status to friends list in sidebar view; added displaying <p>No friend found.</p> if there's no friend matching search term in UsersController@search_friends method
+[33ma59fa18[m HEAD@{27}: commit: Improved Friends icon in navbar view
+[33m5a3f8ae[m HEAD@{28}: commit: Added Infinite Scroll to friend requests modal but it doesn't work yet
+[33m83ce9ba[m HEAD@{29}: rebase -i (finish): returning to refs/heads/master
+[33m83ce9ba[m HEAD@{30}: rebase -i (pick): Changed the way PagesController@index gets friend requests; also, added sending number of friend requests via a variable to sidebar view and in the view it displays number of friends using that variable
+[33m9b5974d[m HEAD@{31}: rebase -i (pick): Changed .help-block color to red
+[33m921580a[m HEAD@{32}: rebase -i (pick): Added <p>There is no friend in your contacts.</p> to sidebar view frends list if there is no friend of user
+[33m90fc463[m HEAD@{33}: rebase -i (pick): Removed all, online, offline (friends) fields (whole container with iterms) from sidebar view because I don't think it's a very necessary field since it didn't even work properly -- it was just sorting friends in a front-end way only, also, it's a good move to give the bottom of the section enough space to display since I added friend requests link to the top
+[33mb4f130c[m HEAD@{34}: rebase -i (pick): Added number of friends next to 'Friends' in sidebar view
+[33mac7d291[m HEAD@{35}: rebase -i (pick): Improved design for Friend Requests link in sidebar view
+[33mf4a0cb7[m HEAD@{36}: rebase -i (pick): Changed 'You have no friend requests.' to 'You have no friend request.'
+[33m36a98e1[m HEAD@{37}: rebase -i (pick): Added a red dot indicator if there's a new friend request to navbar & sidebar views, and added number of friend requests to sidebar view
+[33m51e6ea3[m HEAD@{38}: rebase -i (pick): Added friend request action (accept or deny) functionality
+[33mfa5bde5[m HEAD@{39}: rebase -i (reword): Improved design of friend requests modal
+[33mb0dfac8[m HEAD@{40}: rebase -i: fast-forward
+[33m039bd85[m HEAD@{41}: rebase -i (start): checkout HEAD~10
+[33m223abf1[m HEAD@{42}: commit: Changed the way PagesController@index gets friend requests; also, added sending number of friend requests via a variable to sidebar view and in the view it displays number of friends using that variable
+[33m9039bad[m HEAD@{43}: commit: Changed .help-block color to red
+[33m22a5d94[m HEAD@{44}: commit: Added <p>There is no friend in your contacts.</p> to sidebar view frends list if there is no friend of user
+[33m72b7040[m HEAD@{45}: commit (amend): Removed all, online, offline (friends) fields (whole container with iterms) from sidebar view because I don't think it's a very necessary field since it didn't even work properly -- it was just sorting friends in a front-end way only, also, it's a good move to give the bottom of the section enough space to display since I added friend requests link to the top
+[33madd6382[m HEAD@{46}: commit: Removed all, online, offline (friends) fields (whole container with iterms) from sidebar view because I don't think it's a very necessary field since it didn't even work properly -- it was just sorting friends in a front-end way only, also, it's a good move to give the bottom of the section enough space to display since I added friend requests field to the top
+[33mf818afb[m HEAD@{47}: commit: Added number of friends next to 'Friends' in sidebar view
+[33m4ab3eaf[m HEAD@{48}: commit (amend): Improved design for Friend Requests link in sidebar view
+[33m33d9b41[m HEAD@{49}: commit: Improved design for Friend Requests link
+[33m9fa3af3[m HEAD@{50}: commit (amend): Changed 'You have no friend requests.' to 'You have no friend request.'
+[33m2c7d679[m HEAD@{51}: commit: Changed 'You have no friend requests.' to 'You have no friend request.'
+[33m49dadef[m HEAD@{52}: commit: Added a red dot indicator if there's a new friend request to navbar & sidebar views, and added number of friend requests to sidebar view
+[33mee8a3ff[m HEAD@{53}: commit: Added friend request action (accept or deny) functionality
+[33mb0dfac8[m HEAD@{54}: commit: Improved desing of friend requests modal
+[33m039bd85[m HEAD@{55}: rebase -i (finish): returning to refs/heads/master
+[33m039bd85[m HEAD@{56}: rebase -i (pick): Search friends by search term: get friends with status 1 (accepted) only
+[33me3a54e3[m HEAD@{57}: rebase -i (reword): Added list of friend requests modal with confirming or denying a friend request fields (design is not good enough yet)
+[33mf52c012[m HEAD@{58}: rebase -i: fast-forward
+[33m7325836[m HEAD@{59}: rebase -i (start): checkout HEAD~3
+[33md8e2e9b[m HEAD@{60}: commit: Search friends by search term: get friends with status 1 (accepted) only
+[33mf52c012[m HEAD@{61}: commit: Added confirming or denying a friend request fields (design is not good enough yet)
+[33m7325836[m HEAD@{62}: commit: Added sending a friend request functionality
+[33m2ae6c83[m HEAD@{63}: commit: Added minor design improvement to add_friends view
+[33m8d07447[m HEAD@{64}: commit: Added adding new friend fields to sidebar & add_friends views
+[33m88923fa[m HEAD@{65}: commit: Removed getting friends by search term based on members filter (all, online, offline)
+[33m59dd1bf[m HEAD@{66}: commit: Added getting friends by search term based on members filter (all, online, offline), but it doesn't work properly.
+[33mc291642[m HEAD@{67}: commit: Added focusSearch() JS method to onfocus event of friends search input element (does not work properly yet: does not change CSS style display of friend items)
+[33m5cc7c29[m HEAD@{68}: commit (amend): Fixed undefined isOnline() method property of friend error in the response returned by UsersController@search_friends
+[33m8239d6a[m HEAD@{69}: commit: Fixed undefined isOnline() method property of error in the response returned by UsersController@search_friends
+[33mf042d33[m HEAD@{70}: commit: Fixed online users places messed up issue & scroll issue on getting friends by search term using AJAX when a key other than alphanumeric key is pressed issue in sidebar view
+[33m9f112e6[m HEAD@{71}: commit: Added sending AJAX request functionality to make user online every minute if user is active
+[33mbe03cf9[m HEAD@{72}: commit: Added autocomplete="off" to friend search input element; removed setting search_term variable inside getFriendsBySearchTerm function in myscript.js
+[33me2ca77f[m HEAD@{73}: commit: Improved design for response text that comes from getting friends by search term using AJAX in UsersController@search_friends
+[33ma69df01[m HEAD@{74}: commit: Fixed printing out authenticated user as well while getting friends by search term via AJAX in UsersController@search_friends issue
+[33mcba2bcf[m HEAD@{75}: commit: Fixed getting friends by search term issue in UsersController@search but it still doesn't work properly: it prints out the current logged-in/authenticated user and many times (duplicated rows)
+[33m0ed5a87[m HEAD@{76}: commit: Improved code: removed unnecessary lines in PagesController & User model; added search friends functionality & design (functionality doesn't work properly yet: UsersController@search_friends doesn't get friends by search term)
+[33mc242c91[m HEAD@{77}: commit: Removed online column from users table
+[33m4c2ee2a[m HEAD@{78}: commit: Moved hardcoded JS code from app view to myscript.js
+[33m801da4b[m HEAD@{79}: commit: Fixed scrolling issue: added elementScroll to select parent element to scroll
+[33mae7913b[m HEAD@{80}: commit: Improved readability for infinite scroll functionality
+[33me13b2c2[m HEAD@{81}: commit: Fixed user selection design functionality in sidebar view friends list
+[33m4f993df[m HEAD@{82}: commit: Added Infinite Scroll (scrolling does not work properly yet because of the scrolled area because there is a parent scroll)
+[33m8a0a6ee[m HEAD@{83}: commit (amend): Replaced $online_friends_ids with isOnline()
+[33mc3ebc08[m HEAD@{84}: commit: Replaced with isOnline()
+[33mc3a9722[m HEAD@{85}: commit: Replaced active_users_ids with online_friends_ids
+[33mdce038d[m HEAD@{86}: commit: Fixed 'delete account modal doesn't close after validation fails' issue
+[33mdb1d602[m HEAD@{87}: commit: Replaced 'active_user_ids' with 'active_users_ids' in PagesController@index method & inc/sidebar view
+[33m413e182[m HEAD@{88}: commit: Send friends from PagesController@index to inc/sidebar view instead of getting them in the view; removed data that was previously sent from PagesController@index to inc/sidebar view
+[33mbd0c9ad[m HEAD@{89}: commit: Fixed showing online users in inc/sidebar view: show the active users within the last 1 minute
+[33m7f7d128[m HEAD@{90}: commit (amend): Replaced user activity via Cache with thomastkim/laravel-online-users
+[33m30cbf29[m HEAD@{91}: commit: Replaced activity via Cache with thomastkim/laravel-online-users
+[33m4051049[m HEAD@{92}: commit: Added checking user activity via Cache
+[33m5ecb3a8[m HEAD@{93}: commit: Added online status to friends (contacts) list items in inc/sidebar view
+[33m36bc6f6[m HEAD@{94}: commit: Added online column to users table
+[33m67e2560[m HEAD@{95}: commit: Replaced raw template code with mine: now all friends come from DB
+[33m2daa433[m HEAD@{96}: commit: Added getting friends list to inc/sidebar view
+[33ma4842ee[m HEAD@{97}: commit: Added hootlex/laravel-friendships package
+[33m278362e[m HEAD@{98}: commit: Added minlength=8 to auth/register and inc/sidebar views password & password_confirmation input fields
+[33mcc0d15d[m HEAD@{99}: commit: Replaced 'auth()->user()->avatar == NULL' with 'auth()->user()->thumbnail == NULL' in inc/sidebar view
+[33m27ee68f[m HEAD@{100}: commit: Replaced thumbnail with avatars for other areas as well (non-configured parts of inc/sidebar view); replaced 'thumb' with 'thumbnail' in UsersController@update method user thumbnail file name setting
+[33m33dfe34[m HEAD@{101}: commit: Replaced /storage/images/avatars/ user avatar with /storage/images/avatars/thumbnails/ user thumbnail (including default)
+[33m5f53eec[m HEAD@{102}: commit: Added Intervention Image library; added thumbnail functionality to UsersController@update & destroy methods
+[33m8ca6f77[m HEAD@{103}: commit: Added thumbnail column to users table
+[33m2f87339[m HEAD@{104}: commit: Fixed updating another user's account information vulnerability; fixed error via session color in inc/messages view: changed from success (green) to danger (red)
+[33mc023501[m HEAD@{105}: commit: Fixed deleting another user's account vulnerability
+[33m6ba4668[m HEAD@{106}: commit (amend): Fixed account delete design & functionality issues
+[33m93905ed[m HEAD@{107}: commit: Fixed account delete issue
+[33mcd2bebb[m HEAD@{108}: commit: Added default(0) to users table nightmode column (migration: add_night_mode_to_users)
+[33mdee1493[m HEAD@{109}: commit: Added delete account modal (form submitting functionality doesn't work properly yet)
+[33mf29ea21[m HEAD@{110}: commit: Improved design for user switching on/off dark mode; made getting user in UsersController@nightmode simpler
+[33m118a996[m HEAD@{111}: commit: Removed session night mode switch (there'll be only user night mode)
+[33mc4cfb46[m HEAD@{112}: commit: Fixed night mode on/off for users design issue: keeping the state of the toggle switch
+[33m93e73ed[m HEAD@{113}: commit: Fixed night mode on/off functionality for users (except design issue: keeping the state of the toggle switch)
+[33m9f51d40[m HEAD@{114}: commit: Fixed night mode on/off functionality (for the current session only)
+[33m07705ef[m HEAD@{115}: commit (amend): Improved user update validation errors design: when an error appears the form menu is opened and shown so the user can see that the updating process failed and they can read the related error messages
+[33mf2c6dee[m HEAD@{116}: commit: Improved user update validation errors design: when an error appears the form menu is opened and shown so the user can see that the updating process failed and they can read the related error message(s)
+[33ma2d334f[m HEAD@{117}: commit: Changed button elements to span elements inside form-groups in auth login & register views forms
+[33m191bfe1[m HEAD@{118}: commit: Added regex validation rule to username, and improved other validation rules in RegisterController@validator & UsersController@update methods
+[33m0db0de2[m HEAD@{119}: commit: Improved design of success & error messages in views
+[33mc68f09f[m HEAD@{120}: commit (amend): Moved favicon, logos, and integrations image files from dist/img to storage/images, and updated code in layouts/app, inc/sidebar, auth/login, and auth/register views accordingly
+[33m72cd821[m HEAD@{121}: commit: Moved favicon, logos, and integrations images from dist/img to storage/images, and changed code in views accordingly
+[33ma2c2be7[m HEAD@{122}: commit: Replaced ti-wand with ti-light-bulb for Appearance menu icon in Settings > My Account
+[33mb7fa835[m HEAD@{123}: commit: Replaced 'Talkshak' with 'JustIM' for Appearance menu text in Settings > My Account
+[33meb953b8[m HEAD@{124}: commit: Replaced ti-pencil with ti-palette for Appearance menu icon in Settings > My Account
+[33m2720413[m HEAD@{125}: commit: Replaced ti-panel with ti-settings for navbar Settings menu icon
+[33md8ac38f[m HEAD@{126}: commit: Removed logout field from Settings
+[33m5ea05b1[m HEAD@{127}: commit: Remove ti-angle-down from sidebar Settings logout field
+[33m3cde7d3[m HEAD@{128}: commit: Added file handling to UsersController@update, and changed sidebar avatar image fields accordingly
+[33m1a47851[m HEAD@{129}: commit: Changed navbar Chats icon from ti-comment-alt to ti-comments
+[33m4730074[m HEAD@{130}: commit: Improved user update fields in Settings > My Account; added user update & delete routes to web.php; added constructor, update, and destroy methods to UsersController with functionality for only constructor & update methods except image upload functionality for update method
+[33m8d02eb9[m HEAD@{131}: commit: Added form attributes, form method, and CSRF field to user update form in Settings > My Account
+[33mc87ece5[m HEAD@{132}: commit: Improved avatar upload input in user update form in Settings > My Account
+[33mbc41c59[m HEAD@{133}: commit: Created UsersController
+[33m491d92d[m HEAD@{134}: commit: Changed 'Chat' to 'Chats' in navbar view
+[33mf5d82bc[m HEAD@{135}: commit: Changed favicon and logo; added user avatar to Friends, Chat, Notifications menus, and user update field in Settings menu; improved user edit/update form fields in settings menu
+[33m5f85e6c[m HEAD@{136}: commit: Changed favicon and logos
+[33maf5551a[m HEAD@{137}: commit: Changed friends icon in navbar view from ti-home to ti-comments-smiley
+[33m293ed03[m HEAD@{138}: commit: Added authenticated user information to settings menu in sidebar view; added default avatar image for users with avatar null
+[33m97714e7[m HEAD@{139}: commit: Improved navbar view label names and titles
+[33mab79223[m HEAD@{140}: commit: Added Talkshak sign-up view to register view
+[33mfe791c8[m HEAD@{141}: commit: Added Talkshak sign-in view to login view; changed favicon, logo, and logo2 images
+[33m4d4bbda[m HEAD@{142}: commit: Added username field to RegisterController@create
+[33mf9f024b[m HEAD@{143}: commit: Added username validation rule to RegisterController@validator
+[33m038e10d[m HEAD@{144}: commit: Added username to fillable in User model
+[33m17109ae[m HEAD@{145}: commit: Added username input field to register view
+[33med02a42[m HEAD@{146}: commit: Added username column to users table
+[33m943c991[m HEAD@{147}: commit: Removed image upload during registration
+[33md5fd0c8[m HEAD@{148}: commit: Fixed RegisterController validation failure by adding enctype="multipart/form-data" to user registration form in register view
+[33m5c747c5[m HEAD@{149}: commit (amend): Removed required attribute from avatar file input element in register view; added error handling for avatar file input element in register view; added avatar image validation rule to RegisterController@validator; added avatar field to RegisterController@create; added avatar to the array of fillable fields in User model
+[33m28489a7[m HEAD@{150}: commit (amend): Removed required attribute from avatar file input element in register view; added error handling for avatar file input element in register view; added avatar image validation to RegisterController@validator; added avatar field to RegisterController@create; added avatar to the array of fillable fields in User model
+[33m1ade9cb[m HEAD@{151}: commit (amend): Removed required attribute from avatar file input element in register view; added error handling for avatar file input element to register view; added avatar image validation to RegisterController@validator; added avatar field to RegisterController@create; added avatar to the array of fillable fields in User model
+[33me834612[m HEAD@{152}: commit: Removed required attribute from avatar file input element in register view; added error handling for avatar file input element to register view; added avatar image validation to RegisterController@validator; added avatar field to RegisterController@create
+[33m25edfbc[m HEAD@{153}: commit: Added accept attribute to avatar file input in register view
+[33md895479[m HEAD@{154}: commit: Added avatar file input field to register view
+[33ma48d77b[m HEAD@{155}: commit: Added avatar column to users table
+[33m301a129[m HEAD@{156}: commit: Added dark.css to activate Night Mode
+[33mc706e48[m HEAD@{157}: commit: Added logout to navbar & sidebar views
+[33m0380ded[m HEAD@{158}: commit: Added old layouts/app view to auth login, register, email, reset views
+[33mab5c995[m HEAD@{159}: commit: Added old layouts/app view to dashboard view
+[33mf260181[m HEAD@{160}: checkout: moving from master to master
+[33mf260181[m HEAD@{161}: checkout: moving from master to master
+[33mf260181[m HEAD@{162}: commit: Added JustIM logo
+[33m774fa6c[m HEAD@{163}: commit: Added Talkshak view
+[33mbafbe16[m HEAD@{164}: commit: Added PagesController, pages view, and matched them with index route
+[33m83c3bb9[m HEAD@{165}: commit (amend): Added Laravel Collective
+[33m1f7ea83[m HEAD@{166}: commit: Added Laravel form template
+[33mc2c2cc8[m HEAD@{167}: commit: Configuration commit
+[33m62feea1[m HEAD@{168}: commit (initial): Initial commit
