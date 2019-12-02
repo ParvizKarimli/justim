@@ -106,7 +106,6 @@ setInterval(function () {
 }, 60000);
 
 // Take a friend request action: accept or deny a friend request
-var friendRequestActionTaken = false;
 function friendRequestAction(e) {
     event.preventDefault();
 
@@ -133,17 +132,4 @@ function friendRequestAction(e) {
             document.getElementById('friend-request-action-container-' + dataFriendId).innerHTML = this.responseText;
         }
     };
-
-    friendRequestActionTaken = true;
-
-    return;
-}
-
-// Refresh page after friendRequestsModal gets hidden if a friend request actions has been taken
-$('#friendRequestsModal').on('hidden.bs.modal', refreshPage);
-function refreshPage() {
-    if(friendRequestActionTaken === true) {
-        location.reload();
-    }
-    return;
 }
