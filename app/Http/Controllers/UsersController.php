@@ -175,7 +175,7 @@ class UsersController extends Controller
         {
             foreach($friends as $friend)
             {
-                $user = User::find($friend->id);
+                $user = User::find($friend->id); // Looks expensive! Could've selected user columns in join request above.
                 echo '<a href="#" class="filterMembers all ';
                 echo $user->isOnline() ? 'online' : 'offline';
                 echo ' contact infinite-scroll-item" data-toggle="list">';
