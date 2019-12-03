@@ -57,12 +57,12 @@ jQuery(document).ready(function($) {
     }),
 
 	
-    $("#people").on("keyup", function() {
+    /*$("#people").on("keyup", function() {
         var t = $(this).val().toLowerCase();
         $("#contacts a").filter(function() {
             $(this).toggle($(this).text().toLowerCase().indexOf(t) > -1);
         });
-    });
+    });*/
 
     $("#conversations").on("keyup", function() {
         var t = $(this).val().toLowerCase();
