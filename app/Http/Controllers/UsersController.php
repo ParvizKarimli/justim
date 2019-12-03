@@ -157,7 +157,7 @@ class UsersController extends Controller
     public function search_friends(Request $request)
     {
         $search_term = $request->input('search_term');
-        $friends = \DB::table('friendships')
+        $friends_all = \DB::table('friendships')
             ->join('users', function ($join) {
                 $join->on('users.id', '=', 'friendships.sender_id')
                     ->orOn('users.id', '=', 'friendships.recipient_id');
@@ -168,11 +168,14 @@ class UsersController extends Controller
             })
             ->where('friendships.status', 1)
             ->where('users.name', 'like', '%' . $search_term . '%')
-            ->where('users.id', '!=', auth()->id())
-            ->paginate(10);
+            ->where('users.id', '!=', auth()->id());
+        $friends_all_array = $friends_all->get()->toArray();
+
+        $friends = $friends_all->paginate(10);
 
         if(count($friends) > 0)
         {
+            echo '<p><b>' . count($friends_all_array) . '</b></p>';
             foreach($friends as $friend)
             {
                 $user = User::find($friend->id); // Looks expensive! Could've selected user columns in join request above.
@@ -195,10 +198,21 @@ class UsersController extends Controller
                         <p>&#64;' . $friend->username . '</p>
                     </div>
                     <div class="person-add">
-                        <i class="ti-user"></i>
+                        <i class="ti-user COMING FROM FRIEND SEARCH"></i>
                     </div>
                 </a>';
             }
+
+            echo '<div class="page-load-status-contacts text-center">';
+                if(count($friends_all_array) > 10)
+                {
+                    echo '<p class="infinite-scroll-request">' .
+                        'Loading... COMING FROM FRIEND SEARCH<br>' .
+                    '</p>';
+                }
+            echo '</div>';
+
+            $friends->links();
         }
         else
         {

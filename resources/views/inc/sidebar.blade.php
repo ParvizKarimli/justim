@@ -55,7 +55,7 @@
                                             <p>&#64;{{ $friend->username }}</p>
                                         </div>
                                         <div class="person-add">
-                                            <i class="ti-user"></i>
+                                            <i class="ti-user COMING FROM OUT OF FRIEND SEARCH"></i>
                                         </div>
                                     </a>
                                 @endforeach
