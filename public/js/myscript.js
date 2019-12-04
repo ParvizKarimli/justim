@@ -147,3 +147,20 @@ function refreshPage() {
     }
     return;
 }
+
+$(document).on("click", ".filterMembers", function () {
+    var friendName = $(this).data('friend-name');
+    var friendUsername = $(this).data('friend-username');
+    var friendThumbnail = $(this).data('friend-thumbnail');
+    if(friendThumbnail == '') {
+        friendThumbnail = 'default_thumbnail.jpg';
+    } else {
+        friendThumbnail = $(this).data('friend-thumbnail');
+    }
+    var friendSince = $(this).data('friend-since');
+
+    $("#friendName").html( friendName );
+    $("#friendUsername").html( '@' + friendUsername );
+    $("#friendThumbnail").attr( 'src', '/storage/images/avatars/thumbnails/' + friendThumbnail );
+    $("#friendSince").html( friendSince );
+});
