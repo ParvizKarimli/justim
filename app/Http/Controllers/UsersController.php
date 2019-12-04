@@ -182,7 +182,7 @@ class UsersController extends Controller
                 $user = User::find($friend->id); // Looks expensive! Could've selected user columns in join request above.
                 echo '<a href="#" class="filterMembers all ';
                 echo $user->isOnline() ? 'online' : 'offline';
-                echo ' contact infinite-scroll-item" data-toggle="modal" data-target="#friendModal" data-friend-name="' . $friend->name . '" data-friend-username="' . $friend->username . '" data-friend-thumbnail="' . $friend->thumbnail . '" data-friend-since="' . $friend->friend_since . '">';
+                echo ' contact infinite-scroll-item" data-toggle="modal" data-target="#friendModal" data-friend-id="' . $friend->id . '" data-friend-name="' . $friend->name . '" data-friend-username="' . $friend->username . '" data-friend-thumbnail="' . $friend->thumbnail . '" data-friend-since="' . $friend->friend_since . '">';
                 if($friend->thumbnail == NULL)
                 {
                     echo '<img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="' . $friend->name . '" alt="avatar">';
@@ -295,6 +295,40 @@ class UsersController extends Controller
                 $friendship->save();
                 echo 'Friend request denied.';
             }
+        }
+    }
+
+    // Remove friend
+    public function remove_friend(Request $request)
+    {
+        $friend_id = $request->input('friend_id');
+
+        $user = User::find($friend_id);
+
+        if(empty($user))
+        {
+            return back()->with('error', 'User not found');
+        }
+        else
+        {
+            return auth()->user()->unfriend($user);
+        }
+    }
+
+    // Block user
+    public function block_user(Request $request)
+    {
+        $user_id = $request->input('user_id');
+
+        $user = User::find($user_id);
+
+        if(empty($user))
+        {
+            return back()->with('error', 'User not found');
+        }
+        else
+        {
+            return auth()->user()->blockFriend($user);
         }
     }
 }
