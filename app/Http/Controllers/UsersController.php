@@ -181,7 +181,7 @@ class UsersController extends Controller
                 $user = User::find($friend->id); // Looks expensive! Could've selected user columns in join request above.
                 echo '<a href="#" class="filterMembers all ';
                 echo $user->isOnline() ? 'online' : 'offline';
-                echo ' contact infinite-scroll-item" data-toggle="list">';
+                echo ' contact infinite-scroll-item" data-toggle="modal" data-target="#friendModal">';
                 if($friend->thumbnail == NULL)
                 {
                     echo '<img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="' . $friend->name . '" alt="avatar">';
