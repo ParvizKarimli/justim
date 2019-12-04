@@ -168,7 +168,8 @@ class UsersController extends Controller
             })
             ->where('friendships.status', 1)
             ->where('users.name', 'like', '%' . $search_term . '%')
-            ->where('users.id', '!=', auth()->id());
+            ->where('users.id', '!=', auth()->id())
+            ->select('users.id', 'users.name', 'users.username', 'users.thumbnail', 'friendships.created_at AS friend_since');
         $friends_all_array = $friends_all->get()->toArray();
 
         $friends = $friends_all->paginate(10);
@@ -181,7 +182,7 @@ class UsersController extends Controller
                 $user = User::find($friend->id); // Looks expensive! Could've selected user columns in join request above.
                 echo '<a href="#" class="filterMembers all ';
                 echo $user->isOnline() ? 'online' : 'offline';
-                echo ' contact infinite-scroll-item" data-toggle="modal" data-target="#friendModal">';
+                echo ' contact infinite-scroll-item" data-toggle="modal" data-target="#friendModal" data-friend-name="' . $friend->name . '" data-friend-username="' . $friend->username . '" data-friend-thumbnail="' . $friend->thumbnail . '" data-friend-since="' . $friend->friend_since . '">';
                 if($friend->thumbnail == NULL)
                 {
                     echo '<img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="' . $friend->name . '" alt="avatar">';

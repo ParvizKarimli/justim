@@ -14,7 +14,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="card friend-request">
+                <div class="card">
                     <b>Name: </b> <p id="friendName"></p>
                     <b>Username: </b> <p id="friendUsername"></p>
                     <b>Avatar: </b> <p>
