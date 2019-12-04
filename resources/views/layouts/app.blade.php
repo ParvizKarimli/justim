@@ -36,6 +36,7 @@
         @include('inc.system.messages')
         @include('inc.delete_account_modal')
         @include('inc.friend_requests_modal')
+        @include('inc.friend_modal')
     </div> <!-- Layout -->
 </main>
 

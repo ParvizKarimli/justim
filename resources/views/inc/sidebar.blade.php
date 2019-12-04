@@ -43,7 +43,7 @@
                                 <p>There is no friend in your contacts.</p>
                             @else
                                 @foreach($friends as $friend)
-                                    <a href="#" class="filterMembers all {{ $friend->isOnline() ? 'online' : 'offline' }} contact" data-toggle="list">
+                                    <a href="#" class="filterMembers all {{ $friend->isOnline() ? 'online' : 'offline' }} contact" data-toggle="modal" data-target="#friendModal">
                                         @if($friend->thumbnail == NULL)
                                             <img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="{{ $friend->name }}" alt="avatar">
                                         @else
