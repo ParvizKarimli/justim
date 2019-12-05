@@ -148,7 +148,7 @@ function refreshPage() {
     return;
 }
 
-// Send friend data to friend modal
+// Send friend data to friend modal on click friend field/on show friend modal
 $(document).on("click", ".filterMembers", function () {
     var friendId = $(this).data('friend-id');
     var friendName = $(this).data('friend-name');
