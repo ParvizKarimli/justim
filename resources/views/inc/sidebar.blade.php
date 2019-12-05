@@ -649,7 +649,7 @@
                             <!-- Start of Privacy & Safety -->
                             <div class="category">
                                 <a href="#" class="title collapsed" id="headingSeven" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
-                                    <i class="ti-lock"></i>
+                                    <i class="ti-panel"></i>
                                     <div class="data">
                                         <h5>Privacy & Safety</h5>
                                         <p>Control your privacy settings</p>
@@ -722,6 +722,34 @@
                                 </div>
                             </div>
                             <!-- End of Privacy & Safety -->
+                            <!-- Start of Blocking/Blocked Users -->
+                            <div class="category">
+                                <a href="#" class="title collapsed" id="headingEight" data-toggle="collapse" data-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+                                    <i class="ti-lock"></i>
+                                    <div class="data">
+                                        <h5>Blocked Users</h5>
+                                        <p>See the users you have blocked</p>
+                                    </div>
+                                    <i class="ti-angle-down"></i>
+                                </a>
+                                <div class="collapse" id="collapseEight" aria-labelledby="headingEight" data-parent="#accordionSettings">
+                                    <div class="content no-layer">
+                                        <div>
+                                            <form>
+                                                <label>Search User</label>
+                                                <input type="text">
+                                                <input type="submit" value="Block User">
+                                            </form>
+                                            <ul>
+                                                <li>John Doe</li>
+                                                <li>Joe Doe</li>
+                                                <li>Jane Doe</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of Blocking/Blocked Users -->
                         </div>
                     </div>
                 </div>
