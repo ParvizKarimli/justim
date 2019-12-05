@@ -274,25 +274,23 @@ class UsersController extends Controller
         $data_friend_id = $request->input('data_friend_id');
         $data_action = $request->input('data_action');
 
-        $user = User::find($data_friend_id);
+        $auth_user = auth()->user();
+        $sender = User::find($data_friend_id);
 
-        if(empty($user))
+        if(empty($sender))
         {
             return back()->with('error', 'User not found');
         }
         else
         {
-            $friendship = auth()->user()->getFriendship($user);
             if($data_action === 'accept')
             {
-                $friendship->status = 1;
-                $friendship->save();
+                $auth_user->acceptFriendRequest($sender);
                 echo 'Friend request accepted.';
             }
             elseif($data_action === 'deny')
             {
-                $friendship->status = 2;
-                $friendship->save();
+                $auth_user->denyFriendRequest($sender);
                 echo 'Friend request denied.';
             }
         }
