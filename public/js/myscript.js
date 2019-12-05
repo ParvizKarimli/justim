@@ -193,8 +193,7 @@ function removeFriend(e) {
     xmlhttp.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200)
         {
-            alert('Friend removed successfully.');
-            location.reload();
+            document.getElementById('friend-action-response').innerHTML = this.responseText;
         }
     };
 }
@@ -222,8 +221,7 @@ function blockUser(e) {
     xmlhttp.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200)
         {
-            alert('User blocked successfully.');
-            location.reload();
+            document.getElementById('friend-action-response').innerHTML = this.responseText;
         }
     };
 }

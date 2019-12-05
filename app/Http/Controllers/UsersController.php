@@ -301,15 +301,16 @@ class UsersController extends Controller
     {
         $friend_id = $request->input('friend_id');
 
-        $user = User::find($friend_id);
+        $friend = User::find($friend_id);
 
-        if(empty($user))
+        if(empty($friend))
         {
-            return back()->with('error', 'User not found');
+            echo 'alert("User not found.");location.reload();';
         }
         else
         {
-            return auth()->user()->unfriend($user);
+            auth()->user()->unfriend($friend);
+            echo 'alert("Friend removed successfully.");location.reload();';
         }
     }
 
@@ -322,11 +323,12 @@ class UsersController extends Controller
 
         if(empty($user))
         {
-            return back()->with('error', 'User not found');
+            echo 'alert("User not found.");location.reload();';
         }
         else
         {
-            return auth()->user()->blockFriend($user);
+            auth()->user()->blockFriend($user);
+            echo 'alert("User blocked successfully.");location.reload();';
         }
     }
 }

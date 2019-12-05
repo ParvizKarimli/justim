@@ -25,6 +25,7 @@
                 <div id="friend-action-container">
                     <a class="btn btn-warning col-sm-4" id="removeFriend" onclick="if(confirm('Are you sure you want to unfriend this user?')) { removeFriend(this); }" data-friend-id="">Unfriend</a>
                     <a class="btn btn-danger col-sm-4" id="blockUser" onclick="if(confirm('Are you sure you want to block this user?')) { blockUser(this); }" data-user-id="">Block</a>
+                    <script id="friend-action-response"></script>
                 </div>
             </div>
         </div>
