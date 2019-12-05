@@ -329,10 +329,6 @@ class UsersController extends Controller
         {
             echo 'alert("User not found.");location.reload();';
         }
-        elseif(!auth()->user()->isFriendWith($user))
-        {
-            echo 'alert("You are not friends with this user.");location.reload();';
-        }
         else
         {
             auth()->user()->blockFriend($user);
