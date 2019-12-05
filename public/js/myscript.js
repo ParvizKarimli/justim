@@ -110,8 +110,8 @@ var friendRequestActionTaken = false;
 function friendRequestAction(e) {
     event.preventDefault();
 
-    var dataFriendId = e.getAttribute('data-friend-id');
-    var dataAction = e.getAttribute('data-action');
+    var senderId = e.getAttribute('data-sender-id');
+    var action = e.getAttribute('data-action');
 
     if(window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -125,12 +125,12 @@ function friendRequestAction(e) {
     // Send the proper header information along with the request
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.setRequestHeader('X-CSRF-TOKEN', document.querySelector('meta[name="csrf-token"]').content);
-    xmlhttp.send('data_action=' + dataAction + '&data_friend_id=' + dataFriendId);
+    xmlhttp.send('action=' + action + '&sender_id=' + senderId);
 
     xmlhttp.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200)
         {
-            document.getElementById('friend-request-action-container-' + dataFriendId).innerHTML = this.responseText;
+            document.getElementById('friend-request-action-container-' + senderId).innerHTML = this.responseText;
         }
     };
 

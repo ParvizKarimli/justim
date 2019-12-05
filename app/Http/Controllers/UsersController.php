@@ -271,11 +271,11 @@ class UsersController extends Controller
     // Accept or deny a friend request
     public function friend_request_action(Request $request)
     {
-        $data_friend_id = $request->input('data_friend_id');
-        $data_action = $request->input('data_action');
+        $sender_id = $request->input('sender_id');
+        $action = $request->input('action');
 
         $auth_user = auth()->user();
-        $sender = User::find($data_friend_id);
+        $sender = User::find($sender_id);
 
         if(empty($sender))
         {
@@ -283,12 +283,12 @@ class UsersController extends Controller
         }
         else
         {
-            if($data_action === 'accept')
+            if($action === 'accept')
             {
                 $auth_user->acceptFriendRequest($sender);
                 echo 'Friend request accepted.';
             }
-            elseif($data_action === 'deny')
+            elseif($action === 'deny')
             {
                 $auth_user->denyFriendRequest($sender);
                 echo 'Friend request denied.';
