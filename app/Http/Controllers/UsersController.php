@@ -279,7 +279,7 @@ class UsersController extends Controller
 
         if(empty($sender))
         {
-            return back()->with('error', 'User not found');
+            return back()->with('error', 'User not found'); // This line doesn't even work, it's just for legacy backup
         }
         else
         {
