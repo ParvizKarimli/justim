@@ -131,6 +131,9 @@ function friendRequestAction(e) {
         if(this.readyState == 4 && this.status == 200)
         {
             document.getElementById('friend-request-action-container-' + senderId).innerHTML = this.responseText;
+
+            // And the jQuery method which doesn't print out any error to console
+            //$('#friend-request-action-container-' + senderId).html(this.responseText);
         }
     };
 
