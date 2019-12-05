@@ -329,6 +329,14 @@ class UsersController extends Controller
         {
             echo 'alert("User not found.");location.reload();';
         }
+        elseif(auth()->user()->isBlockedBy($user))
+        {
+            echo 'alert("You are blocked by this user.");location.reload();';
+        }
+        elseif($user->isBlockedBy(auth()->user()))
+        {
+            echo 'alert("You have already blocked this user.");location.reload();';
+        }
         else
         {
             auth()->user()->blockFriend($user);
