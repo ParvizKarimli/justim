@@ -734,17 +734,51 @@
                                 </a>
                                 <div class="collapse" id="collapseEight" aria-labelledby="headingEight" data-parent="#accordionSettings">
                                     <div class="content no-layer">
-                                        <div>
-                                            <form>
-                                                <label>Search User</label>
-                                                <input type="text">
-                                                <input type="submit" value="Block User">
-                                            </form>
-                                            <ul>
-                                                <li>John Doe</li>
-                                                <li>Joe Doe</li>
-                                                <li>Jane Doe</li>
-                                            </ul>
+                                        <div class="set">
+                                            <div class="details">
+                                                <h5>Block User</h5>
+                                                <form action="/users/block_user" method="post">
+                                                    {{ csrf_field() }}
+                                                    <div class="form-group">
+                                                        <label for="username">Username</label>
+                                                        <input type="text" class="form-control" name="username" placeholder="@">
+                                                    </div>
+                                                    <button class="btn btn-link w-100" type="submit">
+                                                        Block User
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="set">
+                                            <div class="details">
+                                                <h5>Blocked Users</h5>
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">
+                                                        @john
+                                                        <div class="float-right">
+                                                            <button class="btn unblock-button">
+                                                                Unblock
+                                                            </button>
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        @adam
+                                                        <div class="float-right">
+                                                            <button class="btn unblock-button">
+                                                                Unblock
+                                                            </button>
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        @dale
+                                                        <div class="float-right">
+                                                            <button class="btn unblock-button">
+                                                                Unblock
+                                                            </button>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

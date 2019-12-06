@@ -50,3 +50,8 @@
     border-radius: 10px;
     background-color: lightblue;
 }
+
+.unblock-button {
+    color: #28a745;
+    margin-left: 3em;
+}
