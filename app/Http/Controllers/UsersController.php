@@ -323,6 +323,12 @@ class UsersController extends Controller
     {
         $username = $request->input('username');
 
+        if(auth()->user()->username === $username)
+        {
+            echo 'alert("You cannot block yourself.");location.reload();';
+            return;
+        }
+
         $user = User::where('username', $username)->first();
 
         if(empty($user))
@@ -342,5 +348,7 @@ class UsersController extends Controller
             auth()->user()->blockFriend($user);
             echo 'alert("User blocked successfully.");location.reload();';
         }
+
+        return;
     }
 }
