@@ -741,7 +741,7 @@
                                                     {{ csrf_field() }}
                                                     <div class="form-group">
                                                         <label for="username">Username</label>
-                                                        <input type="text" class="form-control" id="usernameToBlock" name="username" placeholder="@">
+                                                        <input type="text" class="form-control" id="usernameToBlock" name="username" placeholder="@" required>
                                                     </div>
                                                     <button class="btn btn-link w-100" type="button" onclick="if(confirm('Are you sure you want to block this user?')) { $(this).data('username', $('#usernameToBlock').val()); blockUser(this); }" data-username="">
                                                         Block User

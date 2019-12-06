@@ -205,7 +205,8 @@ function removeFriend(e) {
 function blockUser(e) {
     event.preventDefault();
 
-    //var username = e.getAttribute('data-username'); // For some reason it doesn't work but the jQuery version below works
+    //var username = e.getAttribute('data-username'); // For some reason it doesn't work anymore
+    // but the jQuery version below works
     var username = $(e).data('username');
 
     if(window.XMLHttpRequest) {
