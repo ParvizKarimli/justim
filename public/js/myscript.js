@@ -165,7 +165,7 @@ $(document).on("click", ".filterMembers", function () {
     var friendSince = $(this).data('friend-since');
 
     $("#removeFriend").attr( 'data-friend-id', friendId );
-    $("#blockUser").attr( 'data-user-id', friendId );
+    $("#blockUser").attr( 'data-username', friendUsername );
     $("#friendName").html( friendName );
     $("#friendUsername").html( '@' + friendUsername );
     $("#friendThumbnail").attr( 'src', '/storage/images/avatars/thumbnails/' + friendThumbnail );
@@ -205,7 +205,7 @@ function removeFriend(e) {
 function blockUser(e) {
     event.preventDefault();
 
-    var userId = e.getAttribute('data-user-id');
+    var username = e.getAttribute('data-username');
 
     if(window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -219,7 +219,7 @@ function blockUser(e) {
     // Send the proper header information along with the request
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.setRequestHeader('X-CSRF-TOKEN', document.querySelector('meta[name="csrf-token"]').content);
-    xmlhttp.send('user_id=' + userId);
+    xmlhttp.send('username=' + username);
 
     xmlhttp.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200)

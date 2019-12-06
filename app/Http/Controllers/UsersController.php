@@ -321,9 +321,9 @@ class UsersController extends Controller
     // Block user
     public function block_user(Request $request)
     {
-        $user_id = $request->input('user_id');
+        $username = $request->input('username');
 
-        $user = User::find($user_id);
+        $user = User::where('username', $username)->first();
 
         if(empty($user))
         {
