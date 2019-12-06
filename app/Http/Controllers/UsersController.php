@@ -219,12 +219,15 @@ class UsersController extends Controller
         {
             echo '<p>No friend found.</p>';
         }
+
+        return;
     }
 
     // Make user online by sending AJAX request periodically if user is active
     public function make_user_online()
     {
         // This function does not do anything
+        return;
     }
 
     // Send friend request
@@ -293,6 +296,8 @@ class UsersController extends Controller
                 $auth_user->denyFriendRequest($sender);
                 echo 'Friend request denied.';
             }
+
+            return;
         }
     }
 
@@ -316,6 +321,8 @@ class UsersController extends Controller
             auth()->user()->unfriend($friend);
             echo 'alert("Friend removed successfully.");location.reload();';
         }
+
+        return;
     }
 
     // Block user
