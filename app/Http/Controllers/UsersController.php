@@ -358,4 +358,24 @@ class UsersController extends Controller
 
         return;
     }
+
+    // Unblock user
+    public function unblock_user(Request $request)
+    {
+        $user = User::find($request->id);
+
+        if(empty($user))
+        {
+            return back()->with('error', 'User not found.');
+        }
+        elseif(!$user->isBlockedBy(auth()->user()))
+        {
+            return back()->with('error', 'This user is not blocked by you.');
+        }
+        else
+        {
+            auth()->user()->unblockFriend($user);
+            return back()->with('success', 'User unblocked successfully.');
+        }
+    }
 }

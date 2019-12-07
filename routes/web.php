@@ -27,3 +27,4 @@ Route::post('/users/send_friend_request', 'UsersController@send_friend_request')
 Route::post('/users/friend_request_action', 'UsersController@friend_request_action');
 Route::post('/users/remove_friend', 'UsersController@remove_friend');
 Route::post('/users/block_user', 'UsersController@block_user');
+Route::post('/users/unblock_user/{id}', 'UsersController@unblock_user');

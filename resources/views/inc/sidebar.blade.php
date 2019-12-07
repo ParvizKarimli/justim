@@ -760,9 +760,17 @@
                                                             <li class="list-group-item blocked-user">
                                                                 &#64;{{ $blocked_user->username }}
                                                                 <div class="float-right">
-                                                                    <button class="btn unblock-button">
-                                                                        Unblock
-                                                                    </button>
+                                                                    <form id="unblock-user-form-{{ $blocked_user->id }}" action="/users/unblock_user/{{ $blocked_user->id }}" method="post">
+                                                                        {{ csrf_field() }}
+                                                                        <button class="btn unblock-button" onclick="
+                                                                            event.preventDefault();
+                                                                            if(confirm('Unblock &#64;{{ $blocked_user->username }}?')) {
+                                                                                document.getElementById('unblock-user-form-{{ $blocked_user->id }}').submit();
+                                                                            }
+                                                                        ">
+                                                                            Unblock
+                                                                        </button>
+                                                                    </form>
                                                                 </div>
                                                             </li>
                                                         @endforeach

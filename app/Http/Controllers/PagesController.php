@@ -38,7 +38,7 @@ class PagesController extends Controller
             ->where('friendships.sender_id', auth()->id())
             ->where('friendships.status', 3)
             ->join('users', 'users.id', '=', 'friendships.recipient_id')
-            ->select('users.username')
+            ->select('users.id', 'users.username')
             ->paginate(10);
 
         return view
