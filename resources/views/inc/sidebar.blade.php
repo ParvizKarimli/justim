@@ -773,6 +773,7 @@
                                                             View more
                                                         </button>
                                                     </p>
+                                                    {{ $blocked_users->links() }}
                                                 @endif
                                             </div>
                                         </div>
