@@ -1,4 +1,4 @@
-<!-- Show avatar preview thumbnail before uploading -->
+// Show avatar preview thumbnail before uploading
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -15,7 +15,7 @@ $("#avatar-input").change(function() {
     readURL(this);
 });
 
-<!-- Show deleteAccountModal if there's any error upon validation -->
+// Show deleteAccountModal if there's any error upon validation
 $(document).ready(function() {
     if($('#deleteAccountModal').attr('data-has-error') == 'yes') {
         $('#deleteAccountModal').modal('show');
@@ -25,7 +25,7 @@ $(document).ready(function() {
     }
 });
 
-<!-- Show sendFriendRequestModal if there's any error upon validation -->
+// Show sendFriendRequestModal if there's any error upon validation
 $(document).ready(function() {
     if($('#sendFriendRequestModal').attr('data-has-error') == 'yes') {
         $('#sendFriendRequestModal').modal('show');
@@ -35,7 +35,7 @@ $(document).ready(function() {
     }
 });
 
-<!-- Infinite Scroll initializations -->
+// Infinite Scroll initializations
 // For friends
 $('#contacts').infiniteScroll({
     // options
@@ -46,6 +46,7 @@ $('#contacts').infiniteScroll({
     elementScroll: '#contacts',
     status: '.page-load-status-contacts',
 });
+
 // For friend requests
 $('#friend-requests').infiniteScroll({
     // options
@@ -57,10 +58,11 @@ $('#friend-requests').infiniteScroll({
     status: '.page-load-status-friend-requests',
 });
 // .pagination does not get hidden for friend requests
-// So let's hide it manually
+// so let's hide it manually
 $(document).ready(function(){
     $('.pagination').hide();
 });
+
 // For blocked users
 $('#blocked-users').infiniteScroll({
     // options
@@ -71,6 +73,8 @@ $('#blocked-users').infiniteScroll({
     elementScroll: '#blocked-users',
     /*status: '.page-load-status-friend-requests',*/
 });
+
+// End of Infinite Scroll initializations
 
 // Get friends by search term using AJAX
 function getFriendsBySearchTerm(search_term) {

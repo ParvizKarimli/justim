@@ -767,8 +767,8 @@
                                                             </li>
                                                         @endforeach
                                                     </ul>
+                                                    {{ $blocked_users->links() }}
                                                 @endif
-                                                </ul>
                                             </div>
                                         </div>
                                     </div>
