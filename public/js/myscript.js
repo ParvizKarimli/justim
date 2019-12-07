@@ -36,6 +36,7 @@ $(document).ready(function() {
 });
 
 // Infinite Scroll initializations
+
 // For friends
 $('#contacts').infiniteScroll({
     // options
@@ -71,7 +72,8 @@ $('#blocked-users').infiniteScroll({
     history: false,
     hideNav: '.pagination',
     elementScroll: '#blocked-users',
-    /*status: '.page-load-status-friend-requests',*/
+    scrollThreshold: false,
+    button: '.view-more-button',
 });
 
 // End of Infinite Scroll initializations

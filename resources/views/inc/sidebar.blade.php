@@ -767,7 +767,12 @@
                                                             </li>
                                                         @endforeach
                                                     </ul>
-                                                    {{ $blocked_users->links() }}
+                                                    <br><br>
+                                                    <p>
+                                                        <button class="button btn view-more-button">
+                                                            View more
+                                                        </button>
+                                                    </p>
                                                 @endif
                                             </div>
                                         </div>
