@@ -752,31 +752,22 @@
                                         <div class="set">
                                             <div class="details">
                                                 <h5>Blocked Users</h5>
-                                                <ul class="list-group">
-                                                    <li class="list-group-item">
-                                                        @john
-                                                        <div class="float-right">
-                                                            <button class="btn unblock-button">
-                                                                Unblock
-                                                            </button>
-                                                        </div>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        @adam
-                                                        <div class="float-right">
-                                                            <button class="btn unblock-button">
-                                                                Unblock
-                                                            </button>
-                                                        </div>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        @dale
-                                                        <div class="float-right">
-                                                            <button class="btn unblock-button">
-                                                                Unblock
-                                                            </button>
-                                                        </div>
-                                                    </li>
+                                                @if(count($blocked_users) === 0)
+                                                    <p>You have not blocked any user.</p>
+                                                @else
+                                                    <ul class="list-group" id="blocked-users">
+                                                        @foreach($blocked_users as $blocked_user)
+                                                            <li class="list-group-item blocked-user">
+                                                                &#64;{{ $blocked_user->username }}
+                                                                <div class="float-right">
+                                                                    <button class="btn unblock-button">
+                                                                        Unblock
+                                                                    </button>
+                                                                </div>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                @endif
                                                 </ul>
                                             </div>
                                         </div>

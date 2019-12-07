@@ -14,13 +14,32 @@ class PagesController extends Controller
     public function index()
     {
         $friends = auth()->user()->getFriends($perPage = 10);
+
         $friend_requests = \DB::table('friendships')
             ->join('users', 'users.id', '=', 'friendships.sender_id')
             ->where('friendships.recipient_id', auth()->id())
             ->where('friendships.status', 0)
             ->orderBy('friendships.id', 'desc')
             ->paginate(10);
+
         $friend_requests_count = count(auth()->user()->getFriendRequests());
+
+        /**
+         * Hootlex has default getBlockedFriendships() method
+         * to get the list of blocked users
+         * but it uses get() instead of paginate($perPage) in the end
+         * which is not what I want.
+         * Also I need the friendships table to be joined with
+         * the users table to get used data e.g. names, usernames etc.
+         * And I don't want to edit the Friendable trait file
+         * to modify the default method.
+         */
+        $blocked_users = \DB::table('friendships')
+            ->where('friendships.sender_id', auth()->id())
+            ->where('friendships.status', 3)
+            ->join('users', 'users.id', '=', 'friendships.recipient_id')
+            ->select('users.username')
+            ->paginate(10);
 
         return view
         (
@@ -29,6 +48,7 @@ class PagesController extends Controller
                 'friends' => $friends,
                 'friend_requests' => $friend_requests,
                 'friend_requests_count' => $friend_requests_count,
+                'blocked_users' => $blocked_users,
             ]
         );
     }

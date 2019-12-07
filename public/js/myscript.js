@@ -35,7 +35,7 @@ $(document).ready(function() {
     }
 });
 
-<!-- Infinite Scroll initialization -->
+<!-- Infinite Scroll initializations -->
 // For friends
 $('#contacts').infiniteScroll({
     // options
@@ -60,6 +60,16 @@ $('#friend-requests').infiniteScroll({
 // So let's hide it manually
 $(document).ready(function(){
     $('.pagination').hide();
+});
+// For blocked users
+$('#blocked-users').infiniteScroll({
+    // options
+    path: '.pagination li.active + li a',
+    append: '.blocked-user',
+    history: false,
+    hideNav: '.pagination',
+    elementScroll: '#blocked-users',
+    /*status: '.page-load-status-friend-requests',*/
 });
 
 // Get friends by search term using AJAX
