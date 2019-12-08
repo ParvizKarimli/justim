@@ -51,5 +51,55 @@
 <!-- My Script -->
 <script src="{{ asset('js/myscript.js') }}"></script>
 
+<!-- Infinite Scroll initializations -->
+
+<!-- For friends -->
+@if(auth()->user()->getFriendsCount() > 10)
+    <script>
+        $('#contacts').infiniteScroll({
+            // options
+            path: '.pagination li.active + li a',
+            append: '.contact',
+            history: false,
+            hideNav: '.pagination',
+            elementScroll: '#contacts',
+            status: '.page-load-status-contacts',
+        });
+    </script>
+@endif
+
+<!-- For friend requests -->
+@if($friend_requests_count > 10)
+    <script>
+        $('#friend-requests').infiniteScroll({
+            // options
+            path: '.pagination li.active + li a',
+            append: '.friend-request',
+            history: false,
+            hideNav: '.pagination',
+            elementScroll: '#friend-requests',
+            status: '.page-load-status-friend-requests',
+        });
+    </script>
+@endif
+
+<!-- For blocked users -->
+@if(count(auth()->user()->getBlockedFriendships()) > 10)
+    <script>
+        $('#blocked-users').infiniteScroll({
+            // options
+            path: '.pagination li.active + li a',
+            append: '.blocked-user',
+            history: false,
+            hideNav: '.pagination',
+            elementScroll: '#blocked-users',
+            scrollThreshold: false,
+            button: '.view-more-button',
+        });
+    </script>
+@endif
+
+<!-- End of Infinite Scroll initializations -->
+
 </body>
 </html>

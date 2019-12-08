@@ -35,49 +35,6 @@ $(document).ready(function() {
     }
 });
 
-// Infinite Scroll initializations
-
-// For friends
-$('#contacts').infiniteScroll({
-    // options
-    path: '.pagination li.active + li a',
-    append: '.contact',
-    history: false,
-    hideNav: '.pagination',
-    elementScroll: '#contacts',
-    status: '.page-load-status-contacts',
-});
-
-// For friend requests
-$('#friend-requests').infiniteScroll({
-    // options
-    path: '.pagination li.active + li a',
-    append: '.friend-request',
-    history: false,
-    hideNav: '.pagination',
-    elementScroll: '#friend-requests',
-    status: '.page-load-status-friend-requests',
-});
-// .pagination does not get hidden for friend requests
-// so let's hide it manually
-$(document).ready(function(){
-    $('.pagination').hide();
-});
-
-// For blocked users
-$('#blocked-users').infiniteScroll({
-    // options
-    path: '.pagination li.active + li a',
-    append: '.blocked-user',
-    history: false,
-    hideNav: '.pagination',
-    elementScroll: '#blocked-users',
-    scrollThreshold: false,
-    button: '.view-more-button',
-});
-
-// End of Infinite Scroll initializations
-
 // Get friends by search term using AJAX
 function getFriendsBySearchTerm(search_term) {
     if(window.XMLHttpRequest) {
