@@ -225,74 +225,9 @@
                         <div class="list-group" id="alerts" role="tablist">
                             <a href="#" class="filterNotifications all latest notification" data-toggle="list">
                                 <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-1.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
-                                <div class="status online"></div>
                                 <div class="data">
-                                    <p>Sarah has accepted your friend request on Talkshak.</p>
-                                    <span>Oct 17, 2018</span>
-                                </div>
-                            </a>
-                            <a href="#" class="filterNotifications all latest notification" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Michael" alt="avatar">
-                                <div class="status online"></div>
-                                <div class="data">
-                                    <p>Michael, you have a new friend suggestion today.</p>
-                                    <span>Jun 21, 2018</span>
-                                </div>
-                            </a>
-                            <a href="#" class="filterNotifications all latest notification" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-2.jpg" data-toggle="tooltip" data-placement="top" title="james idoms" alt="avatar">
-                                <div class="status online"></div>
-                                <div class="data">
-                                    <p>james idoms have just sent you a new message.</p>
-                                    <span>Feb 15, 2018</span>
-                                </div>
-                            </a>
-                            <a href="#" class="filterNotifications all latest notification" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-6.jpg" data-toggle="tooltip" data-placement="top" title="Lisa Honey" alt="avatar">
-                                <div class="status online"></div>
-                                <div class="data">
-                                    <p>Lisa Honey has a birthday today. Wish her all the best.</p>
-                                    <span>Mar 23, 2018</span>
-                                </div>
-                            </a>
-                            <a href="#" class="filterNotifications all latest notification" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-3.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
-                                <div class="status online"></div>
-                                <div class="data">
-                                    <p>Linda Gates has accepted your friend request on Talkshak.</p>
-                                    <span>Jan 5, 2018</span>
-                                </div>
-                            </a>
-                            <a href="#" class="filterNotifications all oldest notification" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
-                                <div class="status offline"></div>
-                                <div class="data">
-                                    <p>Karen joye have just sent you a new message.</p>
-                                    <span>Dec 22, 2017</span>
-                                </div>
-                            </a>
-                            <a href="#" class="filterNotifications all oldest notification" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-2.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
-                                <div class="status offline"></div>
-                                <div class="data">
-                                    <p>Michael, you have a new friend suggestion today.</p>
-                                    <span>Nov 29, 2017</span>
-                                </div>
-                            </a>
-                            <a href="#" class="filterNotifications all oldest notification" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-3.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
-                                <div class="status offline"></div>
-                                <div class="data">
-                                    <p>Daniel Cabral have just sent you a new message.</p>
-                                    <span>Sep 31, 2017</span>
-                                </div>
-                            </a>
-                            <a href="#" class="filterNotifications all oldest notification" data-toggle="list">
-                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-4.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
-                                <div class="status offline"></div>
-                                <div class="data">
-                                    <p>Jhon Doe has a birthday today. Wish him all the best.</p>
-                                    <span>Jul 19, 2017</span>
+                                    <p>Sarah accepted your friend request.</p>
+                                    <span>October 17, 2018 at 13:59</span>
                                 </div>
                             </a>
                         </div>
