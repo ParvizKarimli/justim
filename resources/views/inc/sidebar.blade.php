@@ -219,18 +219,7 @@
                         @endif
                     </figure>
                     <span class="logo"><img alt="" src="/storage/images/logo.png"></span>
-                    <div class="search">
-                        <form class="form-inline position-relative">
-                            <input type="search" class="form-control" id="notice" placeholder="Filter notifications...">
-                            <button type="button" class="btn btn-link loop">
-                                <i class="ti-filter"></i></button>
-                        </form>
-                    </div>
-                    <div class="list-group sort">
-                        <button class="btn filterNotificationsBtn active show" data-toggle="list" data-filter="all">All</button>
-                        <button class="btn filterNotificationsBtn" data-toggle="list" data-filter="latest">Latest</button>
-                        <button class="btn filterNotificationsBtn" data-toggle="list" data-filter="oldest">Oldest</button>
-                    </div>
+                    <br><br>
                     <div class="notifications">
                         <h1>Notifications</h1>
                         <div class="list-group" id="alerts" role="tablist">
