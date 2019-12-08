@@ -223,11 +223,20 @@
                     <div class="notifications">
                         <h1>Notifications</h1>
                         <div class="list-group" id="alerts" role="tablist">
-                            <a href="#" class="filterNotifications all latest notification" data-toggle="list">
+                            <a href="#" class="filterNotifications all latest notification" onclick="event.preventDefault();">
                                 <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-1.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
                                 <div class="data">
                                     <p>Sarah accepted your friend request.</p>
                                     <span>October 17, 2018 at 13:59</span>
+                                    <span title="Mark as read" class="float-right notif-read-toggle-btn">&#9899;</span>
+                                </div>
+                            </a>
+                            <a href="#" class="filterNotifications all latest notification" onclick="event.preventDefault();">
+                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Michael" alt="avatar">
+                                <div class="data">
+                                    <p>Michael accepted your friend request.</p>
+                                    <span>November 08, 2019 at 22:03</span>
+                                    <span title="Mark as read" class="float-right notif-read-toggle-btn">&#9899;</span>
                                 </div>
                             </a>
                         </div>

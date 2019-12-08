@@ -55,3 +55,11 @@
     color: #28a745;
     margin-left: 3em;
 }
+
+.notification {
+    background-color: #e8e8e8;
+}
+
+.notification-read {
+    background-color: #fff;
+}
