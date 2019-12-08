@@ -775,12 +775,14 @@
                                                             </li>
                                                         @endforeach
                                                     </ul>
-                                                    <br><br>
-                                                    <p>
-                                                        <button class="button btn view-more-button">
-                                                            View more
-                                                        </button>
-                                                    </p>
+                                                    @if(count(auth()->user()->getBlockedFriendships()) > 10)
+                                                        <br><br>
+                                                        <p>
+                                                            <button class="button btn view-more-button">
+                                                                View more
+                                                            </button>
+                                                        </p>
+                                                    @endif
                                                     {{ $blocked_users->links() }}
                                                 @endif
                                             </div>
