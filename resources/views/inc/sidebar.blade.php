@@ -43,7 +43,7 @@
                                 <p>There is no friend in your contacts.</p>
                             @else
                                 @foreach($friends as $friend)
-                                    <a href="#" class="filterMembers all {{ $friend->isOnline() ? 'online' : 'offline' }} contact" data-toggle="modal" data-target="#friendModal" data-friend-id="{{ $friend->id }}" data-friend-name="{{ $friend->name }}" data-friend-username="{{ $friend->username }}" data-friend-avatar="{{ $friend->avatar }}" data-friend-since="{{ auth()->user()->getFriendship($friend)->created_at }}">
+                                    <a href="#" class="filterMembers all {{ $friend->isOnline() ? 'online' : 'offline' }} contact" data-toggle="modal" data-target="#friendModal" data-friend-id="{{ $friend->id }}" data-friend-name="{{ $friend->name }}" data-friend-username="{{ $friend->username }}" data-friend-avatar="{{ $friend->avatar }}" data-friend-since="{{ date('F j, Y H:i', strtotime(auth()->user()->getFriendship($friend)->created_at)) }}">
                                         @if($friend->thumbnail == NULL)
                                             <img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="{{ $friend->name }}" alt="avatar">
                                         @else
@@ -235,7 +235,7 @@
                                         @endif
                                         <div class="data">
                                             <p>{{ $notification->data['name'] }} (&#64;{{ $notification->data['username'] }}) accepted your friend request.</p>
-                                            <span>{{ $notification->created_at }}</span>
+                                            <span>{{ date('F j, Y \a\t H:i', strtotime($notification->created_at)) }}</span>
                                             <span title="Mark as read" class="float-right notif-read-toggle-btn">&#9899;</span>
                                         </div>
                                     </a>
