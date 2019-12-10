@@ -41,6 +41,19 @@ class PagesController extends Controller
             ->select('users.id', 'users.username')
             ->paginate(10);
 
+        // Get user notifications
+        $notifications = auth()->user()->notifications;
+        /*$notifications = \DB::table('notifications')
+            ->where('notifications.notifiable_id', '=', auth()->id())
+            ->select(
+                'id',
+                'data',
+                'created_at',
+                'read_at'
+            )
+        ->paginate(10);*/
+        //dd($notifications);
+
         return view
         (
             'pages.index',
@@ -49,6 +62,7 @@ class PagesController extends Controller
                 'friend_requests' => $friend_requests,
                 'friend_requests_count' => $friend_requests_count,
                 'blocked_users' => $blocked_users,
+                'notifications' => $notifications,
             ]
         );
     }

@@ -223,22 +223,24 @@
                     <div class="notifications">
                         <h1>Notifications</h1>
                         <div class="list-group" id="alerts" role="tablist">
-                            <a href="#" class="filterNotifications all latest notification" onclick="event.preventDefault();">
-                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-female-1.jpg" data-toggle="tooltip" data-placement="top" title="Sarah" alt="avatar">
-                                <div class="data">
-                                    <p>Sarah accepted your friend request.</p>
-                                    <span>October 17, 2018 at 13:59</span>
-                                    <span title="Mark as read" class="float-right notif-read-toggle-btn">&#9899;</span>
-                                </div>
-                            </a>
-                            <a href="#" class="filterNotifications all latest notification" onclick="event.preventDefault();">
-                                <img class="avatar-md" src="/storage/images/avatars/thumbnails/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Michael" alt="avatar">
-                                <div class="data">
-                                    <p>Michael accepted your friend request.</p>
-                                    <span>November 08, 2019 at 22:03</span>
-                                    <span title="Mark as read" class="float-right notif-read-toggle-btn">&#9899;</span>
-                                </div>
-                            </a>
+                            @if(count($notifications) === 0)
+                                <p>You have no notification.</p>
+                            @else
+                                @foreach($notifications as $notification)
+                                    <a href="#" class="filterNotifications all latest notification" onclick="event.preventDefault();">
+                                        @if($notification->data['thumbnail'] == NULL)
+                                            <img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="{{ $notification->data['name'] }}" alt="avatar">
+                                        @else
+                                            <img class="avatar-md" src="/storage/images/avatars/thumbnails/{{ $notification->data['thumbnail'] }}" data-toggle="tooltip" data-placement="top" title="{{ $notification->data['name'] }}" alt="avatar">
+                                        @endif
+                                        <div class="data">
+                                            <p>{{ $notification->data['name'] }} (&#64;{{ $notification->data['username'] }}) accepted your friend request.</p>
+                                            <span>{{ $notification->created_at }}</span>
+                                            <span title="Mark as read" class="float-right notif-read-toggle-btn">&#9899;</span>
+                                        </div>
+                                    </a>
+                                @endforeach
+                            @endif
                         </div>
                     </div>
                 </div>

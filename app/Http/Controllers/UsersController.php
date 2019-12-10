@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\FriendRequestAccepted;
 use Illuminate\Http\Request;
 use App\User;
 use Image as ImageLib;
@@ -288,7 +289,14 @@ class UsersController extends Controller
         {
             if($action === 'accept')
             {
+                // Accept friend request
                 $auth_user->acceptFriendRequest($sender);
+
+                // Send a notification to the friend request sender user that
+                // their friend request was accepted
+
+                $sender->notify(new FriendRequestAccepted());
+
                 echo 'Friend request accepted.';
             }
             elseif($action === 'deny')
