@@ -294,7 +294,6 @@ class UsersController extends Controller
 
                 // Send a notification to the friend request sender user that
                 // their friend request was accepted
-
                 $sender->notify(new FriendRequestAccepted());
 
                 echo 'Friend request accepted.';

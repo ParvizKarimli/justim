@@ -43,7 +43,7 @@
                                 <p>There is no friend in your contacts.</p>
                             @else
                                 @foreach($friends as $friend)
-                                    <a href="#" class="filterMembers all {{ $friend->isOnline() ? 'online' : 'offline' }} contact" data-toggle="modal" data-target="#friendModal" data-friend-id="{{ $friend->id }}" data-friend-name="{{ $friend->name }}" data-friend-username="{{ $friend->username }}" data-friend-thumbnail="{{ $friend->thumbnail }}" data-friend-since="{{ auth()->user()->getFriendship($friend)->created_at }}">
+                                    <a href="#" class="filterMembers all {{ $friend->isOnline() ? 'online' : 'offline' }} contact" data-toggle="modal" data-target="#friendModal" data-friend-id="{{ $friend->id }}" data-friend-name="{{ $friend->name }}" data-friend-username="{{ $friend->username }}" data-friend-avatar="{{ $friend->avatar }}" data-friend-since="{{ auth()->user()->getFriendship($friend)->created_at }}">
                                         @if($friend->thumbnail == NULL)
                                             <img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="{{ $friend->name }}" alt="avatar">
                                         @else

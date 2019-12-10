@@ -63,3 +63,8 @@
 .notification-read {
     background-color: #fff;
 }
+
+#friendAvatar {
+    height: 15em;
+    width: 15em;
+}

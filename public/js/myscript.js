@@ -129,11 +129,9 @@ $(document).on("click", ".filterMembers", function () {
     var friendId = $(this).data('friend-id');
     var friendName = $(this).data('friend-name');
     var friendUsername = $(this).data('friend-username');
-    var friendThumbnail = $(this).data('friend-thumbnail');
-    if(friendThumbnail == '') {
-        friendThumbnail = 'default_thumbnail.jpg';
-    } else {
-        friendThumbnail = $(this).data('friend-thumbnail');
+    var friendAvatar = $(this).data('friend-avatar');
+    if(friendAvatar == '') {
+        friendAvatar = 'default.jpg';
     }
     var friendSince = $(this).data('friend-since');
 
@@ -141,7 +139,7 @@ $(document).on("click", ".filterMembers", function () {
     $("#blockUser").attr( 'data-username', friendUsername );
     $("#friendName").html( friendName );
     $("#friendUsername").html( '@' + friendUsername );
-    $("#friendThumbnail").attr( 'src', '/storage/images/avatars/thumbnails/' + friendThumbnail );
+    $("#friendAvatar").attr( 'src', '/storage/images/avatars/' + friendAvatar );
     $("#friendSince").html( friendSince );
 });
 
