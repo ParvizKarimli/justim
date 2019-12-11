@@ -240,6 +240,14 @@
                                         </div>
                                     </a>
                                 @endforeach
+                                <div class="page-load-status-notifications text-center">
+                                    @if($number_of_notifications > 10)
+                                        <p class="infinite-scroll-request">
+                                            Loading...<br>
+                                            <!--<img src="/storage/images/default/loader.svg">-->
+                                        </p>
+                                    @endif
+                                </div>
                             @endif
                         </div>
                     </div>

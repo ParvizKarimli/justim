@@ -42,17 +42,7 @@ class PagesController extends Controller
             ->paginate(10);
 
         // Get user notifications
-        $notifications = auth()->user()->notifications;
-        /*$notifications = \DB::table('notifications')
-            ->where('notifications.notifiable_id', '=', auth()->id())
-            ->select(
-                'id',
-                'data',
-                'created_at',
-                'read_at'
-            )
-        ->paginate(10);*/
-        //dd($notifications);
+        $notifications = auth()->user()->notifications()->paginate(10);
 
         // Get the number of notifications
         $number_of_notifications = \DB::table('notifications')

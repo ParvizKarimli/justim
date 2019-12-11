@@ -99,6 +99,21 @@
     </script>
 @endif
 
+<!-- For notifications -->
+@if($number_of_notifications > 10)
+    <script>
+        $('#alerts').infiniteScroll({
+            // options
+            path: '.pagination li.active + li a',
+            append: '.notification',
+            history: false,
+            hideNav: '.pagination',
+            elementScroll: '#alerts',
+            status: '.page-load-status-notifications',
+        });
+    </script>
+@endif
+
 <!-- End of Infinite Scroll initializations -->
 
 </body>
