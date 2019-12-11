@@ -236,7 +236,7 @@
                                         <div class="data">
                                             <p>{{ $notification->data['name'] }} (&#64;{{ $notification->data['username'] }}) accepted your friend request.</p>
                                             <span>{{ date('F j, Y \a\t H:i', strtotime($notification->created_at)) }}</span>
-                                            <span title="Mark as read" class="float-right notif-read-toggle-btn">&#9899;</span>
+                                            <span title="Mark as read" class="float-right notif-read-toggle-btn" onclick="notifReadToggle(this);">&#9899;</span>
                                         </div>
                                     </a>
                                 @endforeach

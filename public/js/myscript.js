@@ -203,20 +203,20 @@ function blockUser(e) {
 }
 
 // Mark as read
-var notifReadToggleBtns = document.querySelectorAll('.notif-read-toggle-btn');
+/*var notifReadToggleBtns = document.querySelectorAll('.notif-read-toggle-btn');
 for(var i=0; i<notifReadToggleBtns.length; i++) {
     notifReadToggleBtns[i].addEventListener('click', notifReadToggle);
-}
+}*/
 
-function notifReadToggle() {
-    this.closest('.notification').classList.toggle('notification-read');
+function notifReadToggle(e) {
+    e.closest('.notification').classList.toggle('notification-read');
 
-    if(this.innerHTML === "⚪") {
-        this.innerHTML = '&#9899;'
-        this.title = 'Mark as read';
+    if(e.innerHTML === "⚪") {
+        e.innerHTML = '&#9899;'
+        e.title = 'Mark as read';
     } else {
-        this.innerHTML = '&#9898;'
-        this.title = 'Mark as unread';
+        e.innerHTML = '&#9898;'
+        e.title = 'Mark as unread';
     }
 
     return;
