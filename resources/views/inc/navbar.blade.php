@@ -26,6 +26,11 @@
                 <a href="#notifications" data-toggle="tab" class="f-grow1" title="Recent Notifications">
                     <i class="ti-bell"></i>
                     Notifications
+                    @if($number_of_notifications > 0)
+                        <span class="badge-pill badge-danger">
+                            {{ $number_of_notifications }}
+                        </span>
+                    @endif
                 </a>
                 <a href=""
                    class="btn power"
