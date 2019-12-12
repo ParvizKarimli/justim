@@ -100,7 +100,7 @@
 @endif
 
 <!-- For notifications -->
-@if($number_of_notifications > 10)
+@if($number_of_unread_notifications > 10)
     <script>
         $('#alerts').infiniteScroll({
             // options

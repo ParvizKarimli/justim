@@ -44,9 +44,10 @@ class PagesController extends Controller
         // Get user notifications
         $notifications = auth()->user()->notifications()->paginate(10);
 
-        // Get the number of notifications
-        $number_of_notifications = \DB::table('notifications')
+        // Get the number of unread notifications
+        $number_of_unread_notifications = \DB::table('notifications')
             ->where('notifiable_id', '=', auth()->id())
+            ->whereNull('read_at')
             ->count();
 
         return view
@@ -58,7 +59,7 @@ class PagesController extends Controller
                 'friend_requests_count' => $friend_requests_count,
                 'blocked_users' => $blocked_users,
                 'notifications' => $notifications,
-                'number_of_notifications' => $number_of_notifications,
+                'number_of_unread_notifications' => $number_of_unread_notifications,
             ]
         );
     }
