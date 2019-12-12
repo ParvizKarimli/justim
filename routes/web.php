@@ -28,3 +28,4 @@ Route::post('/users/friend_request_action', 'UsersController@friend_request_acti
 Route::post('/users/remove_friend', 'UsersController@remove_friend');
 Route::post('/users/block_user', 'UsersController@block_user');
 Route::post('/users/unblock_user/{id}', 'UsersController@unblock_user');
+Route::post('/users/notif_read_toggle', 'UsersController@notif_read_toggle');

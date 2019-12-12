@@ -227,7 +227,7 @@
                                 <p>You have no notification.</p>
                             @else
                                 @foreach($notifications as $notification)
-                                    <a href="#" class="filterNotifications all latest notification" onclick="event.preventDefault();">
+                                    <a href="#" class="filterNotifications all latest notification {{ is_null($notification->read_at) ? '' : 'notification-read'}}" id="{{ $notification->id }}" onclick="event.preventDefault();">
                                         @if($notification->data['thumbnail'] == NULL)
                                             <img class="avatar-md" src="/storage/images/avatars/thumbnails/default_thumbnail.jpg" data-toggle="tooltip" data-placement="top" title="{{ $notification->data['name'] }}" alt="avatar">
                                         @else

@@ -385,4 +385,36 @@ class UsersController extends Controller
             return back()->with('success', 'User unblocked successfully.');
         }
     }
+
+    // Toggle mark notification read/unread
+    public function notif_read_toggle(Request $request)
+    {
+        $notification_id = $request->notification_id;
+        $notification = \DB::table('notifications')
+            ->where('id', $notification_id)
+            ->first();
+
+        if(!empty($notification))
+        {
+            if($notification->notifiable_id === auth()->id())
+            {
+                if(is_null($notification->read_at))
+                {
+                    \DB::table('notifications')
+                        ->where('id', $notification_id)
+                        ->update([
+                            'read_at' => \Carbon\Carbon::now()
+                        ]);
+                }
+                else
+                {
+                    \DB::table('notifications')
+                        ->where('id', $notification_id)
+                        ->update([
+                            'read_at' => NULL
+                        ]);
+                }
+            }
+        }
+    }
 }
