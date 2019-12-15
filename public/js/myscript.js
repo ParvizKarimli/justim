@@ -230,11 +230,11 @@ function notifReadToggle(e) {
         {
             e.closest('.notification').classList.toggle('notification-read');
 
-            if(e.innerText === "⚪") {
-                e.innerHTML = '&#9899;'
+            if(e.innerText === '⚪') {
+                e.innerHTML = '&#9899;';
                 e.title = 'Mark as read';
             } else {
-                e.innerHTML = '&#9898;'
+                e.innerHTML = '&#9898;';
                 e.title = 'Mark as unread';
             }
         }
