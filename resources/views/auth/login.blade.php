@@ -77,6 +77,9 @@
                             <div class="page-meta">
                                 <h2>JustIM is a simple instant messenger.</h2>
                                 <span>Join us and enjoy!</span>
+								<span>
+									Developed by <a href="https://parvizkarimli.com" target="_blank">Parviz Karimli</a>
+								</span>
                             </div>
                         </div>
                     </div>
